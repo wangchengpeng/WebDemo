@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            text-align: center;width: 300px;
+        }
+    </style>
+    <script src=Js/jquery-2.0.0.min.js> </script>
+    <script src="JS/angular.min.js"></script>
+    <script>
+        var app=angular.module("bindApp",[]);
+        app.controller("bindCtrl",function($scope){
+            $scope.AngularJSReadXml=function(){
+                $.ajax({
+                   url:"../03xml/books.xml" ,
+                    type:"get",
+                    async:false,
+                    success:function(res)
+                    {
+                        var books = res.getElementsByTagName("book");
+                        $scope.Data=books;
+                    }
+
+                });
+            };
+        });
+        app.controller("test",function($scope){
+            $scope.count=1;
+            $scope.AddCount=function(){
+                $scope.count+=1;
+            };
+        });
+    </script>
+</head>
+<body ng-app="bindApp">
+<div    ng-controller="test">
+    <input ng-model="content"><br/>
+    输入的是{{content}}
+    <hr/>
+    <br/>
+    当前数:{{count}}<br/>
+    <input type="button" ng-click="AddCount()" value="+1"/>
+</div>
+
+
+<div  ng-controller="bindCtrl">
+    <input type="button" value="angularJSReadXml" ng-click="AngularJSReadXml()">
+
+    <table>
+        <tr ng-repeat="x in Data">
+            <td ng-repeat="m in x.children">
+                {{m.innerHTML}}
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
