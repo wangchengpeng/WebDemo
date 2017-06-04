@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // 功能:封装单击触摸手势
+        // 思路:手指头放上去会触发touchstart事件 能获取到手指头的位置(targetTouches) clientX clientY
+        // 手指头离开的时候会触发touchend事件  能获取到手指改变的位置(changedTouches) 
+        //  通过判断水平方向和竖直方向的值的差值 如果等于0 代表位置没有发生改变 因此是tap手势
+        // 步骤:
+        // 1.获取元素
+        var box = document.querySelector('.box');
+        // 2.声明变量
+        var touchstartX, touchstartY, touchEndX, touchEndY;
+        // 3.给元素添加touchstart
+        box.addEventListener('touchstart', function (ev) {
+            var touch = ev.targetTouches[0];
+            // 4.获取起始点的位置
+            touchstartX = touch.clientX;
+            touchstartY = touch.clientY;
+        })
+        // 5.给元素添加touchend
+        box.addEventListener('touchend', function (ev) {
+            var touch = ev.changedTouches[0];
+            // 6.为了获取结束点的位置
+            touchEndX = touch.clientX;
+            touchEndY = touch.clientY;
+            // 7.判断位置的差值是否为0(0是一个没有误差的值 这里留一点误差 大概是6px);
+            if (Math.abs(touchEndX - touchstartX)< 6 && Math.abs(touchEndY - touchstartY)< 6) {
+                    console.log("tap手势触发了");
+            }
+        })
+    </script>
+</body>
+
+</html>

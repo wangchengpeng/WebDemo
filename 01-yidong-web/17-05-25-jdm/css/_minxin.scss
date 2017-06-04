@@ -1,0 +1,24 @@
+// 混合器
+
+// 盒子尺寸:让盒子的大小等于css中width或者height的大小
+@mixin boxSizing{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// 固定定位
+@mixin fixed{
+  position: fixed;
+  top:0;
+  left:0;
+}
+// 精灵图
+@mixin sprite{
+  background-image: url('../images/jd-sprites.png');
+  background-size: 200px 200px;
+}
+@mixin Radius($radius:5px){
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  border-radius:$radius;
+}

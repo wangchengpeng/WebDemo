@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body{
+      margin:0;
+      padding:0;
+      width:100%;
+      height:100%;
+    }
+  /* 1.通过切图工具 来量出.box在设计图中的大小 16px*16px */
+    /*2.确定.box占了设计图分成20份之后的比例 0.5份 */
+    /*3.确定每种设备html的font-size的大小*/
+    @media only screen and (width: 320px){
+      html{
+        font-size:16px;
+      }
+    }
+    @media only screen and (width:360px)  {
+      html{
+        font-size:18px;
+      }
+    }
+    .box{
+      /*  width= 16(该元素在设计图中的大小)/设计图每一份的大小*html的font-size的大小 */
+      /*   width:16/32*1*rem(1rem=1*16) */
+      width:0.5rem;
+      height:0.5rem;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

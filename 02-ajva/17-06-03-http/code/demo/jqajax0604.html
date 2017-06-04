@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src=jquery-2.0.0.min.js> </script>
+    <script>
+        $.ajax({
+            async:false,
+            type:"post",
+            url:"../02ajax/04chat.php",
+            data:{message:"你好"},
+            success:function(res)
+            {
+                $("#con").html(res);
+                console.log(res);
+            }
+        });
+        console.log("呵呵");
+    </script>
+</head>
+<body>
+    <div id="con"></div>
+</body>
+</html>

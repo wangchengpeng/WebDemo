@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .box {
+      width: 320px;
+      height: 400px;
+      margin: 10px auto;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    var box = document.querySelector('.box');
+    // touchstart 事件 
+    box.addEventListener('touchstart', function (ev) {
+      // console.log(ev);
+      // 记录当前元素上有几根手指
+      // console.log(ev.targetTouches)
+        // console.log(ev.targetTouches[0].clientX +'-----------'+ ev.targetTouches[0].clientY)
+
+      // 发生改变的手指信息
+      // console.log(ev.changedTouches);
+    })
+
+    box.addEventListener('touchend', function (ev) {
+      // 发生改变的手指的信息
+      console.log(ev.changedTouches);
+    })
+  </script>
+</body>
+
+</html>

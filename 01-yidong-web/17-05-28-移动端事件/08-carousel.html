@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lunbotu</title>
+    <style>
+        html,
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .view {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+            width: 1000%;
+            position: relative;
+        }
+
+        li {
+            width: 10%;
+            float: left;
+        }
+
+        a {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="view">
+    <ul>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_1.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_2.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_3.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_4.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_5.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_6.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_7.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="./images/slide_8.jpg" alt=""></a>
+        </li>
+    </ul>
+</div>
+<script>
+    //  功能: 移动端的触屏轮播图
+    //  步骤:
+    // 1.获取元素
+    var oView = document.querySelector('.view');
+    var oUl = document.querySelector('ul');
+    // 2.获取的是第一个元素和最后一个元素
+    var oFirstLi = document.querySelector('.view li:first-child');
+    var oLastLi = document.querySelector('.view li:last-child');
+
+
+    //节流阀
+    var isTransitionEnd = false;
+
+    // 3.声明变量
+    var startX, endX, oViewWidth, aLi, size, timer, index = 0;
+    // 4.页面打开之后 设置 view ul  li 的尺寸 当页面载入的时候 把最后一个li和第一个li插入ul中
+    function init() {
+
+        // 把第一个li插入ul的后面
+        oUl.appendChild(oFirstLi.cloneNode(true));
+        // 把最后一个li插入到第一个li的前面
+        oUl.insertBefore(oLastLi.cloneNode(true), oFirstLi);
+
+        // 获取li的个数
+        aLi = document.querySelectorAll('.view li');
+        size = aLi.length;
+
+        //  通过setWidth函数 初始化 ul li的尺寸
+        setWidth();
+        //  通过调用autoPlay 让轮播图动起来
+        autoPlay();
+        index--;
+        oUl.style.left = index * oViewWidth + 'px';
+    }
+    // 用来设置 ul li的尺寸
+    function setWidth() {
+        // 1.获取view的尺寸
+        oViewWidth = oView.clientWidth;
+        // 2.设置ul的尺寸
+        oUl.style.width = oViewWidth * size + 'px';
+        // 3.设置每个li的尺寸
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].style.width = oViewWidth + 'px';
+        }
+    }
+    init();
+
+    // 5.让轮播图动起来
+    function autoPlay() {
+
+        timer = setInterval(function () {
+            index--;
+            // 加一个动画
+            if (index == 0) {
+                index = 2 - size;
+            }
+            if (index == 1 - size) {
+                index = -1;
+            }
+            oUl.style.transition = 'all 0.5s ease-in-out';
+            oUl.style.left = index * oViewWidth + 'px';
+        }, 500)
+    }
+    // 事件  作用:当轮播图到最后一个或者第一个的时候  让图快速到第一个 或者最后一个
+    oUl.addEventListener('webkitTransitionEnd', function () {
+        console.log(index);
+        if (index == 0) {
+            index = 2 - size;
+            oUl.style.left = index * oViewWidth + 'px';
+        }
+        if (index == 1 - size) {
+            index = -1;
+            oUl.style.left = index * oViewWidth + 'px';
+        }
+        oUl.style.transition = '';
+        oUl.style.left = index * oViewWidth + 'px';
+    })
+
+
+    oUl.addEventListener('transitionend', function () {
+        isTransitionEnd = false;
+    })
+
+    oUl.addEventListener('touchstart', function (ev) {
+        clearInterval(timer);
+
+        var touches = ev.targetTouches[0];
+
+        startX = touches.clientX;
+    })
+    oUl.addEventListener('touchend', function (ev) {
+
+        if (isTransitionEnd == true) return;
+        isTransitionEnd = true;
+        console.log(1);
+
+        var touches = ev.changedTouches[0];
+        endX = touches.clientX;
+
+        if (endX - startX > 0) {
+            index++;
+            if (index == 0) {
+                index = 2 - size;
+            }
+            if (index == 1 - size) {
+                index = -1;
+            }
+        } else {
+            index--;
+            if (index == 0) {
+                index = 2 - size;
+                oUl.style.left = index * oViewWidth + 'px';
+            }
+            if (index == 1 - size) {
+                index = -1;
+                oUl.style.left = index * oViewWidth + 'px';
+            }
+        }
+        oUl.style.transition = 'all 0.5s ease-in-out';
+        oUl.style.left = index * oViewWidth + 'px';
+    })
+</script>
+</body>
+
+</html>

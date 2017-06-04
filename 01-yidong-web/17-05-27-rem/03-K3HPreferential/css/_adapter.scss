@@ -1,0 +1,39 @@
+//。。。。。。。。。。。。。判断显示器大小   、、、、、、、、、、、、、、、、、、、、、、、
+
+@media screen and (width: 320px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+//  肾6
+@media screen and (width: 375px) {
+  html {
+    font-size: calc(375px / 20);
+  }
+}
+
+//   6p 屏幕
+@media screen and (width: 414px) {
+  html {
+    font-size: calc(414px / 20);
+  }
+}
+
+@media screen and (width: 768px) {
+  html {
+    font-size: calc(768px / 20);
+  }
+}
+
+@media screen and (width: 736px) {
+  html {
+    font-size: calc(736px / 20);
+  }
+}
+
+@media screen and (width: 1024px) {
+  html {
+    font-size: calc(1024px / 20);
+  }
+}

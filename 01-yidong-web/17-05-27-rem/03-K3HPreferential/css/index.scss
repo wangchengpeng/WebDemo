@@ -1,0 +1,229 @@
+//``````````````````````````````引包``````````````````````````````
+@import "setting";
+@import "mixin";
+@import "base";
+@import "font-awesome";
+@import "adapter";
+
+body {
+  background-color: $bodyColor;
+}
+
+header {
+  width: $width;
+  height: calc(88rem / 32);
+  background: $headerColor;
+  .box {
+    width: $widthW;
+    margin: 0 auto;
+    a {
+      display: block;
+      width: $width;
+      height: 100%;
+      .back-icon {
+        font-size: (32rem/32);
+        color: $white;
+        line-height: (88rem/32);
+      }
+      span {
+        font-size: (32rem/32);
+        color: $white;
+        line-height: (88rem/32);
+        font-family: $baseFontFamily;
+        margin-left: (16rem/32);
+      }
+    }
+  }
+}
+
+/*优惠券*/
+
+main {
+  background-color: #f7f4f1;
+  .coupon {
+    width: (593rem/32);
+    margin: 0 auto;
+    .coupon-top {
+      height: (86rem/32);
+      h3 {
+        font-size: (26rem/32);
+        height: (86rem/32);
+        line-height: (86rem/32);
+        float: left;
+        font-weight: 400;
+      }
+      span {
+        float: right;
+        color: $fontColot;
+        font-size: (28rem/32);
+        height: (85rem/32);
+        line-height: (84rem/32);
+      }
+    }
+    .coupon-bottom {
+      width: $width;
+      height: (314rem/32);
+      border-radius: 0.3rem;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+      text-indent: (1em);
+      background-image: url(./../images/yellar.png);
+      background-size: auto (312rem/31.7);
+      position: relative;
+      h3 {
+        font-size: (46em/32);
+        font-weight: 400;
+        line-height: (60em/32);
+        color: $white;
+        padding-top: (10rem/32);
+      }
+      .t-j {
+        font-size: (23em/32);
+        color: $fontColor-1;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+      }
+      i.s-z {
+        position: absolute;
+        width: 0.95rem;
+        height: 0.95rem;
+        top: 5.59375rem;
+        left: 0.9rem;
+        background-image: url(../images/spirit-1.png);
+        background-size: calc(200rem / 32) auto;
+        background-position: -1.7rem -1.6rem;
+        z-index: 10;
+      }
+      .s-z-j {
+        margin-top: 2.7375rem;
+        margin-left: 0.9rem;
+        font-size: 0.4625rem;
+        color: $white;
+        span {
+        }
+      }
+      .j-j {
+        width: 3.1875rem;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        font-size: (20em/32);
+        color: $white;
+        position: absolute;
+        top: 5.775rem;
+        right: 0.63125rem;
+        background-color: #2a603b;
+        border-radius: 3px;
+        text-align: center;
+        text-indent: initial;
+      }
+      div {
+        margin-top: 1.28125rem;
+        span {
+          height: 2.01rem;
+          line-height: 2.01rem;
+          text-align: center;
+          tab-index: 1em;
+          font-size: (24rem/32);
+          position: relative;
+          i {
+            position: absolute;
+            width: 0.95rem;
+            height: 0.95rem;
+            top: 0.48rem;
+            left: 3.2rem;
+            background-image: url(../images/spirit-1.png);
+            background-size: (200rem / 32) auto;
+            background-position: -3.4rem -1.6rem;
+          }
+        }
+        span:nth-child(1) {
+          width: 50%;
+          float: left;
+          border-right: 1px solid $borderColor;
+        }
+        span:nth-child(2) {
+          width: 50%;
+          float: right;
+          i {
+            background-position: 0.1rem -0.18rem;
+          }
+        }
+      }
+    }
+    //优惠券
+    .coupon-bottom-1 {
+      background-image: url(./../images/purple.png);
+      height: (222rem/32);
+      h3 {
+        font-size: 0.6475em;
+        padding-top: 0.6em;
+        i {
+
+        }
+        span {
+          font-size: 1.71875rem;
+        }
+      }
+      .t-j {
+        margin-top: 2.5rem;
+        color: $white;
+      }
+      .j-j {
+        margin-top: -0.2em;
+        background-color: #6a4279;
+      }
+      .s-z-j {
+        position: absolute;
+        top: 2.9375rem;
+      }
+    }
+    .coupon-bottom-2 {
+      background-image: url(./../images/purple.png);
+    }
+    .coupon-bottom-3 {
+      width: $width;
+      height: (220rem/32);
+      border: 3px dashed $borderColor;
+      background-color: $white;
+      text-align: center;
+      i {
+        //position:absolute;
+        display: block;
+        width: (104rem/32);
+        height: (104rem/32);
+        background-image: url(../images/icon-ja.png);
+        background-size: (104rem/32) auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: (36rem/32);
+      }
+      span {
+        display: block;
+        font-size: (25rem/32);
+        color: $iconColor;
+        margin-top: (16rem/32);
+      }
+    }
+    .coupon {
+      .coupon-top {
+        height:(28rem/32);
+      }
+    }
+  }
+}
+
+.tips {
+  width: (588rem/32);
+  margin: 0 auto;
+  margin-top: (116rem/32);
+  color: $iconColor;
+  font-size: (24rem/32);
+  p {
+    line-height: (40rem/32);
+  }
+}
+
+.coupon-bottom p:nth-child(3) {
+  color: #000;
+  background-color: #ff6069;
+}

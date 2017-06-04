@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面渲染的时候 请使用ie系列浏览器的edge这个浏览器的内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽手势的封装</title>
+    <style>
+        .box{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100px;
+            height:100px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+    // 功能:拖拽手势的封装
+    // 思路:当前的top=拖拽前的top+拖拽的y轴的距离
+        // 当前的left = 拖拽前的left+拖拽的X轴的距离
+    //  步骤
+            // 1.获取box元素
+            var box = document.querySelector('.box');
+            // 声明变量
+            var startX,startY,currentX,currentY,_left,_top;
+            // 2.给box元素添加touchstart事件
+            box.addEventListener('touchstart',function(ev){
+                
+            // 3.获取拖拽前的top 和left
+            _left = this.offsetLeft;
+            _top = this.offsetTop;
+            // 4.获取拖拽前的x和y坐标
+            var touches = ev.targetTouches[0];
+            startX = touches.clientX;
+            startY =touches.clientY;
+            })
+
+            // 5.给box元素添加touchmove事件
+            box.addEventListener('touchmove',function(ev){
+
+            // 6.获取当前的x和y的坐标
+            var touches = ev.changedTouches[0];
+            currentX = touches.clientX;
+            currentY =touches.clientY;
+            // 7.给box元素添加样式
+            this.style.left = _left+(currentX-startX)+'px';
+            this.style.top = _top+(currentY-startY)+'px';
+            })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/*点击是元素有一个颜色      */
+* {
+  -webkit-tap-highlight-color: transparent; }
+
+body, ul, li, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-size: 16px;
+  font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif;
+  /*这是苹果和安卓手机都有的字体*/ }
+
+ul {
+  list-style: none; }
+
+a {
+  display: block;
+  text-decoration: none; }
+
+input {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  outline: none;
+  /*    ?????????　　　*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  /*兼容安卓手机  normalize*/ }
+
+/*容器*/
+.jdm {
+  width: 100%;
+  margin: 0 auto; }
+
+/*顶部*/
+.search {
+  width: 100%;
+  height: 40px;
+  background-color: #c93e26;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  /*搜索框*/ }
+  .search .logo {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    display: block;
+    width: 56px;
+    height: 21px;
+    /*精灵图*/
+    background-image: url("../images/jd-sprites.png");
+    background-size: 200px 200px;
+    background-position: 0 -109px; }
+  .search .search-box {
+    width: 100%;
+    height: 40px;
+    padding-left: 75px;
+    padding-right: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*改变盒子计算宽度*/
+    overflow: hidden; }
+    .search .search-box .icon-search {
+      position: absolute;
+      top: 10px;
+      left: 80px;
+      display: block;
+      width: 20px;
+      height: 30px;
+      background-image: url("../images/jd-sprites.png");
+      background-size: 200px 200px;
+      background-position: -60px -109px; }
+    .search .search-box input {
+      width: 100%;
+      height: 30px;
+      margin-top: 5px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      padding-left: 30px; }
+  .search .login {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    color: #fff; }
+
+/*内容*/
+.main {
+  width: 100%;
+  padding-bottom: 48px; }
+
+.carousel ul, .carousel li, .carousel a, .carousel img {
+  width: 100%; }
+.carousel a {
+  display: block; }
+
+/*导航栏*/
+.nav {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 10px;
+  border-bottom: 6px solid #dedede; }
+  .nav ul {
+    width: 100%; }
+    .nav ul li {
+      float: left;
+      width: 25%; }
+    .nav ul a {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding-bottom: 10px; }
+    .nav ul img {
+      width: 40px;
+      height: 40px; }
+    .nav ul span {
+      display: block;
+      color: #666;
+      font-size: 12px; }
+
+/*掌上秒杀*/
+.spike {
+  width: 100%;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden; }
+
+.spike-top {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 10px; }
+  .spike-top .icon-clock {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 30px;
+    background-image: url("../images/jd-sprites.png");
+    background-size: 200px 200px;
+    background-position: -83px 97px;
+    margin-right: 5px; }
+  .spike-top .text-clock {
+    float: left;
+    color: #c93e26;
+    font-size: 14px;
+    margin-top: 9px;
+    margin-right: 5px; }
+  .spike-top .time-clock {
+    float: left;
+    font-size: 0;
+    margin-top: 11px; }
+    .spike-top .time-clock span {
+      font-size: 13px;
+      background-color: #000;
+      color: #fff; }
+    .spike-top .time-clock span:nth-child(3n) {
+      background-color: #000;
+      color: #fff;
+      margin: 0 1px; }
+    .spike-top .time-clock span:nth-child(3n+1) {
+      padding-left: 2px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px; }
+    .spike-top .time-clock span:nth-child(3n+2) {
+      padding-right: 2px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px; }
+  .spike-top .spike-more {
+    float: right;
+    color: #666;
+    font-size: 13px;
+    margin-top: 9px;
+    margin-right: 5px; }
+    .spike-top .spike-more s {
+      float: right;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url("../images/jd-sprites.png");
+      background-size: 200px 200px;
+      background-position: -383px -249px; }
+
+.spike-bottom {
+  width: 100%; }
+  .spike-bottom ul {
+    width: 100%; }
+  .spike-bottom li {
+    width: 33.33333%;
+    float: left;
+    padding: 10px 10px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .spike-bottom a {
+    display: block;
+    position: relative;
+    width: 100%; }
+  .spike-bottom img {
+    width: 100%; }
+  .spike-bottom b {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: orange;
+    color: #fff;
+    padding: 2px 5px;
+    /*圆角属性*/
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%; }
+  .spike-bottom .price {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px; }
+    .spike-bottom .price span {
+      display: block;
+      font-size: 12px; }
+    .spike-bottom .price .new-price {
+      color: #c93e26;
+      font-size: 14px; }
+    .spike-bottom .price .old-price {
+      color: #666;
+      text-decoration: line-through; }
+
+/*优惠券*/
+.coupon {
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+  .coupon img {
+    width: 100%; }
+  .coupon ul {
+    width: 100%;
+    padding: 0 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 100; }
+    .coupon ul li {
+      width: 50%;
+      float: left; }
+      .coupon ul li a {
+        width: 100%; }
+      .coupon ul li img {
+        width: 100%;
+        vertical-align: top; }
+
+/*热卖*/
+.hotsale {
+  width: 100%;
+  overflow: hidden; }
+  .hotsale ul {
+    width: 100%; }
+    .hotsale ul .three {
+      width: 100%; }
+      .hotsale ul .three a {
+        float: left;
+        display: block;
+        width: 33.33333%; }
+      .hotsale ul .three img {
+        width: 100%; }
+    .hotsale ul .two {
+      width: 100%; }
+      .hotsale ul .two a {
+        float: left;
+        display: block;
+        width: 50%; }
+      .hotsale ul .two img {
+        width: 100%; }
+
+/*# sourceMappingURL=index.css.map */

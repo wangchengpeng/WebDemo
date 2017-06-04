@@ -1,0 +1,30 @@
+/*点击是元素有一个颜色      */
+*{
+  -webkit-tap-highlight-color:rgba( 0,0,0,0);
+}
+
+body,ul,li,h1,h2,h3,h4,h5,h6{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-size: 16px;
+  font-family:$fontFamily;    /*这是苹果和安卓手机都有的字体*/
+}
+ul{
+  list-style:none;
+}
+a{
+  display: block;
+  text-decoration: none;
+}
+
+input{
+  display:block;
+  padding: 0;
+  margin: 0;
+  border:0 none;
+  outline: none;           /*    ?????????　　　*/
+  @include  boxSizing();
+  -webkit-appearance: none;    /*兼容安卓手机  normalize*/
+}

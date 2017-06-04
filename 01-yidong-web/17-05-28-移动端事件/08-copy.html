@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .view {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        ul {
+            position: relative;
+            width: 1000%;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 10%;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="view">
+    <ul>
+        <li><a href="javascript:;"><img src="./images/slide_1.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_2.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_3.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_4.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_5.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_6.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_7.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./images/slide_8.jpg" alt=""></a></li>
+    </ul>
+</div>
+<script>
+    // 1.获取view ul
+    var oView = document.querySelector('.view');
+    var oUl = document.querySelector('.view ul');
+    // 2.获取第一个li和最后一个li
+    var oFirstLi = document.querySelector('.view li:first-child');
+    var oLastLi = document.querySelector('.view li:last-child');
+
+    //节流阀
+    var isTransitionEnd = false;
+
+    // 3.声明变量
+    var viewWidth, aLi, size, index = 0, timer, startX, endX;
+    // 4.布局
+    function init() {
+        // 把最后一个li添加到第一个li的前面
+        oUl.insertBefore(oLastLi.cloneNode(true), oFirstLi);
+        // 把第一个li添加到最后一个li的后面
+        oUl.appendChild(oFirstLi.cloneNode(true));
+        // 获取所有的li
+        aLi = document.querySelectorAll('li');
+        size = aLi.length;
+        // 设置所有元素的宽度
+        setWidth();
+        // 设置第一个li显示
+        index--;
+        oUl.style.left = viewWidth * index + 'px';
+        // 当页面打开的时候 就让轮播图开始轮播
+        autoPlay();
+    }
+    // 5.设置ul的宽度 设置li的宽度
+    function setWidth() {
+        // 获取view的宽度
+        viewWidth = oView.clientWidth;
+        //  ul的宽度 = viewWidth*li的length
+        oUl.style.width = viewWidth * size + 'px';
+        // 设置li的宽度
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].style.width = viewWidth + 'px';
+        }
+    }
+    // 6.自动轮播
+    function autoPlay() {
+        timer = setInterval(function () {
+            index--;
+            if (index == -10) {
+                index = -2;
+                oUl.style.transition="";
+                oUl.style.left = viewWidth * index + 'px';
+            }
+            oUl.style.transition = "all 1s";
+            oUl.style.left = viewWidth * index + 'px';
+        }, 500)
+    }
+    // 7.在每一个过渡结束之后去判断是否是最后一个  是否是第一个
+    oUl.addEventListener('webkitTransitionEnd', function () {
+        console.log(index);
+        if (index == -9) {
+            index = -1;
+            oUl.style.left = viewWidth * index + 'px';
+        }
+        if (index == 0) {
+            index = -8;
+            oUl.style.left = viewWidth * index + 'px';
+        }
+        oUl.style.transition = "";
+        oUl.style.left = viewWidth * index + 'px';
+    })
+
+    oUl.addEventListener('transitionend',function(){
+        isTransitionEnd=false;
+    })
+
+
+    // 8.用手指滑动
+    oUl.addEventListener('touchstart', function (ev) {
+        // 清除定时器
+        clearInterval(timer);
+        var touches = ev.targetTouches[0];
+
+        startX = touches.clientX;
+    });
+    oUl.addEventListener('touchend', function (ev) {
+
+        if (isTransitionEnd == true) return ;
+        isTransitionEnd = true;
+        console.log(1);
+
+        var touches = ev.changedTouches[0];
+        endX = touches.clientX;
+
+        if (endX - startX > 0) {
+            // 向右滑动
+            index++;
+        } else {
+            // 向左滑动
+            index--;
+        }
+        if (index == -9) {
+            index = -1;
+            oUl.style.left = viewWidth * index + 'px';
+        }
+        if (index == 0) {
+            index = -8;
+            oUl.style.left = viewWidth * index + 'px';
+        }
+        oUl.style.transition = "";
+        oUl.style.transition = "all 1s";
+        oUl.style.left = viewWidth * index + 'px';
+    })
+    //
+    init();
+</script>
+</body>
+
+</html>

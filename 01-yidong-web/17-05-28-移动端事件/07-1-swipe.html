@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>swipe判断手指滑动的方向</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<!--<script>-->
+<!--// 功能:封装 swipe  判断手指滑动的方向-->
+<!--// 思路:-->
+<!--// 1.获取到开始触点和结束触点-->
+<!--// 2.首先判断x轴上的两个触点的差值的绝对值是不是大于-->
+<!--//   y轴上的两个触点的差值的绝对值-->
+<!--// 3.如果x轴两点间的绝对值大于y轴两点间的距离,那么是水平移动-->
+<!--// 4.否则为竖直移动-->
+<!--// 5.如果是水平移动 那么判断结束点的x值是否大于开始点的x值-->
+<!--// 6.如果结束点大于开始点的x值，那么代表向右移动-->
+<!--// 7.否则向左-->
+<!--// 8.同理判断竖直方向即可-->
+<!--// 步骤:-->
+<!--// 0.声明变量-->
+<!--var startX, startY, endX, endY, absDx, absDy;-->
+<!--// 1.给html添加touchstart事件-->
+<!--document.addEventListener('touchstart', function (ev) {-->
+<!--// 2.在touchstart事件中获取开始点坐标-->
+<!--var touches = ev.targetTouches[0];-->
+
+<!--startX = touches.clientX;-->
+<!--startY = touches.clientY;-->
+
+<!--})-->
+
+<!--// 3.给html添加touchend事件-->
+<!--document.addEventListener('touchend', function (ev) {-->
+<!--// 4.在touchend事件中获取结束点坐标-->
+<!--var touches = ev.changedTouches[0];-->
+
+<!--endX = touches.clientX;-->
+<!--endY = touches.clientY;-->
+<!--// 5.计算出x轴的移动绝对值 和 y轴的移动绝对值-->
+<!--absDx = Math.abs(endX - startX);-->
+<!--absDy = Math.abs(endY - startY);-->
+
+<!--// 6.判断-->
+<!--if (Math.max(absDx, absDy) > 10) {-->
+<!--var direction = absDx > absDy ? -->
+<!--endX > startX? '向右':'向左'  :-->
+<!--endY > startY? '向下':'向上';-->
+<!--}-->
+<!--console.log(direction);-->
+<!--})-->
+<!--</script>-->
+</body>
+<script>
+    var startX, startY, endX, endY, adsDx, adsDy;
+
+    //添加touchstart事件
+
+    document.addEventListener("touchstart", function (e) {
+        var touches = e.targetTouches[0];
+
+        startX = touches.clientX;
+        startY = touches.clientY;
+//        console.log(startX);
+//        console.log(startY);
+    })
+
+    //添加touchend事件
+
+    document.addEventListener('touchend', function (ev) {
+        // 4.在touchend事件中获取结束点坐标
+        var touches = ev.changedTouches[0];
+
+        endX = touches.clientX;
+        endY = touches.clientY;
+        // 5.计算出x轴的移动绝对值 和 y轴的移动绝对值
+        absDx = Math.abs(endX - startX);
+        absDy = Math.abs(endY - startY);
+
+        // 6.判断
+        if (Math.max(absDx, absDy) > 10) {
+            var direction = absDx > absDy ?
+                    endX > startX ? '向右' : '向左' :
+                    endY > startY ? '向下' : '向上';
+        }
+        console.log(direction);
+    })
+</script>
+</html>
