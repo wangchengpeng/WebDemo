@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+        <!--异步交互-->
+        <input type="button" value="异步交互的四个基本步骤"> <div></div>
+        <script>
+               document.querySelector("input[type=button]").onclick=function(){
+                            //1：创建对象
+                            var xhr=new XMLHttpRequest();
+                            //2: 打开连接 get 方式提交，请求的参数必须在地址的后面. send 方法不能省略
+                            xhr.open("get","01ajaxget.php?username=zhangsan");
+                            //3:发送数据 null
+                            xhr.send(null);
+                            //4：接收数据 .. 我们是通过一个回调函数去进行接收,我们需要把这个回调函数绑在xhr 对象上面
+                            //时刻监听这服务器端状态的概念  服务器端响应数据回来的时候就会调用.
+                            xhr.onreadystatechange=function(){
+                                    //我们在这个里面可以获取到服务器端一些状态,
+                                    //可以获取到0,1，2,3,4 五个状态
+                                    //其中这个4 这个状态代表的是服务器端响应完成
+                                    //这个函数会被调用很多次，因为会返回多个状态.
+                                    //通过这个属性可以接收到状态
+                                    if(xhr.readyState==4){  //代表服务器的数据已经响应完成,但是并不代表响应成功
+                                            //接收数据
+                                            //通过这个属性，我们可以去接收到数据. responseText
+                                            //我们还需要进行判断，响应是否成功，如果它的状态吗是200，代表的就是服务器响应成功.
+                                            //status 这个属性是用来获取服务端的状态吗的
+                                           if(xhr.status==200){
+                                                //代表响应完成，响应成功
+                                               var data=xhr.responseText;
+                                               //接收到数据，我在把这个数据，写到页面上面去.
+                                               document.querySelector("div").innerHTML=data;
+                                           };
+
+                                    }
+
+                            }
+
+               }
+        </script>
+</body>
+</html>

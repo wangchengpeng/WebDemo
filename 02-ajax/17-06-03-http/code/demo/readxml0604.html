@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src=jquery-2.0.0.min.js></script>
+
+
+    <script>
+
+        try
+        {
+            var str=null;
+            console.log(null.toString());
+        }catch (ex)
+        {
+            console.log("报错了");
+            console.log(ex);
+        }
+        console.log(11111);
+        function jqAjaxReadXml() {
+            $.get("../03xml/books.xml", function (res) {
+
+//                console.log(res);
+//                console.log(res.getElementsByTagName("book"));
+                var books = res.getElementsByTagName("book");
+                var html = "<table style=' text-align: center;width: 300px;'>";
+                for (var i = 0; i < books.length; i++) {
+                    html += "<tr>";
+                    for (var j = 0; j < books[i].children.length; j++) {
+                        html += "<td>" + books[i].children[j].innerHTML + "</td>";
+                    }
+                    html += "</tr>";
+                }
+                html += "</table>";
+                $("#content").html(html);
+            });
+        }
+        function jsAjaxReadXml() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "../03xml/books.xml", true)
+            xhr.send();
+            xhr.onreadystatechange=function()
+            {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    var books = xhr.responseXML.getElementsByTagName("book");
+                    console.log(books);
+                    var html = "<table style=' text-align: center;width: 300px;'>";
+                    for (var i = 0; i < books.length; i++) {
+                        html += "<tr>";
+                        for (var j = 0; j < books[i].children.length; j++) {
+                            html += "<td>" + books[i].children[j].innerHTML + "</td>";
+                        }
+                        html += "</tr>";
+                    }
+                    html += "</table>";
+                    console.log(html)
+                    $("#content").html(html);
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="jqAjaxReadXml" onclick="jqAjaxReadXml()">
+<input type="button" value="jsAjaxReadXml" onclick="jsAjaxReadXml()">
+<div id="content"></div>
+</body>
+</html>
