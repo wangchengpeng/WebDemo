@@ -1,0 +1,32 @@
+[
+    {
+        "personName":"社会幺哥",
+        "personAge":11,
+        "personDesc":"人狠话不多1",
+        "lifePhoto":"images/1.jpg"
+    },
+    {
+        "personName":"社会霹雳哥2",
+        "personAge":12,
+        "personDesc":"人狠话不多2",
+        "lifePhoto":"images/2.jpg"
+    },
+    {
+        "personName":"社会霹雳哥3",
+        "personAge":13,
+        "personDesc":"人狠话不多3",
+        "lifePhoto":"images/3.jpg"
+    },
+    {
+        "personName":"社会霹雳哥4",
+        "personAge":14,
+        "personDesc":"人狠话不多4",
+        "lifePhoto":"images/1.jpg"
+    },
+    {
+        "personName":"社会霹雳哥5",
+        "personAge":15,
+        "personDesc":"人狠话不多5",
+        "lifePhoto":"images/2.jpg"
+    }
+]

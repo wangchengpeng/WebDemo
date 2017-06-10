@@ -1,0 +1,261 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讲师管理系统</title>
+    <!--这里是bootstrap 的css 核心文件.-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--我要使用bootstrap table 插件，我需要引入bootstrap table 的样式文件-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-table.css">
+    <!--引入的文件  增删改查讲师都在这一个页面完成，异步交互，交互了页面也没有进行刷新。 -->
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <!--fileupload start 文件上传-->
+    <script src="../bootstrap/js/jquery.ui.widget.js"></script>
+    <script src="../bootstrap/js/jquery.iframe-transport.js"></script>
+    <script src="../bootstrap/js/jquery.fileupload.js"></script>
+    <!--fileupload end 文件上传-->
+    <!--页面布局采用的bootstrap 的样式，去进行布局.-->
+    <!--bootstrap 的核心js 文件也需要引入-->
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <!--用到bootstrap table 的插件文件-->
+    <script src="../bootstrap/js/bootstrap-table.js"></script>
+    <!--我table要显示中文的提示，我就需要引入中文的国际化文件,js 文件-->
+    <script src="../bootstrap/js/bootstrap-table-zh-CN.js"></script>
+
+</head>
+<body>
+      <div style="width: 900px;margin: 100px auto;">
+          <a href="#" class="btn bg-primary" data-toggle="modal" data-target="#teacherWindowId">添加讲师</a>
+
+
+          <!-- 添加讲师信息 -->
+          <div class="modal fade" id="teacherWindowId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">添加讲师</h4>
+                      </div>
+                      <div class="modal-body">
+                          <form id="teacherFormId">
+                              <div class="form-group">
+                                  <input type="text" class="form-control" name="username"  placeholder="请输入讲师的姓名">
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" name="age" placeholder="请输入年龄">
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" name="telephone" placeholder="请输入手机号">
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" name="desc" placeholder="请输入描述">
+                              </div>
+                              <div class="form-group">
+                                  <input type="file"   id="fileuploadId" name="lifePhoto" data-url="../api/fileupload.php">
+                              </div>
+                              <div id="imageViewId" style="width: 100px;height: 100px;border: 2px solid #ccc;opacity: 0">
+
+                              </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default cancelTeacherBtn" data-dismiss="modal">关闭</button>
+                          <button type="button" class="btn btn-primary saveTeacherBtn">保存</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+          <table id="teacherTableId"></table>
+      </div>
+
+      <script>
+            /*我画这个table，使用bootstrap table 插件.
+            *
+            * bootstrapTable 这个是一个插件，基于bootstrap 插件
+            * 因为它还需要使用到bootstrap 的一些样式.
+            * 这个插件可以帮助我们去发送请求，帮助我们去渲染数据.
+            * */
+            $("#teacherTableId").bootstrapTable({
+                    url:"../api/findTeacher.php", //发送的请求的地址
+                    method:"get", //请求的提交方式
+                    //发送数据过去,提供了一个回调函数，让我们去设置数据到服务器.
+                    //queryParams 这个函数在请求发送之前调用.
+                    //通过这个回调函数可以向服务器设置一些额外的参数，通过这个设置参数名，参数值.
+                    queryParams:function(params){
+                        //params 是一个对象，你通过这个对象添加参数. parms 里面有一些默认的参数.
+                        //发送到服务器的参数.
+                        //假设用户点击的是第一页，params.pageNum=1  offset=0 假设点击的是第二页 params.pageNum=2 offset=10
+                        //params.pageNum=3 offset=20
+
+                        console.log(params);
+
+                        params.pageNum=(params.offset/10+1);
+
+
+                        params.pageSize=10;
+                        return params;
+                    },
+                    //加一句代码，我就可以解决这个问题.
+                    //开启服务端分页.
+                    pagination:true, //在table 底部显示分页条,
+                    /*
+                    * 意思：开启服务端分页，
+                    *      要求服务端的数据必须是这样的一个格式
+                    *      {
+                    *           total:"111",  //12 页
+                    *           rows:[
+                     {id: "10", username: "小旋风", telephone: "13620934111", age: "29", t_desc: "小胖",…},{},{},{},{}] //当前页的数据
+                    *      }
+                    *      必须有key 叫total，总记录数，bootstrap table 要根据total 计算总共有多少页
+                    *      rows 当前页的记录，bootstrap table 要显示当前页的记录.
+                    *
+                    * */
+                    sidePagination:"server", //开启服务端的分页.
+                    onLoadSuccess:function(){  //当远程的数据加载完毕的时候调用.
+                        //console.log($(".delTeacherBtn").length);
+                        $(".delTeacherBtn").on("click",function(){
+                                //删除，我要把这条记录对应的id 获取到。
+                                //发送请求给后台服务器，进行数据库的删除
+                                //this 指向到这个按钮，这个按钮上面有一个id 属性，这个的值是这一行的id 的值.
+                                //alert(this.id);
+                                var teacherId=this.id;
+                                //您确定要删除这条记录吗
+                                var flag=window.confirm("您确定要删除这条记录吗");
+                                if(flag){
+                                    //删除这条记录.
+                                    $.ajax({
+                                        url:"../api/removeTeacher.php",
+                                        type:"get",
+                                        data:{
+                                            id:teacherId
+                                        },
+                                        success:function(data){
+                                              if(data.status=="ok"){ //代表删除成功
+
+                                                    //我现在想要bootstrap table 去刷新
+                                                    //重新发送请求，渲染数据.
+                                                    //bootstrap table 里面的方法，我们需要这样去调用
+                                                    //把方法名refresh传给这个方法bootstrapTable;
+
+                                                    $("#teacherTableId").bootstrapTable("refresh");
+                                              }
+                                        }
+                                    })
+
+                                }
+                        })
+
+                    },
+                    /*
+                    * row 代表的服务端返回的每一行的数据.
+                    * index 代表的每一条记录的索引值
+                    *
+                    * 在数据渲染之前会调用这个rowStyle 函数.
+                    * 在数据渲染之前，我们可以改变row 的结果.
+                    * */
+                    rowStyle:function(row,index){
+
+                        //后台返回的数据都在row 里面。id 也可以在row 里面.
+
+                         //获取到的是图片的地址.
+                        var src=row.lifephoto;
+
+                        console.log(src);
+
+
+                        row.lifephoto="<img width='50' src='../"+src+"'>";
+
+                        //我每一行在新增一列，它的key 叫做operation
+                        //row.id 我在这里可以获取到每一行的id
+                        row.operation="<a href='#' id='"+row.id+"' class='btn btn-danger delTeacherBtn'>删除</a>";
+                        return row;
+                    },
+                    columns:[
+                        {
+                            title:"讲师姓名",
+                            field:"username"
+                        },
+                        {
+                            title:"讲师年龄",
+                            field:"age"
+                        },
+                        {
+                            title:"讲师电话",
+                            field:"telephone"
+                        },
+                        {
+                            title:"讲师描述",
+                            field:"t_desc"
+                        },
+                        {
+                            title:"讲师照片",
+                            field:"lifephoto"
+                        },
+                        {
+                            title:"操作",
+                            field:"operation"
+                        }
+                    ]
+            });
+
+            //这个位置获取不到按钮. 这个按钮发送请求到后台，后台返回数据，然后我把数据渲染到页面上面
+            //而这个过程这句代码已经执行，所以这里获取不到按钮.
+            //console.log($(".delTeacherBtn").length);
+            //需要等待后台的数据加载完成，再去执行$(".delTeacherBtn") 代码，获取按钮，添加事件.
+
+            var imageSrc;
+
+            /*文件上传的代码*/
+            $("#fileuploadId").fileupload({
+                 autoLoad:true,
+                 done:function(e,data){
+                        //imageViewId
+
+                        var img=document.createElement("img");
+                        //i响应的地址是一个这样的地址.images/circle.png
+                        img.src="../"+data.result;
+
+                        //images/circle.png
+                        imageSrc=data.result;
+
+
+                        img.width="100";
+
+                        //往对应的位置追加
+                        $("#imageViewId").append(img);
+
+                        //执行动画.
+                        $("#imageViewId").animate({opacity:1,marginLeft:100},2000);
+                 }
+            })
+
+            /*保存这个讲师的信息*/
+            $(".saveTeacherBtn").on("click",function(){
+                    //保存数据. 获取表单的数据
+                    var data=$("#teacherFormId").serialize();
+                    //我还差一个地址.
+                    data=data+"&lifephoto="+imageSrc;
+
+                    $.ajax({
+                        url:"../api/addTeacher.php",
+                        type:"post",
+                        data:data,
+                        success:function(info){
+                             if(info.status=="ok"){
+                                    //关闭窗口
+                                    $(".cancelTeacherBtn").click();
+
+                                    //刷新table
+                                    $("#teacherTableId").bootstrapTable("refresh");
+                             }
+                        }
+                    })
+
+            });
+
+      </script>
+
+</body>
+</html>

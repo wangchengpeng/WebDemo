@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            border-collapse: collapse;
+        }
+        td {
+            height: 40px;
+            text-align: center;
+            border: 1px solid #CCC;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="查询">
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>描述</td>
+        <td>照片</td>
+    </tr>
+    <tbody id="tbodyId"></tbody>
+</table>
+<script>
+    document.querySelector("input").onclick=function(){
+        var xhr=new XMLHttpRequest();
+        xhr.open("get","01json.php");
+        xhr.send(null);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4 && xhr.status==200){
+
+                var  jsonStr=xhr.responseText;
+
+                var obj=JSON.parse(jsonStr);
+                var arrStr=[];
+
+                for(var i= 0;i<obj.length;i++){
+                    var tr="<tr>";
+                        tr+="<td>"+obj[i].personName+"</td>";
+                        tr+="<td>"+obj[i].personAge+"</td>";
+                        tr+="<td>"+obj[i].personDesc+"</td>";
+                        tr+='<td><img width="100" src ="'+obj[i].lifePhoto+'"></td>';
+                    "</tr>";
+                    arrStr.push(tr);
+                }
+                var html=arrStr.join("")  //将数组里面的元素使用指定的字符串进行连接
+
+                document.getElementById("tbodyId").innerHTML=html;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

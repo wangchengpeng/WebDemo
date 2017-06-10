@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="使用script 标签去发送请求">
+    <script>
+
+            document.querySelector("input").onclick=function(){
+
+                     //发送请求，发送跨域请求，使用script 标签去发送跨域请求.
+                     var script=document.createElement("script");
+                     //发送请求
+                     //script 标签必须要挂在到页面上面. 现在在内存里面.
+                     script.src="http://api.jisuapi.com/shouji/query?appkey=7ca5f245254f2b88&shouji=13900000011";
+                     //挂在到页面，浏览器就会解析这个标签.
+                     document.body.appendChild(script);
+                     //现在报错，是因为服务器返回的数据客户端浏览器会以js 的方式去解析.
+                     //因为我使用的script 标签发送的请求，服务器返回的数据浏览器调用js 引擎解析. 以js 的语法去解析.
+                     //{"status":"0","msg":"ok","result":{"shouji":"13900000011","province":"新疆","city":"乌鲁木齐","company":"中国移动","cardtype":"GSM","areacode":"0991"}}
+                     //js 解析就会报错.
+                     //现在问题：我现在可以使用script 标签去发送跨域请求了，但是服务器返回的数据
+                     //被浏览器直接以js 的方式解析，我们现在想在我的js 代码里面直接获取到服务器端返回的数据.
+
+
+            };
+    </script>
+</body>
+</html>

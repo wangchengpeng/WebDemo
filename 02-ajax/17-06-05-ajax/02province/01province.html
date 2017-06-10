@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <select id="provinceId">
+            <option>请选择省份</option>
+        </select>
+        <select id="cityId">
+            <option>请选择城市</option>
+        </select>
+        <select id="areaId">
+            <option>请选择区域</option>
+        </select>
+
+        <script>
+                //获取数据: 将数据解析渲染到页面。
+                /*
+                * 思路：
+                *       1：页面加载完毕，我需要获取后台的数据，获取到后台的数据之后
+                *       2：将省份的数据解析之后放在第一个select 里面
+                *       3：当用户选中省份，将用户选中的省份对应的城市的数据放在第二个select 里面
+                *       4：当用户选中城市，将用户选中的城市对应的区域的数据放在第三个select 里面.
+                * */
+                //1：页面加载完毕，我需要获取后台的数据，获取到后台的数据之后
+                window.onload=function(){
+                          var obj;  //定义了之后，一定要保护好。
+                          var cities;
+                          var xhr=new XMLHttpRequest();
+                          xhr.open("get","01province.php");
+                          xhr.send(null);
+                          xhr.onreadystatechange=function(){
+                              if(xhr.readyState==4 && xhr.status==200){
+                                        var jsonStr=xhr.responseText;
+                                        //2：将省份的数据解析之后放在第一个select 里面
+                                        //2.1 将json 格式的数据转换JavaScript 对象
+                                        obj=JSON.parse(jsonStr);
+                                        //2.2 遍历这个所有的省份，获取到省份的名称
+                                        for(var i=0;i<obj.length;i++){
+                                              var provinceName=obj[i].provinceName;
+                                              //2.3 创建option,给option 赋值省份名称
+                                              var option=document.createElement("option");
+                                              option.innerHTML=provinceName;
+                                              //2.4 将option 添加到第一个select 里面去.
+                                              document.getElementById("provinceId").appendChild(option);
+                                        }
+                              }
+                          };
+                         //3：当用户选中省份，将用户选中的省份对应的城市的数据放在第二个select 里面
+                         //3.1 用户选中省份的时候触发一个事件，这个事件名称叫做onchange 事件
+                         //onchange 下拉框发生改变的时候触发.
+                         document.getElementById("provinceId").onchange=function(){
+                                    //3.2 获取用户当前选中的省份
+                                    var provinceName=this.value;
+                                    //3.2 找到省份下面对应的城市
+                                    //思路：获取到所有的省份的数据，遍历所有的省份，省份名称可以拿到
+                                    //让遍历出来的省份跟当前选中的省份进行比较
+                                    //如果相等，我就取出该省份下面的城市，城市对应的值肯定是一个数组，遍历城市。
+                                    for(var i=0;i<obj.length;i++){
+                                        if(obj[i].provinceName==provinceName){
+                                             //3.3 找到城市对应的名称，创建option，赋值给option
+                                             cities=obj[i].cities;
+                                             //注意：添加之前，先清空
+                                             document.getElementById("cityId").innerHTML="<option>请选择城市</option>";
+                                             document.getElementById("areaId").innerHTML="<option>请选择区域</option>";
+                                             for(var i=0;i<cities.length;i++){
+                                                  var cityName=cities[i].cityName;
+                                                  var option=document.createElement("option");
+                                                  option.innerHTML=cityName;
+                                                 //3.4 将option 添加到第二个select 里面.
+                                                  document.getElementById("cityId").appendChild(option);
+                                             }
+                                        }
+                                    }
+                         }
+
+                         /*
+                         * 4：当用户选中城市，将用户选中的城市对应的区域的数据放在第三个select 里面.
+                         * 4.1 用户选中对应的城市。获取到当前选中的城市
+                         * 4.2 然后要从当前城市下面找到对应的区域。
+                         * 4.3  创建option，把区域的名称赋值给option
+                         * 4.4  把option 添加到第三个select 里面.
+                         * */
+                         document.getElementById("cityId").onchange=function(){
+                               //4.1 用户选中对应的城市。获取到当前选中的城市
+                                var cityName=this.value;
+
+                                for(var i=0;i<cities.length;i++){
+                                     if(cities[i].cityName==cityName){
+                                         //4.2 然后要从当前城市下面找到对应的区域。
+                                          var areas=cities[i].areas;
+                                          //注意：添加之前，应该先把区域清空.
+                                          document.getElementById("areaId").innerHTML="<option>请选择区域</option>";
+                                          for(var j=0;j<areas.length;j++){
+                                               //4.3 创建option，把区域的名称赋值给option
+                                               var areaName=areas[j].areaName;
+                                               var option=document.createElement("option");
+                                               option.innerHTML=areaName;
+                                               //4.4  把option 添加到第三个select 里面.
+                                               document.getElementById("areaId").appendChild(option);
+                                          }
+                                     }
+                                }
+
+                         }
+
+
+                }
+        </script>
+</body>
+</html>

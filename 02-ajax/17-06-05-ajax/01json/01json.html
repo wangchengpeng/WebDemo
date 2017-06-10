@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="查询">
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>描述</td>
+        <td>生活照</td>
+    </tr>
+    <tbody id="tbodyId"></tbody>
+
+</table>
+<script>
+    document.querySelector("input").onclick=function(){
+        var xhr=new XMLHttpRequest();
+        xhr.open("get","01json.php");
+        xhr.send(null);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                    //获取到服务端json 格式的数据.
+                    var jsonStr=xhr.responseText;
+                    console.log(jsonStr);
+                //console.log(data);
+                    //json 是一个常见数据格式，在任何语言里面都有支持。
+                    //JavaScript 里面的解析思路
+                    //json 格式的字符串跟JavaScript 里面的对象的结构类似
+                    //我们要去对象里面的值，我们通过对象.key 获取到值
+                    //如果我们能够把json 格式的数据转换成JavaScript 对象
+                    //我们就可以直接根据key 得到值.
+                    //解析思路：将json 格式的字符串 转换成JavaScript对象.
+                    //怎么将json 格式的字符串转换成JavaScript对象
+                    //两种方式供我们转换.
+                    //1: eval 函数 这个函数是浏览器给我们提供的函数
+                    // 但是这个方法不是这么用，要求传递进入的json 格式的字符串，必须使用() 括起来.
+                    //把字符串转换为对象，如果转换为对象，通过key 获取到value
+                    //([{},{},{}])
+                    jsonStr="("+jsonStr+")";
+                    var obj=eval(jsonStr);
+                    var arrStr=[];
+                    for(var i=0;i<obj.length;i++){
+                          //获取到每条数据里面的value，根据key，每条记录的key 都是结构固定的.
+                          var tr="<tr>"
+                          tr+="<td>"+obj[i].personName+"</td>";
+                          tr+="<td>"+obj[i].personAge+"</td>";
+                          tr+="<td>"+obj[i].personDesc+"</td>";
+                          tr+="<td><img width='100' src='"+obj[i].lifePhoto+"' /></td>";
+                          tr+="</tr>";
+                          //所有的字符串都放在数组里面
+                          arrStr.push(tr);
+                    }
+                    var html=arrStr.join("");
+                    document.getElementById("tbodyId").innerHTML=html;
+            }
+        }
+    }
+</script>
+</body>
+</html>

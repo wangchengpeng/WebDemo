@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="allAjax.js"></script>
+    <script>
+
+            //支持90% 的ajax 功能.
+            $.ajax({
+                 url:"ajax.php",
+                 type:"get",
+                 data:{
+                      username:"zhangsan"
+                 },
+                 success:function(data){
+                      alert("请求成功的时候调用.");
+                 }
+                 ,
+                 error:function(){
+                     alert("请求失败的的时候调用.");
+                 },
+                 beforeSend:function(){
+                     alert("请求发送之前的时候调用.");
+                 },
+                 complete:function(){
+                     alert("请求完成的时候调用.");
+                 }
+            })
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

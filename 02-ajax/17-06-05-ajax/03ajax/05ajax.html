@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--使用ajax 的逻辑-->
+    <script src="ajax.js"></script>
+    <script>
+        //一个页面有多个地方发送请求，直接调用对应的api 逻辑就可以了.
+            document.getElementsByTagName("input")[0].onclick=function(){
+                //调用对应的api 请求方式，提交的参数，请求的地址，自己设置
+                $.ajax({
+                    url:"",
+                    type:"",
+                    data:"",
+                    success:function(data){
+                            //数据回来放在页面上面的那个位置，自己解析。自己处理.
+                    }
+                })
+            }
+            document.getElementsByTagName("input")[1].onclick=function(){
+                //调用对应的api
+                $.ajax({
+                    url:"",
+                    type:"",
+                    data:"",
+                    success:function(data){
+
+                    }
+                })
+            }
+    </script>
+</head>
+<body>
+
+<input type="button" value="ajax 请求"><input type="text" value="ajax 请求">
+</body>
+</html>

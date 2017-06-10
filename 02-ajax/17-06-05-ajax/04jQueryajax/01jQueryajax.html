@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+            $(function(){
+                    //记住：这个是jQuery 封装的ajax 方法.
+                   /*
+                   * 1:事件的名称
+                   * 2：事件的行为
+                   * */
+                   $("input[type=button]").on("click",function(){
+                            $.ajax({
+                                //url 代表的是请求的地址
+                                url:"ajax.php",
+                                //type 代表的是提交方式
+                                type:"get",
+                                //data 代表的发送到服务器的数据
+                                //发送到服务的数据支持两种格式
+                                //1：第一种格式 字符串
+                                //data:"username=zhagnsan&age=11",
+                                //2: 第二种格式 JavaScript 对象
+                                data:{
+                                      username:"zhangsan",
+                                      age:11
+                                },
+                                //设置请求的超时时间,如果服务器端3秒之后还没有给我响应，连接就会断开.
+                                timeout:3000,
+                                //success 响应成功之后的回调函数.
+                                success:function(data){
+                                      alert("请求成功的时候调用");
+
+                                },
+                                //这个回调函数是在请求失败的时候调用.
+                                //通过这个函数，一般可以给用户一些温馨的提示.
+                                error:function(){
+                                      alert("抱歉，服务器开了小差哦");
+                                },
+                                //请求完成的时候调用，不管出错，还是成功，都会请求完成，都会调用这里
+                                complete:function(){
+                                      alert("请求完成的时候调用");
+                                },
+                                //请求发送之前调用，一般我们可以通过该回调函数来检测发送到服务器的一些数据
+                                //如果该回调函数，return false，就不发送请求了.
+                                beforeSend:function(){
+                                     alert("请求发送之前调用.");
+                                     //我可以在数据发送之前检验. 比如说我要发送手机号到服务器，我先要校验手机号的格式是否正确
+                                     //最后才发送到服务器.
+                                     //可以获取到用户要提交的数据，校验这个数据，如果数据不通过，我就return false，然后给用户提示信息.
+                                     return false;
+                                }
+                            });
+
+                   })
+            })
+    </script>
+</head>
+<body>
+<input type="button" value="jQuery ajax 方法的使用">
+</body>
+</html>

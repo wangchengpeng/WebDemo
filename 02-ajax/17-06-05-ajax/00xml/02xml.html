@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="查询">
+    <table>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>描述</td>
+                <td>生活照</td>
+            </tr>
+    </table>
+<script>
+        document.querySelector("input").onclick=function(){
+            var xhr=new XMLHttpRequest();
+            xhr.open("get","02xml.php");
+            xhr.send(null);
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                        var objDOM=xhr.responseXML;
+                        console.log(objDOM);
+                        //获取到person 然后进行遍历，有多少个person，就有多少tr
+                        var persons=objDOM.getElementsByTagName("person");
+                        //遍历
+                        for(var i=0;i<persons.length;i++){
+                            //获取的是personName:persons[i].getElementsByTagName("personName")[0].innerHTML;
+                            //获取的是personAge:persons[i].getElementsByTagName("personAge")[0].innerHTML;
+                            //获取的是personDesc:persons[i].getElementsByTagName("personDesc")[0].innerHTML;
+                            //获取的是personName:persons[i].getElementsByTagName("lifePhoto")[0].innerHTML;
+                           //1:创建tr
+                            var tr=document.createElement("tr");
+                            var td1=document.createElement("td");
+                            var td2=document.createElement("td");
+                            var td3=document.createElement("td");
+                            var td4=document.createElement("td");
+                            //2:给td 赋值
+                            td1.innerHTML=persons[i].getElementsByTagName("personName")[0].innerHTML;
+                            td2.innerHTML=persons[i].getElementsByTagName("personAge")[0].innerHTML;
+                            td3.innerHTML=persons[i].getElementsByTagName("personDesc")[0].innerHTML;
+                            //td4.innerHTML=persons[i].getElementsByTagName("lifePhoto")[0].innerHTML;
+                            //我们需要创建一个img 标签，然后把地址赋值给img 的src，然后把img 添加到td 里面去
+                            var img=document.createElement("img");
+                            img.setAttribute("width","100");
+                            img.src=persons[i].getElementsByTagName("lifePhoto")[0].innerHTML;
+                            td4.appendChild(img);
+
+
+                            //3:把td 添加到tr 里面去
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+                            tr.appendChild(td3);
+                            tr.appendChild(td4);
+                            //4:给tr 添加到table 里面去
+                            document.querySelector("table").appendChild(tr);
+                        }
+
+                }
+            }
+        }
+</script>
+</body>
+</html>

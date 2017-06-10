@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<persons>
+     <person>
+          <personName>社会我药哥</personName>
+          <personAge>24</personAge>
+          <personDesc>帅帅帅帅</personDesc>
+          <lifePhoto>images/1.jpg</lifePhoto>
+     </person>
+    <person>
+        <personName>社会我段哥</personName>
+        <personAge>25</personAge>
+        <personDesc>人傻钱多</personDesc>
+        <lifePhoto>images/2.jpg</lifePhoto>
+    </person>
+    <person>
+        <personName>社会我武哥</personName>
+        <personAge>18</personAge>
+        <personDesc>有房有车</personDesc>
+        <lifePhoto>images/3.jpg</lifePhoto>
+    </person>
+    <person>
+        <personName>社会我帆姐</personName>
+        <personAge>25</personAge>
+        <personDesc>单身，漂亮，可以</personDesc>
+        <lifePhoto>images/4.jpg</lifePhoto>
+    </person>
+    <person>
+        <personName>社会我霹雳姐</personName>
+        <personAge>25</personAge>
+        <personDesc>单身，漂亮，可以</personDesc>
+        <lifePhoto>images/4.jpg</lifePhoto>
+    </person>
+</persons>

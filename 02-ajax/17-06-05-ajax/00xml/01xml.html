@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+            window.onload=function(){
+                 document.querySelector("input").onclick=function () {
+                       var xhr=new XMLHttpRequest();
+                       xhr.open("get","01xml.php");
+                       xhr.send(null);
+                       xhr.onreadystatechange=function(){
+                            if(xhr.readyState==4 && xhr.status==200){
+                                 //接收数据，解析数据.  解析普通的数据.
+                                //var data=xhr.responseText;
+                                /*
+                                * <?xml version='1.0' encoding='utf-8' ?><persons><person name='zhangsan'></person></persons>
+                                * 我想要获取到zhangsan 这条记录对应的数据 ，我要获取到字符串里面某一个部分，我就要去解析
+                                * 传统的方式解析字符串，我们是使用substring  根据索引 ，但是这样很复杂.
+                                * xml 在任何语言里面都有解析的支持，也就是提供api 去解析xml 格式的数据.
+                                * 思路：xml 跟html 的语法结构类似，html 解析 使用document去解析.
+                                * xml 能否也使用docuemnt 去解析。
+                                * 如果xml 要使用document 去解析，一个xml 文档就应该想办法有一个dom 对象
+                                * 我要把服务端返回的xml 转换成dom 对象。
+                                * 两步:
+                                *       服务端：header("Content-Type:text/xml;charset=utf-8")
+                                *       客户端：
+                                *               responseText 属性是接收普通的文本字符串
+                                *               responseXML 接收服务端响应的xml 格式的数据.
+                                * */
+                                 //现在已经变成了dom 对象，我要获取里面对应的数据，就可以使用dom 的api
+                                 var objDOM=xhr.responseXML;
+                                 //这里调用的是dom 的 api
+                                 console.log(objDOM.getElementsByTagName("person")[0].getAttribute("name"));
+                            }
+                       }
+                 }
+            }
+
+    </script>
+</head>
+<body>
+<input type="button" value="xml 格式的数据解析思路">
+</body>
+</html>

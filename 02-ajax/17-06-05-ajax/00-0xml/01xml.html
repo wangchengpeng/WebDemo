@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload= function(){
+            document.querySelector("input").onclick=function(){
+                //获取XML；
+                var xhr= new XMLHttpRequest();
+                xhr.open("get","01.xml.php");
+                xhr.send(null);
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==44&&xhr.status==200){
+                        var objDOM= xhr.responseXHL;
+                        console.log(objDOM);
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="xml 格式的数据解析思路">
+</body>
+</html>

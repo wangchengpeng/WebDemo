@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="查询">
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>描述</td>
+        <td>生活照</td>
+    </tr>
+    <tbody id="tbodyId">
+
+    </tbody>
+
+</table>
+<script>
+    document.querySelector("input").onclick=function(){
+        var xhr=new XMLHttpRequest();
+        xhr.open("get","01json.php");
+        xhr.send(null);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                    //第二种解析方式
+                    //1：得到的是一个json 格式的字符串
+                    var jsonStr=xhr.responseText;
+                    //2: 解析思路是要将json 格式的字符串转换为JavaScript的对象，然后通过对象的key 取到值.
+                    //2.1:eval 转换的第一种方式  2.2 JSON.parse 的方式去转换.
+                    var obj=JSON.parse(jsonStr);
+                    //console.log(obj);
+
+                    var arrStr=[];
+                    for(var i=0;i<obj.length;i++){
+                         //obj[i]  数组里面的每个对象获取出来
+                         //每个对象的value 值我想获取到，根据key 得到值，必须要知道key 的名称
+//                        console.log(obj[i].personName);
+//                        console.log(obj[i].personAge);
+//                        console.log(obj[i].personDesc);
+//                        console.log(obj[i].lifePhoto);
+//                        console.log("--------------------------------------------------------");
+
+                          var tr="<tr>";
+                          tr+="<td>"+obj[i].personName+"</td>";
+                          tr+="<td>"+obj[i].personAge+"</td>";
+                          tr+="<td>"+obj[i].personDesc+"</td>";
+                          tr+="<td><img width='100' src='"+obj[i].lifePhoto+"'></td>";
+                          tr+="</tr>";
+                          arrStr.push(tr);
+                    }
+                    var html=arrStr.join("")  //将数组里面的元素使用指定的字符串进行连接.
+                    document.getElementById("tbodyId").innerHTML=html;
+
+            }
+        }
+    }
+</script>
+</body>
+</html>
