@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>演示跨域的概念</title>
+</head>
+<body>
+<input type="button" value="跨域访问">
+
+<script>
+
+        document.querySelector("input").onclick=function(){
+                 //使用ajax ，为了演示出来，我使用原生的js XMLHttpRequest 对象
+
+                 var xhr=new XMLHttpRequest();
+
+                 xhr.open("get","http://api.jisuapi.com/shouji/query?appkey=7ca5f245254f2b88&shouji=13800001111");
+                 xhr.send(null);
+                 xhr.onreadystatechange=function(){
+                      if(xhr.readyState==4 && xhr.status==200){
+                            var data=xhr.responseText;
+                            alert(data);
+                      }
+                 }
+
+
+
+
+        }
+
+
+</script>
+
+</body>
+</html>

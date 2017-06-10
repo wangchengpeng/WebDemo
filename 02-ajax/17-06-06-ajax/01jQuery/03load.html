@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <!--jQuery 当中load 方法的使用-->
+    <script>
+        $(function(){
+            $("input").on("click",function(){
+                    /*
+                    * 在jQuery 里面方法的使用分为两种类型的方法，
+                    *   一种是全局方法 直接挂载在 $ 对象下面的方法
+                    *       $.ajax() $.get() $.post()
+                    *   一种是局部方法 局部方法，必须要通过获取页面上面的元素才能去调用
+                    *       $("div").addClass()
+                    *       $("div").removeClass()
+                    *       $("div").css()
+                    *    局部方法一般都是用来操作dom
+                    *   load 方法使用一个局部方法  $("div").load();
+                    * */
+                    //问题1：是get 方式提交还是post 方式提交
+                    //默认是get 方式提交，如果第二个参数的数据是一个对象，默认就以post方式去提交.
+                    //问题2：load 方法有没有特殊的使用场景。
+                    //load 方法加载一个远程地址，远程地址返回的数据将会放在当前元素的内部.
+                    //以后我们假设要远程去载入一个页面，我们可以使用该方法.
+                    $("div").load("ajax.php",{"username":"zhangsan"},function(data){
+                           //alert(data);
+                    });
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div></div>
+<input type="button" value="load 方式的提交">
+</body>
+</html>

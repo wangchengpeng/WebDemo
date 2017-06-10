@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入这个jQuery 文件.-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-waterfall.js"></script>
+    <script src="js/template-native.js"></script>
+    <script type="text/template" id="waterId">
+        <%for(var i = 0;i<items.length;i++){%>
+        <div class="items">
+            <div class="item">
+                <img src="<%=items[i].path%>" alt="">
+                <p>
+                <%=items[i].text%>
+                </p>
+            </div>
+        </div>
+            <%}%>
+    </script>
+<script>
+    $(function(){
+        var params={
+            page:1,
+            pagesSize:50
+        }
+        //要用ajax 在项目里面进行开发， 就看什么时候去加载数据，找到对应的事件
+		//页面加载完毕，我要去获取数据。
+        var render=function(){
+            $.ajax({
+                type:"get",
+                url:"data.php",
+                data:params,
+                success:function(data){
+                    //解析这个数据，放在items
+                    //使用模板解析
+                    
+                    var obj=JSON.parse(data);
+
+                        //如果length等于0，代表没哟更多的数据可以加载了
+                        if(obj.items.length==0){
+                            $(".btn").text("没有跟多的数据了。");
+                            return;
+                        }
+                        
+                        params.page=obj.page;
+                        var html=template("waterId",obj);
+                        
+                        //把后台的返回的数据内容写到对应的位置
+                        $(".items").append(html);
+                        
+                        //进行布局，添加流式的布局
+                        $(".items").waterFall();
+                        
+                        
+                        //数据回来之后，我的按钮又可以再次点击了，点击加载
+                        $(".btn").removeChild("loading").text("点击加载");
+                    }
+            })
+        }
+		
+
+    })
+</script>
+    <style>
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        .items{
+            position: relative;
+        }
+        .item{
+            width: 232px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
+        }
+        .item img{
+            display: block;
+            width: 100%;
+            /*
+            实际的开发过程当中，每张图片的高度不一样.
+            */
+            height: 300px;
+        }
+        /*
+          添加这个目的，就是让每一行的有一张图片高度不一样
+          实际开发过程当中，图片的高度，是后台返回的
+        */
+        .item:nth-child(4n) img{
+            height: 400px;
+        }
+        /*按钮的样式.*/
+        .container > .btn {
+            width: 280px;
+            height: 40px;
+            margin: 30px auto;
+            text-align: center;
+            line-height: 40px;
+            background-color: #CCC;
+            border-radius: 6px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .container > .loading {
+            background-color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--页面布局-->
+<div class="container">
+    <div class="btn ">点击加载</div>
+</div>
+</body>
+</html>

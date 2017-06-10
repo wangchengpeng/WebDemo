@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="使用script 标签去发送请求">
+<script>
+
+    function getInfo(obj){
+        alert("函数被调用.");
+        console.log(obj);
+        //获取到数据，解析数据.
+    }
+
+
+    document.querySelector("input").onclick=function(){
+
+
+
+        //发送请求，发送跨域请求，使用script 标签去发送跨域请求.
+        var script=document.createElement("script");
+        //script 标签能够发送跨域请求，不是跨域的请求当然也可以发送.
+        script.src="03jsonp.php?callback=getInfo";
+        //挂在到页面，浏览器就会解析这个标签.
+        document.body.appendChild(script);
+        //目的，在js 里面去接收到服务器返回的数据.
+        //解决方案：
+//                客户端：
+//                1：给服务端传递一个参数，参数名叫做callback，参数值叫做getInfo
+//                2:我在客户端定义一个getInfo 的函数. 定义的函数一定要是一个全局的函数.
+//                服务端：
+//                1：我接收一个callback 的参数.
+//                2: 服务器端响应的是一个getInfo() 这样的一个内容响应到客户端浏览器
+//                浏览器会以js 的方式去解析getInfo() 就会去调用这个getInfo 这个函数.
+
+
+
+    };
+</script>
+
+</body>
+</html>

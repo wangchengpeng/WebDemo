@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="js/jquery.min.js"></script>
+    <!--1:引入模板文件 （会）-->
+    <script src="js/template-native.js"></script>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+        h3 {
+            text-align: center;
+        }
+        .chatbox {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid #CCC;
+            background-color: #FFF;
+            border-radius: 5px;
+        }
+        .messages {
+            height: 350px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #CCC;
+            overflow: scroll;
+        }
+        .messages h5 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .messages p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .self {
+            text-align: left;
+        }
+
+        .other {
+            text-align: right;
+        }
+
+        .form {
+            height: 150px;
+        }
+
+        .form .input {
+            height: 110px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .form .btn {
+            height: 40px;
+            box-sizing: border-box;
+            border-top: 1px solid #CCC;
+        }
+        .form textarea {
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: none;
+            resize: none;
+            outline: none;
+            font-size: 20px;
+        }
+
+        .form input {
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin-top: 5px;
+            margin-right: 20px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<h3>简单的Ajax实例</h3>
+<div class="chatbox">
+    <div class="messages">
+
+    </div>
+    <!-- 表单 -->
+    <div class="form">
+        <!-- 输入框 -->
+        <div class="input">
+            <!--我要发送的消息-->
+            <textarea>
+
+            </textarea>
+        </div>
+        <!-- 按钮 -->
+        <div class="btn">
+            <input type="button" value="发送">
+        </div>
+    </div>
+</div>
+<!--
+   <div class="self">
+        <h5>我说</h5>
+        <p>你好</p>
+    </div>
+    <div class="other">
+        <h5>对方说</h5>
+        <p>你好</p>
+    </div>
+-->
+<!--2：创建模板-->
+<!--3:准备模板的内容-->
+<script type="text/template" id="templateId">
+    <div class="<%=info%>">
+        <%if(info=='self'){%>
+            <h5>我说:</h5>
+        <%}else if(info=='other'){%>
+             <h5>小爱说:</h5>
+        <%}%>
+        <p><%=text%></p>
+    </div>
+</script>
+<script>
+        /*
+        * 1:我们给极速数据的接口地址发送请求。
+        * 2：我们得到数据之后，我们使用模板去解析数据.
+        * */
+        $(function(){
+             $(".btn input").on("click",function(){
+                    //获取用户输入内容
+                    var message=$(".input textarea").val();
+                    var obj={
+                        text:message,
+                        info:'self'
+                    }
+//                   4:将数据跟模板进行绑定
+                     var html=template("templateId",obj);
+                    //6:将数据跟模板进行绑定之后会返回一个字符串，将这个字符串放在页面上面对应的位置即可.
+                    $(".messages").append(html);
+                    $.ajax({
+                        url:"http://api.jisuapi.com/iqa/query",
+                        type:"get",
+                        data:{
+                            appkey:'7ca5f245254f2b88',
+                            question:message
+                        },
+                        dataType:"jsonp",//跨域里面的内容，等下会讲
+                        success:function(data){
+                                //将相应的数据解析之后放在页面上面对应的位置.
+                               //解析数据，放在页面上面对应的位置,使用模板解析
+                                var content=data.result.content;
+                                var obj={
+                                     text:content,
+                                     info:"other"
+                                }
+                                var html=template("templateId",obj);
+                                $(".messages").append(html);
+                        }
+                    })
+
+
+
+             });
+        })
+
+</script>
+</body>
+</html>

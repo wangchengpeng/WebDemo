@@ -18,7 +18,7 @@
     }
 
     //操作那个数据库
-    mysql_select_db("itcast", $con);
+    mysql_select_db("testdatabase", $con);
 
     //根据id 进行删除
     $sql = "DELETE FROM teacher WHERE id = $_GET[id]";

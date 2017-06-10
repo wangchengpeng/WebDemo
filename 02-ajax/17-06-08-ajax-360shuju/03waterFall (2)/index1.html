@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        .items{
+            position: relative;
+        }
+        .item{
+            width: 232px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
+        }
+        .item img{
+            display: block;
+            width: 100%;
+            /*
+            实际的开发过程当中，每张图片的高度不一样.
+            */
+            height: 300px;
+        }
+        /*
+          添加这个目的，就是让每一行的有一张图片高度不一样
+        */
+        .item:nth-child(4n) img{
+            height: 400px;
+        }
+    </style>
+    <!--1:使用jQuery 去操作dom-->
+    <script src="js/jquery.min.js"></script>
+    <!--2：写一个方法，调用这个方法，可以实现瀑布流的布局，我把这个方法写好之后挂在jQuery 的对象下面
+    就形成了一个插件，这个插件是用来专门做瀑布流的. 一般扩展了这样的一个方法之后，会单独形成一个独立的文件
+    -->
+    <script src="js/jquery-waterfall.js"></script>
+    <script>
+        $(function(){
+                $(".items").waterFall();
+        })
+
+    </script>
+</head>
+<body>
+    <!--页面布局-->
+    <div class="container">
+            <div class="items">
+                <div class="item">
+                    <img src="images/1.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/2.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/3.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/4.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/5.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/6.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/7.jpg" alt="">
+                    <p>
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                        再多的柔情似水，也洗不尽你的锅碗瓢盆
+                    </p>
+                </div>
+           </div>
+    </div>
+
+</body>
+</html>

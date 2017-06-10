@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1:这个函数可以实现基本的功能</title>
+    <script>
+            //这个函数可以实现基本的功能
+            //发送请求，接收数据，还可以支持get 发送，以及post 发送
+            function ajax(type,url,data,success){
+                  var xhr=new XMLHttpRequest();
+                  //因为get 方式提交，请求的参数在地址的后面.
+                  url=url+"?"+data;
+                  xhr.open(type,url);
+                  xhr.send(null);
+                  //这个是一个回调函数，这个函数不会立即执行，这个函数需要等待服务器响应数据的时候才会执行
+                  xhr.onreadystatechange=function(){
+                       //服务端的数据响应完毕以及响应成功的时候才会执行下面的代码.
+                       if(xhr.readyState==4 && xhr.status==200){
+                          //响应回来的数据
+                          var data1=xhr.responseText;
+                         //调用函数.
+                          success(data1);
+                       }
+                  }
+
+            }
+
+    </script>
+</head>
+<body>
+<input type="button" value="ajax 封装">
+<script>
+        document.querySelector("input").onclick=function () {
+                //接收数据。怎么去接收数据的问题.
+                //success 这个函数，服务器端响应完成以及响应成功的时候会调用.
+                ajax("get","ajax.php","username=zhangsan",function(data){
+                       //console.log(data);
+                       //获取到数据，解析数据，将数据跟标签进行组装，然后放在页面.
+                });
+        }
+
+</script>
+</body>
+</html>

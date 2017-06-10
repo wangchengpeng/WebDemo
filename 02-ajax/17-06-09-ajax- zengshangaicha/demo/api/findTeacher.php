@@ -12,7 +12,7 @@
     }
 
     //连接那个数据库  itcast 数据
-    mysql_select_db("itcast", $con);
+    mysql_select_db("testdatabase", $con);
 
     //get 方式提交. 当前页码  2
     $pageNum = $_GET['pageNum'];

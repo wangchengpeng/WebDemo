@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <script src="js/jquery.min.js"></script>
+    <!--扩展一个jQuery 的插件-->
+    <script>
+        /*扩展jQuery 插件*/
+        /*扩展局部方法的插件，什么是局部方法 $().animate()   $.fn 固定写法*/
+        $.fn.waterFall=function(){
+                //实现逻辑代码.
+                //我们现在是使用postion abosulte 去布局，我核心的部分计算出来每个item 的left 值 以及top 值
+                //每个item的left 值。 index*(width+space);
+                //top:第一行的top 值都等于0 每一列的最矮的高度
+                //我们想知道每个item 的width 每个item 的width 是固定的，
+                 //space (itemsWidth-column*width)/(column-1)
+                 var $parentitems=this;
+
+                 //获取到parentItems 的width
+                 var parentWidth=$parentitems.width();
+
+                //获取到里面的每个item
+                var $childitems=$parentitems.children(".item");
+
+                //获取到item 的width
+                var width=$childitems.width();
+                //定义有五列
+                var column=5;
+                //计算出来间距.
+                var space=(parentWidth-column*width)/(column-1);
+               //我要去定位每个item,遍历出来item，然后一个一个的去计算位置，一个一个的去设置位置.
+                /*
+                * each 就是用来遍历的，遍历当前jQuery 对象，jQuery 对象实际是一个数组。
+                * each 接收的是一个函数，有多少个元素，这个函数就会被调用多少次
+                * index jQuery 数组里面的每个元素对应的索引值
+                * dom   jQuery 数组里面的每个元素，它是一个dom 对象
+                * */
+                var arr=[];
+
+                $childitems.each(function(index,dom){
+
+                        //转换成jQuery 对象.
+                        var $dom=$(dom);
+                        //计算每个元素的left 值以及top 值。
+                        //我应该分两批去计算
+                        //第一批：第一行的前面五个元素，top 值都是0
+                        if(index0<column){
+                            $dom.css({
+                                 left:index0*(width+space),
+                                 top:"0"
+                            })
+                            //走这里 index=0,1,2,3,4  $dom 代表的是0,1,2,3,4 的对应的元素.
+                            arr.push($dom.height()); //这五列的告诉都放在这个数组里面，它的索引值就是数组对应的索引角标.
+                        }else{
+                             //否则就是其它的元素.
+                             //我要找到这些元素里面最矮的那一列.
+                             //我要找到这个五列当中最矮的那一列.找到它的索引，以及它的高度。
+                             //找到最矮的那一列的高度，以及它的索引值.
+                             var minIndex=0;
+                             var minHeight=arr[minIndex];
+                             for(var i=0;i<arr.length;i++){
+                                   if(minHeight>arr[i]){
+                                       minHeight=arr[i];
+                                       minIndex=i;
+                                   }
+                             }
+
+                            //设置的是其它的元素的元素的位置
+                            $dom.css({
+                                 top:minHeight+space,
+                                 left:minIndex*(width+space)
+                            });
+                            //我假设我改了minIndex 的height ，我就要把arr 里面的告诉进行一个更新.
+                            arr[minIndex]=minHeight+space+$dom.height();
+
+
+                        }
+                })
+        }
+    </script>
+    <script>
+        //使用jQuery 的插件
+        $(function(){
+
+            //能够帮助我去实现item 的定位.
+            $(".items").waterFall();
+        })
+
+
+    </script>
+    <style>
+            .container{
+                 width: 1200px;
+                 margin: 0 auto;
+                 padding-top: 40px;
+            }
+            .items{
+                 position: relative;
+            }
+
+            .item{
+                 width: 232px;
+                 position: absolute;
+                 left: 0;
+                 top: 0;
+                 box-shadow: 0px 0px 30px rgba(0,0,0,0.3);
+            }
+            .item img{
+                 display: block;
+                 width: 100%;
+                /*
+                实际的开发过程当中，每张图片的高度不一样.
+                */
+                 height: 300px;
+            }
+             /*
+               添加这个目的，就是让每一行的有一张图片高度不一样
+             */
+            .item:nth-child(4n) img{
+                 height: 400px;
+            }
+    </style>
+    <!--
+            1:怎么样去做计算，怎么样去做布局.
+            left 的值的计算:
+              1.1 先要获取每个item 的宽度.
+              1.2 先定死五列，间距应该=(items的宽度-column*item的宽度)/(column-1)
+            我就开始去编写代码:  基本思路
+            我们把对这个items 的item 元素进行定位的代码写成一个方法。调用这个方法，就会自动帮我去
+        定位items 里面的item.
+            我把这个方法挂在jQuery 对象上面，就相当于是jQuery 的插件。
+            1：扩展jQuery 的方法，扩展的方法的功能，调用这个方法，就能实现布局定位.
+            2:按照jQuery 的要求，去添加一个方法，然后再这个方法里面去实现对应的业务逻辑代码。
+            引入jQuery
+    -->
+</head>
+<body>
+      <div class="container">
+            <div class="items">
+                  <div class="item">
+                      <img src="images/1.jpg" alt="">
+                      <p>
+                          你陌陌变成狼，我默默变成替罪羊
+                      </p>
+                  </div>
+                  <div class="item">
+                    <img src="images/2.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                    </p>
+                </div>
+                  <div class="item">
+                    <img src="images/3.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                    </p>
+                </div>
+                  <div class="item">
+                    <img src="images/4.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                    </p>
+                </div>
+                  <div class="item">
+                    <img src="images/5.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                    </p>
+                </div>
+                  <div class="item">
+                    <img src="images/6.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/7.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/8.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/9.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="images/10.jpg" alt="">
+                    <p>
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+                        你陌陌变成狼，我默默变成替罪羊
+
+                    </p>
+                </div>
+            </div>
+      </div>
+</body>
+</html>

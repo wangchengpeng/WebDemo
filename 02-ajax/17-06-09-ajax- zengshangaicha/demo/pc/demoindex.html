@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>讲师管理系统</title>
+    <!--这里是bootstrap 的css 核心文件.-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--我要使用bootstrap table 插件，我需要引入bootstrap table 的样式文件-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-table.css">
+    <!--引入的文件  增删改查讲师都在这一个页面完成，异步交互，交互了页面也没有进行刷新。 -->
+    <script src="../bootstrap/js/jquery.min.js"></script>
+    <!--fileupload start 文件上传-->
+    <script src="../bootstrap/js/jquery.ui.widget.js"></script>
+    <script src="../bootstrap/js/jquery.iframe-transport.js"></script>
+    <script src="../bootstrap/js/jquery.fileupload.js"></script>
+    <!--fileupload end 文件上传-->
+    <!--页面布局采用的bootstrap 的样式，去进行布局.-->
+    <!--bootstrap 的核心js 文件也需要引入-->
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <!--用到bootstrap table 的插件文件-->
+    <script src="../bootstrap/js/bootstrap-table.js"></script>
+    <!--我table要显示中文的提示，我就需要引入中文的国际化文件,js 文件-->
+    <script src="../bootstrap/js/bootstrap-table-zh-CN.js"></script>
+
+</head>
+<body>
+    <a href="#" class="btn bg-primary" data-toggle="modal" data-target="#teacherWindowId">添加讲师</a>
+    <!-- 添加讲师信息 -->
+    <div class="modal fade" id="teacherWindowId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加讲师</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="teacherFormId">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="请输入讲师的姓名">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="age" placeholder="请输入年龄">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="telephone" placeholder="请输入手机号">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="desc" placeholder="请输入描述">
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="fileuploadId" name="lifePhoto" data-url="../api/fileupload.php">
+                        </div>
+                        <div id="imageViewId" style="width: 100px;height: 100px;border: 2px solid #ccc;opacity: 0">
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default cancelTeacherBtn" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary saveTeacherBtn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    //pageSize
+    //pageNum
+    //get方式
+    //$.ajax{
+    //    url: "../api/addTeacher.php",
+    //    typt: "get",
+    //    deat:{
+    //        pageSize:1,
+    //        pageNum:222,
+    //    }
+    //}
+
+
+
+
+    $.ajax({
+        url: "../api/findTeacher.php",
+        type: "get",
+        data: {
+            pageSize: 10,
+            pageNum: 2,
+        },
+        success: function (data) {
+            console.log(data);
+        }
+    })
+
+    //上传文件的代码；
+    $("#fileuploadId").fileupload({
+        autoLoad: true,
+        done: function (e, data) {
+            //imageViewId
+
+            var img = document.createElement("img");
+            //i响应的地址是一个这样的地址.images/circle.png
+            img.src = "../" + data.result;
+
+            //images/circle.png
+            imageSrc = data.result;
+            //console.log(imageSrc);
+
+
+            img.width = "100";
+
+            //往对应的位置追加
+            $("#imageViewId").append(img);
+
+            //执行动画.
+            $("#imageViewId").animate({ opacity: 1, marginLeft: 100 }, 2000);
+        }
+    })
+
+
+    $(".saveTeacherBtn").click(function () {
+        //alert(1);
+        var data = $("#teacherFormId").serialize();
+  
+        data = data + "&lifephoto=" + imageSrc;
+        console.log(data);
+        $.ajax({
+            url: "../api/addTeacher.php",
+            type: "post",
+            data: data,
+            success: function(res) {
+                console.log(res);
+            }
+        })
+    })
+
+
+
+
+
+
+
+
+    
+
+
+
+</script>

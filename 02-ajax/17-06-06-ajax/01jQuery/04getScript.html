@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <!--jQuery 当中getScript 方法的使用-->
+    <script>
+        $(function(){
+            $("input").on("click",function(){
+
+                        //开始去使用这个getScript
+                        //我去载入一个地址，这个地址响应的是JavaScript代码
+                        //我去载入的这个地址可不可以是一个php 文件.
+                        //$.getScript("04getScript.php");
+                        //去载入一个js 文件.
+                        $.getScript("04getScript.js");
+
+                        //应用场景：我们页面打开，不可能一次性把所有的资源都加载进来，慢慢的进行页面的加载.
+                        //远程去载入一段脚本，并且执行这段脚本.
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div></div>
+<input type="button" value="getScript 方式的提交">
+</body>
+</html>

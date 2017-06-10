@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <!--使用jQuery 去解决跨域，这种解决跨域的方式我们叫做jsonp-->
+</head>
+<body>
+<input type="text" id="telephone"><input type="button" value="查询">
+<script>
+        $(function(){
+
+                $("input[type=button]").on("click",function(){
+                    var tel=$("#telephone").val();
+                    //底层封装的就是xmlhttpRequest 对象,跨域.
+                    $.ajax({
+                        url:"http://api.jisuapi.com/shouji/query?appkey=7ca5f245254f2b88&shouji="+tel,
+                        type:"get",
+                        //怎么解决,添加一个dataType:"jsonp" ，就可以实现这个跨域.
+//                        dataType:"jsonp", 默认是使用XMLHttpRequest 对象去发送请求.
+                        dataType:"jsonp",
+                        success:function(data){
+                            console.log(data.result.company+"所属运营商");
+                            console.log(data.result.province+"===所属省份");
+                            console.log(data.result.city+"===所属城市.");
+                        }
+                    })
+                });
+
+        });
+</script>
+</body>
+</html>

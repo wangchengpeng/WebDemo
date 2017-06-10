@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--我们是使用jQuery 的文件上传的插件，要把jQuery 以及插件引入进来.-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.ui.widget.js"></script>
+    <script src="js/jquery.iframe-transport.js"></script>
+    <script src="js/jquery.fileupload.js"></script>
+    <!--这些都是文件上传必须要依赖的，后期开发可以合并成一个文件.
+    插件支持，从桌面拖拽图片到浏览器上传，
+    这个插件，一般是做文件上传的使用.
+    -->
+</head>
+<body>
+    <!--
+        data-url 文件上传的地址.
+    -->
+    <input type="file" name="lifephone" id="fileUploadId" data-url="01fileupload.php">
+    
+    <div id="imageViewId" style="width: 100px;height: 100px;border: 2px solid #ccc;">
+
+    </div>
+
+    <script>
+        /*这个jquery.fileupload.js 里面扩展的jQuery 的方法*/
+        $("#fileUploadId").fileupload({
+              autoLoad:true,
+              done:function(e,data){ //这个回调函数文件上传完成之后会调用.
+                    //接收数据
+                    var src=data.result;
+
+                    var img=document.createElement("img");
+                    img.src=src;
+                    img.width="100";
+
+                    $("#imageViewId").append(img);
+
+                   $("#imageViewId").animate({marginLeft:300},2000);
+
+              }
+        });
+
+    </script>
+</body>
+</html>

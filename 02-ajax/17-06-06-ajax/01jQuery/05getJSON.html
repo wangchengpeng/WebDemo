@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <!--jQuery 当中getJSON 方法的使用-->
+    <script>
+        $(function(){
+            $("input").on("click",function(){
+                    //去远程载入一个地址，这个地址返回的数据，必须是json 格式的数据
+                    //他去获取的数据，这个数据必须返回json
+                    $.getJSON("05getJSON.php",function(data){
+                           //json  的数据格式，key 必须使用双引号才是规范的.
+                           alert(data);
+                    })
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div></div>
+<input type="button" value="getJSON 方式的提交">
+</body>
+</html>

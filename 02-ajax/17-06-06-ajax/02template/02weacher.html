@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气预报查询</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+   <!-- 1:引入模板文件 （会）
+    2：创建模板
+    <script type="text/template" id="personId"></script>
+    3:准备模板的内容
+    模板的内容跟写到页面上面的标签内容有关系.
+    4:将数据跟模板进行绑定
+    template() 这个方法template-native.js 文件提供的
+    1:模板的id
+    personId
+    2:要绑定的数据
+    后台获取过来的数据.
+    要求这个数据的格式必须是{} 结构
+    5：在模板里面解析数据
+    提供两种语法
+    <%%>  这里里面用来写逻辑代码，逻辑代码的语法是js 的语法
+    <%=%> 用来写输出，向模板里面输出
+    我们在这里去解析绑定的数据，直接根据key 去获取值就可以.
+    模板里面的内容 <script type="text/template" id="personId"></script>
+    不是浏览器解析，是template-native.js 文件去解析.
+    6:将数据跟模板进行绑定之后会返回一个字符串，将这个字符串放在页面上面对应的位置即可.-->
+    <script src="js/jquery.min.js"></script>
+    <!--1:引入模板文件-->
+    <script src="js/template-native.js"></script>
+    <!--2：创建模板-->
+    <!--3:准备模板的内容  -->
+    <!--5：在模板里面解析数据-->
+    <script type="text/template" id="weatherId">
+        <%for(var i=0;i<result.daily.length;i++){%>
+            <tr class="table-bordered">
+                <td><%=result.daily[i].date%></td>
+                <td><%=result.daily[i].week%></td>
+                <td><%=result.daily[i].day.temphigh%></td>
+                <td><%=result.daily[i].day.weather%></td>
+                <td><%=result.daily[i].night.templow%></td>
+                <td><%=result.daily[i].night.weather%></td>
+            </tr>
+      <%}%>
+    </script>
+</head>
+<body>
+    <div style="width: 700px;margin: 100px auto;">
+            <div style="float:left;">
+             <input type="text" style="width: 500px;" class="form-control" placeholder="请输入城市" id="cityName">
+            </div>
+             <div style="float: left">
+                    <input class="btn btn-primary" type="button" value="查询">
+             </div>
+
+        <table class="table table-bordered">
+            <tr>
+                <td>日期</td>
+                <td>星期</td>
+                <td>白天的最高温度</td>
+                <td>白天天气</td>
+                <td>晚上的最低温度</td>
+                <td>晚上天气</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+            $(function(){
+                    //点击查询天气预报.
+                    $("input[type=button]").on("click",function(){
+                            var cityName=document.getElementById("cityName").value;
+                            //点击一下，获取用户的输入城市，发送请求给接口的地址，获取数据。
+                            //获取到数据之后使用模板解析.
+                            $.ajax({
+                                url:"http://api.jisuapi.com/weather/query",
+                                type:"get",
+                                data:{
+                                     city:cityName,
+                                     appkey:"7ca5f245254f2b88"
+                                },
+                                dataType:"jsonp", //解决跨域的.
+                                success:function(data){
+                                       //4:将数据跟模板进行绑定
+                                       var html=template("weatherId",data);
+                                       $("table").append(html);
+                                }
+                            })
+
+                    });
+            });
+    </script>
+</body>
+</html>

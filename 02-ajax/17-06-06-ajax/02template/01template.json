@@ -1,0 +1,32 @@
+[
+    {
+        "personName":"社会我姚哥",
+        "personAge":11,
+        "personDesc":"人狠话不多",
+        "lifePhoto":"images/1.jpg"
+    },
+    {
+         "personName":"社会我霹雳哥",
+         "personAge":11,
+         "personDesc":"厉害厉害",
+         "lifePhoto":"images/2.jpg"
+     },
+    {
+       "personName":"社会我班长",
+        "personAge":11,
+        "personDesc":"帅气的外表下有一颗可爱的心",
+        "lifePhoto":"images/3.jpg"
+    },
+   {
+       "personName":"社会我磊哥",
+       "personAge":11,
+       "personDesc":"爷们的外表下有一个可爱的心",
+       "lifePhoto":"images/2.jpg"
+   },
+    {
+      "personName":"社会我亮",
+      "personAge":11,
+      "personDesc":"可爱的外表下有一颗页面的心",
+      "lifePhoto":"images/3.jpg"
+    }
+]

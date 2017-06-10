@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单注册</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+
+        ul {
+            margin: 0;
+            padding: 50px;
+            list-style: none;
+        }
+
+        .register {
+            width: 800px;
+            margin: 50px auto;
+            background-color: #FFF;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+        }
+
+        li {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        label, input {
+            display: block;
+            float: left;
+            height: 46px;
+            font-size: 24px;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        label {
+            width: 200px;
+            line-height: 46px;
+            margin-right: 30px;
+            text-align: right;
+        }
+
+        input {
+            width: 320px;
+            padding: 8px;
+            line-height: 1;
+            outline: none;
+            position: relative;
+        }
+
+        input.code {
+            width: 120px;
+        }
+
+        input.verify {
+            width: 190px;
+            margin-left: 10px;
+        }
+
+        input.disabled {
+            background-color: #CCC !important;
+        }
+
+        input[type=button] {
+            border: none;
+            color: #FFF;
+            background-color: #E64145;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tips {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+        }
+        .tips p {
+            min-width: 300px;
+            max-width: 400px;
+            line-height: 40px;
+            margin: 0 auto;
+            color: #FFF;
+            display: none;
+            background-color: #C91623;
+        }
+    </style>
+
+</head>
+<body>
+<div class="register">
+    <form id="ajaxForm" >
+        <ul>
+            <li>
+                <label for="">用户名</label>
+                <input type="text" name="name" class="name">
+            </li>
+            <li>
+                <label for="">请设置密码</label>
+                <input type="password" name="pass" class="pass">
+            </li>
+            <li>
+                <label for="">请确认密码</label>
+                <input type="password" name="repass" class="repass">
+            </li>
+            <li>
+                <label for="">验证手机</label>
+                <input type="text" name="mobile" class="mobile" >
+            </li>
+            <li>
+                <label for="">短信验证码</label>
+                <input type="text" name="code" class="code">
+                <input type="button" value="获取验证码" class="verify " >
+            </li>
+            <li>
+                <label for=""></label>
+                <input type="button" class="submit" value="立即注册">
+            </li>
+        </ul>
+    </form>
+</div>
+<!-- 提示信息 -->
+<div class="tips">
+    <p>用户名不能为空</p>
+</div>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+      /*
+      * 功能1：点击获取验证码，获取到手机号，给这个手机号发送验证码的数据
+      *      1: 给点击按钮点击事件
+      *      2: 获取到用户输入的手机号
+      *      3：对手机号的格式进行校验 正则表达式校验.
+      *      4：验证通过
+      *         1:我们要把获取验证码的按钮禁用掉 ,阻止用户重复提交.
+      *         2:按钮的里面内容发生改变计时 60-59-58.。。
+      *         3：到了0秒之后，按钮变成可以点击，它里面的值变成获取验证码.
+      *         把手机号发送到服务器，服务器给这个手机号发送一个验证码
+      *
+      *      5：验证不通过
+      *         给用户一个完美温馨的提示。
+      * 功能2：提交注册，获取整个表单里面的数据，直接给服务器发送数据.
+      *       1:获取表单里面选项的数据，发送到服务器，
+        *     2：服务器返回注册的结果.
+      * */
+     $(function(){
+           //1:给点击按钮点击事件
+            $(".verify").on("click",function(){
+
+                  //获取验证码的按钮，因为要进行多次操作，所以我提炼成全局
+                  var $btn=$(this);
+
+                   //2:获取到用户输入的手机号
+                   var mobile=$(".mobile").val();
+                   //3：对手机号的格式进行校验 使用正则表达式
+                   var reg=/^1[3,5,8]{1}[0-9]{9}$/;
+                   $.ajax({
+                       url:"06userReg.php",
+                       type:"get",
+                       data:{
+                            mobile:mobile
+                       },
+                       beforeSend:function(){  //请求发送之前调用，如果返回fasle，就不发送请求了.
+                             var flag=reg.test(mobile);
+                             if(!flag){   //5：验证不通过
+                                   //给用户一个提示，这个提示我们使用alert
+                                   // alert("您输入的手机号是个什么鬼，");
+                                   //页面上面通过dom 进行提示.
+                                   //给用户提示的信息，过2秒之后隐藏
+//                                 $(".tips p").text("您的手机号输入有误，请重新输入").fadeIn(1000);
+//                                 //延迟两秒之后执行
+//                                 window.setTimeout(function(){
+//                                     $(".tips p").fadeOut(1000);
+//                                 },2000);
+//                                 简介写法.  delay 延迟  跟window.setTimeout 功能类似.
+                                  $(".tips p").text("您的手机号输入有误，请重新输入").fadeIn(1000).delay(1500).fadeOut(1000);
+                                  return false;
+                             }else{
+
+                                 //阻止重复提交，我们可以通过样式去进行判断
+                                  if($btn.hasClass("disabled")){ //如果当前按钮包含当前的disabled 样式，就返回true
+                                        return false;
+                                  }
+                                  //验证通过.
+                                  //1：点击完成，立即变成灰色按钮
+                                  $btn.addClass("disabled");
+                                  console.log("马上发送请求."); //代表马上请求
+                             }
+                       },
+                       success:function(data){
+                            //响应数据完成.
+                            //做一个倒计时，60秒，--
+                            var timer=5;
+                            var ids=window.setInterval(function(){
+                                    timer--;
+                                    $btn.val(timer+"s之后获取");
+                                    if(timer==0){
+                                          $btn.removeClass("disabled");
+                                          $btn.val("获取验证码");
+                                          window.clearInterval(ids);
+                                    }
+                            },1000);
+                       }
+                   })
+            });
+
+            //2：提交注册
+            $(".submit").on("click",function(){
+                    //2.1 我要去获取到表单里面用户提交的所有的数据.
+                    //jQuery 提供了一个方法，叫做serialize 方法，这个方法作用，可以获取到表单里面所有的输入选项的数据
+                   var data1=$("#ajaxForm").serialize();
+
+                   $.ajax({
+                       url:"06saveUser.php",
+                       data:data1,
+                       type:"post",
+                       success:function(data2){
+                            //提示用户，添加成功
+                           alert("添加成功.");
+                       }
+                   })
+
+            })
+
+
+     })
+
+</script>
+</body>
+</html>

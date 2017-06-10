@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="跨域资源共享">
+    <script>
+          document.querySelector("input").onclick=function(){
+                var xhr=new XMLHttpRequest();
+                xhr.open("get","http://www.youku.com/cors.php");
+                xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                xhr.send(null);
+                xhr.onreadystatechange=function(){
+                        if(xhr.readyState==4 && xhr.status==200){
+                             var data=xhr.responseText;
+                             console.log(data);
+                        }
+                }
+          };
+    </script>
+
+</body>
+</html>

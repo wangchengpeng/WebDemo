@@ -1,11 +1,15 @@
 
 
 
+01  cross 跨域解析数据
 
 
+02 cross （ 查询手机归属 ）   使用jQuery 去解决跨域，这种解决跨域的方式我们叫做jsonp
 
 
-
+                        //怎么解决,添加一个dataType:"jsonp" ，就可以实现这个跨域.
+//                        dataType:"jsonp", 默认是使用XMLHttpRequest 对象去发送请求.
+                        dataType:"jsonp",
 
 
 

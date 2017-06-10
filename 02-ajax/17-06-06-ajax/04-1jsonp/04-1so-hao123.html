@@ -80,6 +80,8 @@
             script.className = "ss";
 
             //callback
+           //              https://entry.baidu.com/rp/api?di=pu100047&qnum=10&title=1234&jsonp=haocrsback&_=1496849891374
+            //             https://gsp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=jQuery110108531514802152698_1496849891360&wd=%E9%82%A3%E4%B9%88%E5%A5%BD&sc=hao123&_=1496849891362
             script.src = "https://sug.so.360.cn/suggest?callback=getInfo&encodein=utf-8&encodeout=utf-8&format=json&fields=word&word=" + keyword;
             document.body.appendChild(script);
             document.querySelector(".message").style.display = "block";

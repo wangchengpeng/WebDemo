@@ -25,11 +25,11 @@
                 die('Could not connect: ' . mysql_error());
             }
             //连接那个数据
-            mysql_select_db("tastdatadase", $con);
+            mysql_select_db("testdatabase", $con);
 
             //sql 语句
             //把客户端获取到的值，往数据库里面添加
-            $sql="INSERT INTO teacher (username, telephone, age,desc,lifephoto)
+            $sql="INSERT INTO teacher (username, telephone, age,t_desc,lifephoto)
             VALUES
             ('$_POST[username]','$_POST[telephone]','$_POST[age]','$_POST[desc]','$_POST[lifephoto]')";
 

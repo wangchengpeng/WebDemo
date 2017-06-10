@@ -1,16 +1,45 @@
 
 
 
+模板（template）
+
+
+               1:引入模板文件 （会）
+               2：创建模板
+                    <script type="text/template" id="personId"></script>
+               3:准备模板的内容
+                    模板的内容跟写到页面上面的标签内容有关系.
+               4:将数据跟模板进行绑定
+                    template() 这个方法template-native.js 文件提供的
+                    1:模板的id
+                            personId
+                    2:要绑定的数据
+                            后台获取过来的数据.
+                            要求这个数据的格式必须是{} 结构
+               5：在模板里面解析数据
+                    提供两种语法
+                        <%%>  这里里面用来写逻辑代码，逻辑代码的语法是js 的语法
+                        <%=%> 用来写输出，向模板里面输出
+                        我们在这里去解析绑定的数据，直接根据key 去获取值就可以.
+                        模板里面的内容 <script type="text/template" id="personId"></script>
+                        不是浏览器解析，是template-native.js 文件去解析.
+               6:将数据跟模板进行绑定之后会返回一个字符串，将这个字符串放在页面上面对应的位置即可.
 
 
 
 
+01 template   解析数据
+
+02  weacher    获取天气
+
+02  chat    智能聊天
 
 
 
 
-
-
+                        //怎么解决,添加一个dataType:"jsonp" ，就可以实现这个跨域.
+//                        dataType:"jsonp", 默认是使用XMLHttpRequest 对象去发送请求.
+                        dataType:"jsonp",
 
 
 

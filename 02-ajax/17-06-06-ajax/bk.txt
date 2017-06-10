@@ -1,0 +1,43 @@
+
+01 jQuery  的六个方法的使用
+                          1：ajax 方法           这个方法最灵活，可以设置很多属性，里面也提供了很多的回调函数
+                          2：get 方法的使用       只能发送get 请求
+                          3：post 方法的使用      只能发送post 请求
+                          4：load 方法的使用      可以是get ，也可以是post
+                          5：getScript 方法的使用  远程去载入一个地址，这个地址响应的数据必须是js 的数据。
+                          6: getJSON 方法的使用    远程载入一个地址，这个地址必须响应json 格式的数据。
+
+02 template 模板（template）
+
+
+03 scross  跨域访问
+
+
+
+04 jsonp  解决跨域访问的为题
+
+
+                        //怎么解决,添加一个dataType:"jsonp" ，就可以实现这个跨域.
+//                        dataType:"jsonp", 默认是使用XMLHttpRequest 对象去发送请求.
+                        dataType:"jsonp",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

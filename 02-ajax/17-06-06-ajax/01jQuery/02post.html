@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <!--jQuery 当中get 方法的使用-->
+    <script>
+            $(function(){
+                    $("input").on("click",function(){
+                            //接收四个参数，
+                            /*
+                            * param1：发送的请求的地址
+                            * param2：发送到服务器的参数数据
+                            * param3：响应成功之后的回调函数.
+                            * param4: 预期服务器返回的数据类型，jQuery 底层会自动帮我转换成对象.
+                            *      通过第四个参数，预期服务器返回的是json 格式的数据。
+                            *      我们在响应成功之后的回调函数里面接收到的数据就是一个对象
+                            * 严格的json 的数据格式 key 都是双引号，
+                            *
+                            * */
+                            $.post("ajax.php","username=zhangsan",function(data){
+                                console.log(data);
+                            },"xml")
+                    });
+            });
+
+    </script>
+</head>
+<body>
+   <input type="button" value="post 方式的提交">
+</body>
+</html>
