@@ -1,0 +1,130 @@
+*{
+	font-family: "微软雅黑";
+}
+input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/*主体模块设置main*/
+.main{
+	/*padding-top:1.64rem;
+	padding-bottom:47%;*/
+	width:96%;
+    margin:0.2rem 2%;
+    height:11.0rem;
+    background:#f5b8a7;/*肉色*/
+   overflow: hidden;
+}
+/*二维码图片设置ewmBox*/
+.ewmBox{
+	margin-top:1.64rem;
+	width:100%;
+}
+.ewmBox img{
+	width:50%;
+	margin:0 25%;
+}
+/*会员手机号输入框模块设置telInputBox*/
+.telInputBox{
+	margin-top:15%;
+	width:100%;
+}
+.telInput{
+	width:80%;
+    margin:0 10%;
+    height:0.8rem;
+    line-height:0.8rem;
+    text-align: center;
+    background:#fff;
+    color:#000;
+    font-size:0.3rem;
+    
+}
+/*验证模块设置yzBtnBox*/
+.yzBtnBox{
+	margin-top:10%;
+	width:100%;
+}
+.yzBtn{
+	width:80%;
+    margin:0 10%;
+    height:0.8rem;
+    line-height:0.8rem;
+    text-align: center;
+    background:#bc1314;/*红色*/
+    color:#fff;
+    font-size:0.34rem;
+    
+}
+/*body遮罩层设置*/
+.cover {
+	position:fixed; 
+    top:0; 
+    left:0;
+    right:0; 
+    bottom:0;
+    opacity:0.6;
+    -moz-opacity:0.6;
+    filter: alpha(opacity=60);
+    background-color: #fff;
+    display: none;
+}
+/*弹框模块设置tanKuang*/
+.tanKuang{
+	width:70%;
+    margin:0 15%;
+    height:4.5rem;
+    background:#d26d4d;/*橘黄色*/
+   	position:absolute;
+	left:0;
+	top:20%;
+	display: none;
+}
+/*图片设置chadui*/
+.chadui{
+	margin-top:0.3rem;
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+}
+.chadui img{
+	height:1.15rem;
+}
+.cha{
+	/*display: none;*/
+}
+.dui{
+	display: none;
+}
+/*信息提示tishi*/
+.tishi{
+	margin-top:0.3rem;
+	text-align: center;
+	color:#fff;
+    font-size:0.34rem;
+    letter-spacing: 2px;
+}
+.fail{
+	/*display: none;*/
+}
+.success{
+	display: none;
+}
+/*确定按钮设置qdBtnBox*/
+.qdBtnBox{
+	margin-top:0.8rem;
+	width:100%;
+}
+.qdBtn{
+	width:46%;
+    margin:0 27%;
+    height:0.5rem;
+    line-height:0.5rem;
+    text-align: center;
+    background:#fff;
+    color:#d26d4d;/*橘黄色*/
+    font-size:0.34rem;
+    letter-spacing: 2px;
+}

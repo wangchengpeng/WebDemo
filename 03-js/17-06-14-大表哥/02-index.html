@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02-面向函数实现大表哥</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+  <div id="list">
+
+  </div>
+  <script>
+    function createRequest() {
+      return XMLHttpRequest ?
+        new XMLHttpRequest() :
+        new ActiveXObject("XMLHTTP");
+    }
+
+    function loadData() {
+      //创建请求对象
+      var xhr = createRequest();
+      xhr.open('get', 'data.json', true);
+      xhr.onreadystatechange = function () {
+        var state = xhr.readyState,
+          status = xhr.status;
+        // alert(1);
+        if (state == 4) {
+          if (status >= 200 && status < 300 || status == 304) {
+            draw(JSON.parse(xhr.responseText));
+          } else {
+            alert("请求失败");
+          };
+        }
+      };
+      xhr.send();
+    }
+
+    function drawHead(data) {
+      var obj = data[0],
+        thead = document.createElement('thead'),
+        tr = document.createElement('tr'),
+        th;
+      for (var k in obj) {
+        th = document.createElement('th');
+        th.innerHTML = k;
+        tr.appendChild(th);
+      }
+      thead.appendChild(tr);
+      // alert(1);
+      // console.log(thead);
+      return thead;
+    }
+
+    function drawBody( data ){
+      var tbody = document.createElement('tbody'),
+        tr,
+        td;
+
+      var i = 0,
+        l = data.length,
+        k,
+        obj;
+
+      for( ; i < l; i++ ){
+                obj = data[ i ];
+                // 创建行
+                tr = document.createElement( 'tr' );
+                for( k in obj ){
+                    td = document.createElement( 'td' );
+                    td.innerHTML = obj[ k ];
+                    tr.appendChild( td );
+                }
+                tbody.appendChild( tr );
+            }
+      return tbody;
+      // console.log(tbody);
+    }
+
+    function draw(data) {
+      var table = document.createElement('table');
+      table.className = 'grid-table';
+
+      table.appendChild(drawHead(data));
+      table.appendChild(drawBody(data));
+      document.querySelector('#list').appendChild(table);
+    };
+    loadData();
+  </script>
+</body>
+
+</html>

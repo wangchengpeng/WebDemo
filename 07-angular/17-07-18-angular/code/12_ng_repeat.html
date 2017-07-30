@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>12_输出英雄列表</title>
+</head>
+<body>
+    
+    <div ng-app="app" ng-controller="myC">
+    
+        <ul>
+            
+            <li ng-repeat="hero in heros">
+                {{hero.name}}
+            </li>
+
+        </ul>
+
+
+    </div>
+
+
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        //需要动态的数据
+        //数据需要初始化
+        //初始化一般在控制器中完成
+        //有控制器就要有模块对象
+        //将控制器和模块对象在页面中应用起来
+        var app = angular.module('app',[]);
+        //创建控制器用于初始化数据
+        app.controller('myC',function($scope){
+                 //需要动态的数据
+                 //数据需要初始化
+                 $scope.heros = [{
+                    id:1,name:'韩信'
+                 },
+                 {
+                    id:2,name:'暴君'
+                 },{
+                    id:3,name:'王昭君'
+                 }];
+        });
+
+
+    </script>
+
+
+</body>
+</html>

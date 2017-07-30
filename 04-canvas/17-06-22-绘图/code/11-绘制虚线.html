@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-绘制虚线</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+	 	ctx.setLineDash( [ 4, 8, 4 ] );
+	 	ctx.lineDashOffset = 2;
+	 	ctx.moveTo( 0, 50 );
+	 	ctx.lineTo( 600, 50 );
+	 	ctx.stroke();
+
+	 	var arr = ctx.getLineDash();
+	 	console.log( arr );
+	</script>
+</body>
+</html>

@@ -1,57 +1,58 @@
 // 设置字体
-$defaultFont:"Microsoft YaHei", "微软雅黑", Tahoma, Helvetica;
+$defaultFont: "Microsoft YaHei", "微软雅黑", Tahoma, Helvetica;
 
 // 设置颜色
-$defaultFontColor:#333;
+$defaultFontColor: #333;
 
-$BorderColor:#c6cbcf;
-$topNavColor:#8d8d8d;
-$primaryColor:#e61e25;
-$white:#fff;
-$black:#000;
+$BorderColor: #c6cbcf;
+$topNavColor: #8d8d8d;
+$primaryColor: #e61e25;
+$white: #fff;
+$black: #000;
 
 // 尺寸
-$width:100%;
-$baseWidth:980px;
-$longWidth:1170px;
+$width: 100%;
+$Zwidth: 750px;
+$baseWidth: 980px;
+$longWidth: 1170px;
 
-
-
+//混合器
+@mixin center {
+  margin: 0 auto;
+}
 
 // 顶部尺寸
-$topNavHeight:40px;
-$qrcodeWidth:228px;
-$serviceWidth:325px;
-$extraWidth:180px;
-$joinWidth:242px;
-$topNavButtonRadius:3px;
-
+$topNavHeight: 40px;
+$qrcodeWidth: 228px;
+$serviceWidth: 325px;
+$extraWidth: 180px;
+$joinWidth: 242px;
+$topNavButtonRadius: 3px;
 
 // 导航
-$navHeight:64px;
-$logoWidth:145px;
-$bHeight:2px;
-$linkNormalColor:#878787;
-$linkHoverColor:$defaultFontColor;
-$linkActiveColor:$black;
+$navHeight: 64px;
+$logoWidth: 145px;
+$bHeight: 2px;
+$linkNormalColor: #878787;
+$linkHoverColor: $defaultFontColor;
+$linkActiveColor: $black;
 
 // 专长
-$dtFontSize:18px;
-$dtMarginBottom:20px;
-$dtFontWeight:500;
-$ddLineHeight:2;
-$ddFontSize:14px;
-$circleFontFamily:cursive;
-$circleFontColor:#666;
+$dtFontSize: 18px;
+$dtMarginBottom: 20px;
+$dtFontWeight: 500;
+$ddLineHeight: 2;
+$ddFontSize: 14px;
+$circleFontFamily: cursive;
+$circleFontColor: #666;
 
 // 通知
-$notifyImgHeight:38px;
-$notifyColor:#efb513;
-$notifyBookColor:#428bca;
-
+$notifyImgHeight: 38px;
+$notifyColor: #efb513;
+$notifyBookColor: #428bca;
 
 // 新闻
-$titleWidth:100px;
-$titleMarginLeft:110px;
-$dotNormalBgColor:#d0d0d0;
-$dotHoverBgColor:$primaryColor;
+$titleWidth: 100px;
+$titleMarginLeft: 110px;
+$dotNormalBgColor: #d0d0d0;
+$dotHoverBgColor: $primaryColor;

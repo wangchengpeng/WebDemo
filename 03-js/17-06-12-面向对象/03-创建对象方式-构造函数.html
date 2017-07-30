@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-创建对象方式-构造函数</title>
+</head>
+<body>
+    <script>
+        var sex = 10;
+        function Person( name, age, sex ){
+            console.log( this );
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // var guoguo =  new Person( 'guoguo', 18, 'boy' );
+        // var jingjing = new Person( 'jingjing', 19, 'girl' );
+        var duoduo = Person( 'duoduo', 20, 'girl' ); // undefined
+        console.log( sex );
+    </script>   
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-时钟案例</title>
+	<style>
+		canvas {
+			margin: 50px 380px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="300"></canvas>
+	<script>
+		var canvas = document.querySelector( '#canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		
+		function roundRect( x, y, w, h, r ) {
+			ctx.moveTo( x, y + r );
+			ctx.arcTo( x, y + h, x + w, y + h, r );
+			ctx.arcTo( x + w, y + h, x + w, y, r );
+			ctx.arcTo( x + w, y, x, y, r );
+			ctx.arcTo( x, y, x, y + r, r );
+		}
+		function clock() {
+			// 0 清楚画布
+			ctx.clearRect( 0, 0, w, h );
+			// 1 绘制表盘
+			ctx.save(); // 保存最初的状态
+			ctx.translate( w / 2, h / 2 );
+			ctx.beginPath();
+			roundRect( -140, -140, 280, 280, 60 )
+			ctx.arc( 0, 0, 125, 0, 2 * Math.PI );
+			ctx.fill( 'evenodd' );
+
+			// 2 绘制刻度
+			// 2.1 绘制小时刻度
+			ctx.save();
+			for( var i = 0; i < 12; i++ ){
+				ctx.beginPath();
+				ctx.moveTo( 117, 0 );
+				ctx.lineTo( 125, 0 );
+				ctx.lineWidth = 4;
+				ctx.lineCap = 'round';
+				ctx.stroke();
+				ctx.rotate( Math.PI / 6 );
+			}
+			ctx.restore();
+			// 2.2 绘制分秒刻度
+			ctx.save();
+			for( i = 0; i < 60; i++ ){
+				// 如果i对5取余 不为 0，就绘制刻度
+				if( i % 5 != 0 ){
+					ctx.beginPath();
+					ctx.moveTo( 121, 0 );
+					ctx.lineTo( 125, 0 );
+					ctx.lineWidth = 2;
+					ctx.strokeStyle = 'rgba( 0, 0, 0, .5 )';
+					ctx.lineCap = 'round';
+					ctx.stroke();
+				}
+				ctx.rotate( Math.PI / 30 );
+			}
+			ctx.restore();
+
+			// 3 绘制数字
+			var angle;
+			for( i = 0; i < 12; i++ ){
+				angle = i * Math.PI / 6;
+				var x = 106 * Math.cos( angle ),
+					y = 106 * Math.sin( angle );
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.fillText( i + 3 > 12 ? i + 3 - 12 : i + 3, x, y );
+			}
+
+			// 4 绘制品牌
+			ctx.font = 'italic bold 14px 微软雅黑';
+			ctx.fillText( 'clock', 0, -80 );
+			// 5 绘制时针
+			var now = new Date();
+			var hours = now.getHours(),
+				mins = now.getMinutes(),
+				secs = now.getSeconds();
+
+			ctx.save();
+			ctx.rotate( -Math.PI / 2 );
+			angle = ( hours + mins / 60 + secs / 3600 ) * Math.PI / 6;
+			ctx.beginPath();
+			ctx.moveTo( 0, 0 );
+			ctx.lineTo( 60 * Math.cos( angle ), 60 * Math.sin( angle ) );
+			ctx.lineWidth = 6;
+			ctx.lineCap = 'round';
+			ctx.stroke();
+			// 6 绘制分针
+			angle = ( mins+ secs / 60 ) * Math.PI / 30;
+			ctx.beginPath();
+			ctx.moveTo( 0, 0 );
+			ctx.lineTo( 80 * Math.cos( angle ), 80 * Math.sin( angle ) );
+			ctx.lineWidth = 4;
+			ctx.stroke();
+			// 7 绘制秒针
+			angle = secs * Math.PI / 30;
+			ctx.beginPath();
+			// ctx.moveTo( 0, 0 );
+			ctx.moveTo( -16 * Math.cos( angle ), -16 * Math.sin( angle )  );
+			ctx.lineTo( 110 * Math.cos( angle ), 110 * Math.sin( angle ) );
+			ctx.lineWidth = 2;
+			ctx.strokeStyle = 'red';
+			ctx.stroke();
+			ctx.restore();
+			
+			// 8 绘制中心的圆
+			ctx.beginPath();
+			ctx.arc( 0, 0, 6, 0, 2 * Math.PI );
+			ctx.fillStyle = 'red';
+			ctx.fill();
+
+			ctx.restore(); // 恢复到最初状态
+		}
+		
+		window.setInterval( clock, 20 );
+	</script>
+</body>
+</html>

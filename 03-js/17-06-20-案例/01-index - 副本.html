@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="" href="table.css">
+  <script src="./table.js"></script>
+  <!--<script src="./table.js"></script>-->
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="list"> 
+  </div>
+  <script>
+    var t = myTable({
+      target: '#list',
+      url: 'data.json',
+      model: [
+        { text: '金币数', prop: 'count' },
+        { text: '姓名', prop: 'name' },
+        { text: '性别', prop: 'gender' },
+        { text: '邮箱', prop: 'email' },
+        { text: '年龄', prop: 'age' },
+      ]
+    });
+  </script>
+</body>
+
+</html>

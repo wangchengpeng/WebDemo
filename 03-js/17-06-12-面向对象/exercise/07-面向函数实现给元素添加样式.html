@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-面向函数实现给元素添加样式</title>
+    <style>
+        div,p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        div1
+    </div>
+    <div>
+        div2
+    </div>
+    <p>
+        p1
+    </p>
+    <p>
+        p2
+    </p>
+   <script>
+       //根据标签名或取dom元素；
+       function getByTag(tag){
+           return document.getElementsByTagName(tag);
+       }
+       //将dom数组或伪数组中的所有dom元素进行绳子样式操作；
+       /*function setStyles(doms){
+           var i = 0;
+           l = doms.length;
+
+           for(; i <l ; i++){
+               doms[i].style.border= "2px solid #009";
+           }
+       }
+       setStyles( getByTag("div") );*/
+        //将dom数组或伪数组中的所有dom元素进行绳子样式操作；
+       function setStyles( doms, callback){
+           var i = 0;
+           l = doms.length;
+           for(; i < l; i++){
+               //对当前dom元素进行操作交给回掉函数；
+               callback( doms[i]);
+           }
+       }
+       setStyles(getByTag("div"),function(elem){
+           elem.style.backgroundColor = "#c0c0c0";
+       })
+       setStyles(getByTag("p"),function(elem){
+           elem.style.backgroundColor = "#fafafa";
+       })
+   </script>
+</body>
+</html>

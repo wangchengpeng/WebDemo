@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09-绘制点</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		var margin = 20; // 指定坐标轴与canvas 的边距
+
+		// 绘制y轴
+		ctx.beginPath();
+		ctx.moveTo( margin, margin );
+		ctx.lineTo( margin, h - margin );
+		// 绘制x轴
+		ctx.lineTo( w - margin, h - margin );
+		ctx.stroke();
+
+		var arrowSize = 16; // 定义箭头大小
+		// 绘制y轴箭头
+		ctx.beginPath();
+		ctx.moveTo( margin, margin );
+		ctx.lineTo( margin - arrowSize / 2, margin + arrowSize );	
+		ctx.lineTo( margin, margin + arrowSize / 2 );
+		ctx.lineTo( margin + arrowSize / 2, margin + arrowSize );
+		ctx.closePath();
+		// 绘制x轴箭头
+		ctx.moveTo( w - margin, h - margin );
+		ctx.lineTo( w - margin - arrowSize, h - margin - arrowSize / 2 );
+		ctx.lineTo( w - margin - arrowSize / 2, h - margin );
+		ctx.lineTo( w - margin - arrowSize, h - margin + arrowSize / 2 );
+		ctx.closePath();
+		ctx.fill();
+
+		// 新坐标系的原点
+		var x0 = margin,
+			y0 = h - margin;
+
+		var x, y;
+
+		// 确定点
+		var pointSize = 4;
+		var points = [ [ 20, 60 ], [ 60, 100 ], [ 100, 160 ], [ 200, 60 ], [ 300, 2150 ] ];
+		var renderPoints = []; // 变换后的所有点
+		ctx.fillStyle = 'red';
+		
+		points.forEach( function( point ) {
+			x = x0 + point[ 0 ];
+			y = y0 - point[ 1 ];
+			renderPoints.push( [ x, y ] );
+			// 绘制点
+			ctx.beginPath();
+			ctx.arc( x, y, pointSize, 0, 2 * Math.PI );
+			ctx.fill();
+		} );
+		// 遍历renderPoints时，从第二个点开始遍历。
+		var i = 1,
+			l = renderPoints.length,
+			point = renderPoints[ 0 ];
+
+		ctx.strokeStyle = 'green';
+		ctx.beginPath();
+		ctx.moveTo( point[ 0 ], point[ 1 ] );
+		for( ; i < l; i++ ){
+			point = renderPoints[ i ];
+			ctx.lineTo( point[ 0 ], point[ 1 ] );
+		}
+		ctx.stroke();
+	</script>
+</body>
+</html>

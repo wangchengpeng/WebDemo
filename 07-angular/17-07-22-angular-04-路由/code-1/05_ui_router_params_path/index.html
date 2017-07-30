@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_SPA</title>
+</head>
+<style type="text/css">
+.h {
+    background-color: yellowgreen;
+    height: 50px;
+}
+
+.b {
+    background-color: hotpink;
+    height: 250px;
+}
+
+.f {
+    background-color: skyblue;
+    height: 50px;
+}
+</style>
+
+<body ng-app="app">
+    <div class="h">
+        <a ui-sref="list">查看学生列表</a>
+    </div>
+    <div class="b" ui-view></div>
+    <div class="f">
+        版权所有 违者必究
+    </div>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+    //创建模块及依赖模块
+    angular.module('app', ['ui.router'])
+        //配置路由规则
+        .config(['$stateProvider', function($stateProvider) {
+            $stateProvider.state('list', {
+                    //   href="#!/music2" - > 匹配  如下url
+                    //   点击以后的行为  配，配url属性
+                    url: '/list',
+                    template: '<ul>' +
+                        ' <li ng-repeat="stu in stus track by $index">' +
+                        ' {{stu.name}}   ' + 
+                        '<a href="#!/detail/{{stu.id}}/{{stu.name}}">' + '查看详情</a>' +
+                        ' </li> ' +
+                        '</ul>',
+                    //这个控制器数据路由的，template或者templateUrl中可以直接使用
+                    controller: ['$scope', function($scope) {
+                        $scope.stus = [{
+                            id: 1,
+                            name: '小明'
+                        }, {
+                            id: 2,
+                            name: '小红'
+                        }];
+                    }]
+                })
+                .state('detail', {
+                    url: '/detail/:prop1/:prop2',  //匹配/detial/xx/xxx
+                    template: '<h1>您点击的是id为：{{id}}{{name}}的学生</h1>',
+                    controller: ['$scope', '$state', function($scope, $state) {
+                        console.log($state.params);
+                        $scope.name = $state.params.prop1;
+                        $scope.id = $state.params.prop2;
+
+                    }]
+                });
+
+        }])
+    </script>
+</body>
+
+</html>

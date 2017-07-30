@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象冒充</title>
+</head>
+<body>
+	<script>
+		function Parent( name, age, gender ){
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+		}
+
+	/*	function Child( name, age, gender,address ){
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+			this.address = address;
+		}*/
+
+		function Child( name, age, gender,address ){
+			// 让Parent构造函数成为child对象的方法
+			this.base = Parent;
+			this.base( name, age, gender ); 
+			// 任务完成后，将base删除
+			delete this.base;
+			this.address = address;
+		}
+
+		var child = new Child( 'child', 18, 'boy', '北京' );
+		console.log( child );
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>01_mvc的案例</title>
+</head>
+
+<body ng-app="app" ng-controller="myc">
+    <ul>
+        <li ng-repeat="stu in stus track by $index">{{stu.name}}</li>
+    </ul>
+    <button ng-click="add()">添加一个</button>
+    <button ng-click="del()">删除一个</button>
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+    angular.module('app', [])
+        .controller('myc', ['$scope', 'myService', function($scope, myService) {
+            console.log(myService);
+            //查询
+            $scope.stus = [{
+                id: 1,
+                name: '小红'
+            }, {
+                id: 2,
+                name: '小明'
+            }, {
+                id: 3,
+                name: '小珠'
+            }];
+
+            //添加
+            $scope.add = function() {
+                //获取用户的详细数据
+                //将数据封装成对象
+
+
+                //操作数据的model来做
+                //又一个service来完成
+                // {
+                //   id:4,
+                //   name:'添加来的数据'
+                //   }
+
+
+                //显示是否添加成功
+
+            }
+            //删除
+            $scope.del = function() {
+
+                //很多很多业务上需要考虑的事情，以及对应的代码
+
+                //操作数据
+                $scope.stus.splice(2, 1);
+
+                //删除之后的页面的属性反馈
+                //涉及到其他的事情
+            }
+
+        }])
+        .service('myService', function() {
+            this.stus = [];
+            this.name = '专职操作学生的服务对象';
+            this.add = function(stu) {
+                //判断当前用户点是否合法吗？
+                this.stus.push(stu);
+                //将数据保存在localStorage中
+            }
+        })
+    </script>
+</body>
+
+</html>

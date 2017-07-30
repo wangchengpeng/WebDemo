@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object.create</title>
+</head>
+<body>
+	<script>
+		var parent = { name: 'guo', age: 19, say: function() {
+			console.log( 'saying' );
+		} };
+
+		var child = Object.create( parent );
+		console.log( child );
+		child.say();
+		console.log( child.name );
+	</script>
+</body>
+</html>

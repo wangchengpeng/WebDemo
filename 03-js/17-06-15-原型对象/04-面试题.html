@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>面试题</title>
+</head>
+<body>
+  <script>
+    var name = 'window';
+    function foo (){
+        console.log( this.name );
+    }
+
+    var obj = {
+      name: 'obj',
+      say: function( fn ){
+        console.log( this.name );  //obj 
+        fn();                      // window;
+        arguments[ 0 ]();          //undefined
+        console.log( arguments );
+      }
+    };
+
+    obj.say( foo );
+
+    function fn1(n1, n2, n3, n4 ){
+      console.log( arguments );
+      console.log( arguments[ 2 ] );
+      n4();
+      arguments[ 3 ]();
+    }
+
+    fn1(1, 2, 3, function(){
+      console.log( this );      // this =》arguments
+    });
+
+  </script>
+</body>
+</html>

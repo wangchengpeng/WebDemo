@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-绘制图像-缩放绘制</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="200"></canvas>
+	<img src="./meilv.jpg" alt="大镁铝">
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		// var img = new Image(); // 创建图像对象
+		var img = document.getElementsByTagName( 'img' )[ 0 ];
+		img.src = './meilv.jpg';
+		img.onload = function() {
+			var imgW = img.width,
+				imgH = img.height;
+
+			ctx.drawImage( img, 70, 25, 150 * imgW / imgH, 150 );
+		};
+
+
+	</script>
+</body>
+</html>

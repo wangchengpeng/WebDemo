@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01-了解Object.prototype成员</title>
+</head>
+
+<body>
+  <script>
+    console.log(Object.prototype);
+    var obj = { name: 'obj' };
+    console.log(obj.propertyIsEnumerable('name')); // true
+    function Dog() { }
+    Dog.prototype.color = 'red';
+    var TaiDi = new Dog();
+    console.log(TaiDi.propertyIsEnumerable('color'));// false 
+    
+    //ES5  defineProperty
+
+    Object.defineProperty(obj, 'age', {
+      value: 20,
+      enumerable: false
+    })
+
+    console.log(obj.hasOwnProperty('age'));  //true 
+    console.log(obj.propertyIsEnumerable('age'));  //false
+    for (var k in obj) {
+      console.log(k)
+    }
+  </script>
+</body>
+
+</html>

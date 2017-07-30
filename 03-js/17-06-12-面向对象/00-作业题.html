@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>00-作业题</title>
+</head>
+<body>
+    <script>
+        /*function toCamel( val ){
+            // 1 将val以 - 切割字符串，得到所有单词。将第二个单词开始 首字母变成大写即可
+            // 得到所有单词
+            var words = val.split( '-' );
+            
+            var i = 1, l = words.length;
+            var word;
+            // 从第一个单词开始遍历
+            for( ; i < l; i++ ){
+                word = words[ i ];
+                // 获取当前单词的第一个字符
+                var firstChar = word.charAt( 0 ).toUpperCase(); // Bbb
+                words[ i ] = firstChar + word.slice( 1 );
+            }
+            // words ==> [ 'aaa' 'Bbb', 'Ccc', 'Ddd' ]
+            return words.join( '' );
+        }*/
+
+        function toCamel( val ){
+            return val.replace( /-(\w)/g, function( whole, group ){
+                return group.toUpperCase();
+            } );
+        }
+
+        console.log( toCamel( 'aaa-bbb-ccc-ddd' ) );
+        // aaaBbbCccDdd
+        // -b B ; -c C; -d D
+    </script>   
+</body>
+</html>

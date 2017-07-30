@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-根据数据绘制饼图</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+		// 1 确定圆心点坐标
+		var x = w / 2,
+			y = h / 2;
+
+		var r = 140;
+		var colors = 'darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray'.split( ',' );
+
+		var start = -90,
+			end;
+
+		// 创造数据 即时通讯工具的使用情况
+		var data = [
+			{ name: 'QQ', value: 500 },
+			{ name: 'Wechat', value: 600 },
+			{ name: 'Momo', value: 300 },
+			{ name: 'Tantan', value: 300 },
+			{ name: 'YY', value: 100 },
+			{ name: 'Feiq', value: 50 },
+			{ name: 'Aliwan', value: 150 }
+		];
+
+		// 求样本总和
+		var sum = 0;
+		data.forEach( function( v ) {
+			sum += v.value;
+		} );
+		data.forEach( function( v, i ) {
+			v.angle = v.value * 360 / sum;
+			// 绘制扇形
+			end = start + v.angle;
+			ctx.beginPath();
+			ctx.moveTo( x, y );
+			ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+			ctx.fillStyle = colors[ i ];
+			ctx.fill();
+			// 在绘制下一个扇形时，起始角度 为 当次end
+			start = end;
+		} );
+	</script>
+</body>
+</html>

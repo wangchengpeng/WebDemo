@@ -1,0 +1,117 @@
+body {
+  background-color: #f5f5f5;
+}
+
+
+// 菜单start
+#menu{
+  padding:10px 20px 10px 10px;
+  // margin: 10px -10px 0 0 ;
+  background-color: #fff;
+  text-align: center;
+  .row{
+    div{
+      margin-top: 10px;
+      padding-right: 5px;
+      a{
+        img{
+          width: 50px;
+        }
+        p{
+          font-size:12px;
+        }
+      }
+    }
+    // 隐藏最后四个
+    div:nth-last-child(-n+4){
+      display: none;
+    }
+  }
+}
+// 菜单end
+
+// 推荐标题stare
+#recommend{
+   .recommend_title{
+     background-color: #FF841D;
+     padding-left: 10px;
+     padding-right: 10px;
+     height: 35px;
+     span{
+       font-size: 14px;
+       color: #fff;
+       line-height: 35px;
+     }
+     img{
+       float: right;
+       width: 20px;
+       margin-top: 7px;
+     }
+   }
+}
+
+// 推荐标题end
+
+// 推荐产品start
+#recommend{
+   .recommend_product{
+     border-bottom: 1px solid #ccc;
+      .media{
+      padding-bottom: 10px;
+      padding: 10px;
+      .media-left{
+        a{
+          img{
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .media-body{
+        .media-heading{
+             // 最小高度
+             min-height: 56px;
+             line-height: 22px;
+             font-size: 16px;
+             overflow: hidden;// 超出的内容隐藏
+             text-overflow: ellipsis;// 超出的内容显示冒号
+             display:-webkit-box;
+             -webkit-box-orient: vertical;
+             -webkit-line-clamp:3;
+             span{
+             color: #FF841D;
+             }
+        }
+        .other{
+          color: #A4A1A9;
+          font-size: 12px;
+          .other_talk{
+            float:right;
+          }
+        }
+      }
+    }
+  }
+  .recommend_more{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    background-color: #F5F5F5;
+    border: 1px solid #ddd;
+    a{
+      display: block;
+    }
+  }
+}
+
+// 推荐产品end
+
+
+
+
+
+
+
+
+

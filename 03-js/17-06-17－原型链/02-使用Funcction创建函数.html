@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02-使用Function创建函数</title>
+</head>
+
+<body>
+  <script>
+    var f1 = new Function();
+    // ==> var f1 = function(){};
+    var f2 = new Function('alert(1)');
+    // ==> var f2 = function(){alert(1)};
+    var f3 = new Function('n', 'alert( n　); ');
+    // ==> var f4 function( n, m){alert( n +　ｍ)};
+    var f4 = new Function('n', 'm', 'alert(n +　ｍ)')
+    // ==> var f4 = function(n, m){ alert ( n + m );};
+    /*f1();
+       f2();
+       f3(2);
+       f4( 1, 2 );*/
+  </script>
+</body>
+
+</html>

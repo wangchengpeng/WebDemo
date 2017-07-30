@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13-画布的保存</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+		p {
+			height: 400px;
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<p>
+	</p>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var img = new Image();
+		img.src = './meilv.jpg';
+		img.onload = function() {
+			ctx.drawImage( img, 50, 50 );
+			var baseimg = canvas.toDataURL();
+			document.querySelector( 'p' ).style.backgroundImage = 'url( ' + baseimg + ' ) ';
+		};
+	</script>
+</body>
+</html>

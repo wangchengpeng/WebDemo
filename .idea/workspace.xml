@@ -2,137 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99e7b627-3116-4c0b-a152-0af2c9be3d8e" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/images/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/images/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/images/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/images/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/images/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/images/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/images/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/images/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/images/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/images/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/IMG_0565.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/active2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/images/shield_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-03-http/exercise/01.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-03-http/exercise/bx.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-03-http/exercise/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/01xml.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/01xml.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/02xml.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/02xml.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/02xml.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/01xml.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/01xml.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/02xml.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/02xml.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00xml/02xml.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/01json.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/01json.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/02json.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01-1json/person.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/01json.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/01json.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/02json.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/person.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/02province/01province.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/02province/01province.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/02province/01province.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03-3ajax/06ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03-3ajax/07allAjax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03-3ajax/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03-3ajax/ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03-3ajax/allAjax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/01ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/02ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/03ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/04ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/05ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/06ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/07allAjax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/allAjax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/04jQueryajax/01jQueryajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/04jQueryajax/ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/04jQueryajax/js/jquery-1.12.4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-05-ajax/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/02template/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/03cross/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/01jsonp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/02jsonp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/03jsonp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/03jsonp.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/04-1so-hao123.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/04so.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/js/jquery-1.12.4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/js/template-native.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/04jsonp/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-06-ajax/bk.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/addTeacher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/fileupload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/findTeacher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/removeTeacher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap-table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/bootstrap-table-zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/bootstrap-table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/iscroll-probe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/jquery-1.12.4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/jquery.fileupload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/jquery.iframe-transport.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/jquery.ui.widget.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/template-native.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/bootstrap/js/zepto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/mobile/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/mobile/index2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/pc/index.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/$@$%_DRA@2C1HHX{S6NXSYM.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/0a735eeca8f4098d2dd67a27e6b2b54a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/0e7a8c3304d90cd68369e0229f6cc0e5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/14791967975544.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/25.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/68ea680226a519252f8823a5a77d2acf1cc52f8c1d7f9-GzYSIi.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/N~_PD9$M%LUNZ7FQ54UV[WM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/ad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/art-template-master.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/nv-fy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/t1.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/鍙嶅鎴樹簤 鐖卞ソ鍜屽钩.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-02-php/0333333/images/鏆撮鎴浘2016920965848.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03-js/17-06-21-练习/css/index1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/ddd.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/images/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/images/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/images/$@$%_DRA@2C1HHX{S6NXSYM.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/images/circle.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/images/5.jpg" afterPath="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/images/5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index.scss" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index2.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/mobile/index2.html" afterPath="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/mobile/index2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-27-rem/03-K3HPreferential/css/index.css" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-27-rem/03-K3HPreferential/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/index.html" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-25-jdm/css/index.css" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-25-jdm/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-26-rem/03-K2HPreferential/css/index.css" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-26-rem/03-K2HPreferential/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-28-移动端事件/02-targetTouches.html" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-28-移动端事件/02-targetTouches.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/config/applicationhost.config" afterPath="$PROJECT_DIR$/.vs/config/applicationhost.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/_setting.scss" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/_setting.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index.css" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index.css.map" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01-yidong-web/17-05-28-移动端事件/05-copy.html" afterPath="$PROJECT_DIR$/01-yidong-web/17-05-28-移动端事件/05-copy.html" />
     </list>
     <ignored path="xinxiangmu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -153,11 +46,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="addTeacher.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/addTeacher.php">
+      <file leaf-file-name="index1.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/index1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69512194">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kkk.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kkk.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -171,8 +84,8 @@
         <option value="Sass File" />
         <option value="Less File" />
         <option value="CSS File" />
-        <option value="SCSS File" />
         <option value="HTML File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -182,28 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/17-05-28-移动端事件/06-copy.html" />
-        <option value="$PROJECT_DIR$/17-05-28-移动端事件/06-1copy.html" />
-        <option value="$PROJECT_DIR$/17-05-28-移动端事件/07-swipe.html" />
-        <option value="$PROJECT_DIR$/17-05-28-移动端事件/07-1-swipe.html" />
-        <option value="$PROJECT_DIR$/17-05-28-移动端事件/08-carousel.html" />
-        <option value="$PROJECT_DIR$/17-05-28-移动端事件/08-copy.html" />
-        <option value="$PROJECT_DIR$/17-05-31-wjs/css/_base.scss" />
-        <option value="$PROJECT_DIR$/17-05-31-wjs/css/_normalize.scss" />
-        <option value="$PROJECT_DIR$/17-05-31-wjs/css/_setting.scss" />
-        <option value="$PROJECT_DIR$/17-05-31-wjs/css/index.scss" />
-        <option value="$PROJECT_DIR$/17-05-31-wjs/index.html" />
-        <option value="$PROJECT_DIR$/17-06-02-conp/index.html" />
-        <option value="$PROJECT_DIR$/17-05-29/bootcss/node_modules/bootstrap/node_modules/relateurl/lib/parse/path.js" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03/01-code.html" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/demo/ajax_0604.html" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/02ajax/01ajaxget.php" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/02ajax/04chat.html" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/demo/jquery-2.0.0.min.js" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/02ajax/04chat.php" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/demo/jqajax0604.html" />
-        <option value="$PROJECT_DIR$/02-ajva/17-06-03-http/code/demo/readxml0604.html" />
-        <option value="$PROJECT_DIR$/02-ajax/17-06-03-http/code/demo/angular基础操作.html" />
         <option value="$PROJECT_DIR$/02-ajax/17-06-03-http/code/00php/01.php" />
         <option value="$PROJECT_DIR$/02-ajax/17-06-03-http/exercise/demo.html" />
         <option value="$PROJECT_DIR$/02-ajax/17-06-03-http/exercise/01.php" />
@@ -233,6 +124,28 @@
         <option value="$PROJECT_DIR$/02-ajax/17-06-08-ajax/03waterFall/index3.html" />
         <option value="$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/01xml.html" />
         <option value="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/teacher/api/addTeacher.php" />
+        <option value="$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/addTeacher.php" />
+        <option value="$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/01fileupload.html" />
+        <option value="C:/wamp/bin/apache/Apache2.2.21/conf/httpd.conf" />
+        <option value="$PROJECT_DIR$/03-js/17-06-12/00-作业题.html" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index.css" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index.scss" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index2.css" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/index.html" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/_setting.scss" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index2.scss" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/index.scss" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/dd.scss" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/ddd.scss" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/ddd.css" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/ddd.scss" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/css1/ddd.scss" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj.scss" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/aaaa.scss" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/aa.scss" />
+        <option value="$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/jj.scss" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/aa.css" />
+        <option value="$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.scss" />
       </list>
     </option>
   </component>
@@ -242,9 +155,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="244" />
-    <option name="y" value="18" />
-    <option name="width" value="1378" />
+    <option name="x" value="-30" />
+    <option name="y" value="20" />
+    <option name="width" value="1370" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -300,15 +213,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="02-ajax" />
+              <option name="myItemId" value="03-js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17-06-09-ajax- zengshangaicha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teacher" />
+              <option name="myItemId" value="17-06-21-练习" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -322,19 +231,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="02-ajax" />
+              <option name="myItemId" value="03-js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17-06-09-ajax- zengshangaicha" />
+              <option name="myItemId" value="17-06-21-练习" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teacher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -348,11 +253,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="02-ajax" />
+              <option name="myItemId" value="03-js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17-06-09-ajax- zengshangaicha" />
+              <option name="myItemId" value="17-06-21-练习" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jjj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kkk.scss" />
+              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17-05-27-yidong-web-rem-buju" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17-05-27-yidong-web-rem-buju" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="03-js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="17-06-21-练习" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jjj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,15 +309,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="02-ajax" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17-06-09-ajax- zengshangaicha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
+              <option name="myItemId" value="03-js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,33 +323,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="02-ajax" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17-06-09-ajax- zengshangaicha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17-05-27-yidong-web-rem-buju" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="17-05-27-yidong-web-rem-buju" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="02-ajax" />
+              <option name="myItemId" value="01-yidong-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -436,11 +345,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\17-05-27-yidong-web-rem-buju\03-js\17-06-21-练习\css" />
       <recent name="E:\17-05-27-yidong-web-rem-buju\02-ajax\17-06-09-ajax- zengshangaicha\demo" />
       <recent name="E:\17-05-27-yidong-web-rem-buju\02-ajax\17-06-06-ajax\04-1jsonp" />
       <recent name="E:\17-05-27-yidong-web-rem-buju\02-ajax\17-06-06-ajax" />
       <recent name="E:\17-05-27-yidong-web-rem-buju\02-ajax\17-06-06-ajax\04jsonp" />
-      <recent name="E:\17-05-27-yidong-web-rem-buju\02-ajax\17-06-06-ajax\03cross" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\17-05-27-yidong-web-rem-buju\02-ajax\17-06-06-ajax" />
@@ -511,10 +420,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="244" y="18" width="1378" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="-30" y="20" width="1370" height="735" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23432836" sideWeight="0.47332186" order="0" side_tool="false" content_ui="combo" x="140" y="116" width="347" height="695" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26276276" sideWeight="0.47332186" order="0" side_tool="false" content_ui="combo" x="140" y="116" width="347" height="695" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -528,12 +437,12 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20099668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19568823" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -603,192 +512,43 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/02json.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.451613">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/02province/01province.php">
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/bk.txt">
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097770154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/00-0xml/02xml.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.03442029">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/js/jquery.min.js">
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/index1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/js/jquery-1.12.4.js">
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/index1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/ajax.php">
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/index1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/05getJSON.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/03load.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/03cross/01cross.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8709676">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/bk.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04jsonp/02jsonp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.884058">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04jsonp/03jsonp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48369566">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04jsonp/03jsonp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61921096">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/03cross/bk.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/02template/01template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53985506">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04jsonp/01jsonp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2753623">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/bk.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.380789">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/03cross/02cross.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38043478">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04jsonp/bk.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22813036">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/01jQuery/js/hello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097770154">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/js/jquery-1.12.4.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/js/template-native.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35849056">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/02template/bk.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2607204">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/bk.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22813036">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/04so.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-06-ajax/04-1jsonp/01jsonp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2753623">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -834,18 +594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/04jQueryajax/01jQueryajax.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055248618">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/03-3ajax/05ajax.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.32258">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.290323">
           <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,14 +703,179 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4390244">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/03ajax/06ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.17495395">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/04jQueryajax/01jQueryajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10497238">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/02json.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20994475">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-05-ajax/01json/01json.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.31491712">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02-ajax/17-06-09-ajax- zengshangaicha/demo/api/addTeacher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69512194">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/01cors/12306.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-ajax/17-06-08-ajax-360shuju/02fileupload/01fileupload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-25-jdm/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-26-rem/03-K2HPreferential/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-26-rem/02-rem-layout/2-rem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-27-rem/en-ren.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-28-移动端事件/05-copy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/wamp/bin/apache/Apache2.2.21/conf/httpd.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="374" column="64" selection-start-line="374" selection-start-column="64" selection-end-line="374" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="888" column="0" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/index2.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54347825">
+          <caret line="546" column="17" selection-start-line="546" selection-start-column="17" selection-end-line="546" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/jd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="19" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-31-wjs/css/_setting.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04398148">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/ddd.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04398148">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01-yidong-web/17-05-29/wjs/css1/ddd.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.61290324">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/index.css.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/index1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03-js/17-06-21-练习/css/jjj/kkk.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>

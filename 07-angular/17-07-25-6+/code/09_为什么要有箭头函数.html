@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script type="text/javascript">
+    'use strict';
+        // var person = {
+        //     name:'jack',
+        //     init:function(){
+        //         // console.log(this);
+        //         //使用self来存储this
+        //         var self = this;
+        //         document.body.onclick = function(){
+        //             // alert(this.name); //jack 
+        //             // console.log(this); // body,js中的this是根据运行时的对象
+        //             alert(self.name);
+        //         }
+        //     }
+        // };
+        // person.init();
+
+            var person = {
+            name:'jack',
+            init:function(){
+                //这一行是person
+                document.body.onclick = ()=>{
+                    //箭头函数，本身没有自己的this,但是其会自动向上级function绑定this
+                    // alert(this.name);
+                    alert(this);
+                }
+            }
+        };
+        person.init();
+
+
+    </script>
+</body>
+</html>

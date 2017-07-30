@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-构造函数的执行过程</title>
+</head>
+<body>
+<script>
+    function B( name ){
+        this.name = name;
+        //return 1; //返回数字
+        //return 'string';  //返回字符串
+        //return true;      //返回bool值
+        //return null;      //返回null值
+        //return undefined;  //反回undefined
+        return new Date();  //返回日期对象
+    }
+    var a = new B( 'a' );
+    console.log(a);
+    alert(a);
+</script>
+</body>
+</html>

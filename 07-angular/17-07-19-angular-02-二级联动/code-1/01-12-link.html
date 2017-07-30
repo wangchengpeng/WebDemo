@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-12-自定义指令</title>
+</head>
+<body>
+    <div ng-app="app" ng-init="isShow = true">
+             {{isShow}}
+         
+         <div ng-show="isShow">
+            我是isShow
+         </div> 
+         <button ng-click="isShow = !isShow">
+            点击改变值
+         </button>
+
+    </div>
+         <!--  <div ng-show="isShow">
+        我是ng-show
+    </div>
+    <div ng-defined></div>
+
+    <button ng-click="isShow = !isShow"> 点击改变xxx的值</button> -->
+    <script src="./assets/angular/angular.js"></script>
+    <script>
+        angular.module('app',[])
+        .directive('myDiv',function(){
+            return{
+                template:'<h1>{{content}}</h1>',
+                link:function(scope,element,attrs){
+                    scope.text = '自定义指令';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

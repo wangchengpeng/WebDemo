@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_SPA</title>
+</head>
+<style type="text/css">
+.h {
+    background-color: yellowgreen;
+    height: 50px;
+}
+
+.b {
+    background-color: hotpink;
+    height: 250px;
+}
+
+.f {
+    background-color: skyblue;
+    height: 50px;
+}
+</style>
+
+<body ng-app="app">
+    <div class="h" ng-controller="myc">
+        <input type="text" ng-change="change()" ng-model="url"/>
+    </div>
+    <div class="b" ui-view></div>
+    <div class="f">
+        版权所有 违者必究
+    </div>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+    //创建模块及依赖模块
+    angular.module('app', ['ui.router'])
+        //配置路由规则
+        .config(['$stateProvider', function($stateProvider) {
+            $stateProvider.state('music', {
+
+                    url: '/music',
+                    template:'<h1>我是音乐</h1>'
+                })
+
+
+        }])
+        .controller('myc',['$scope','$state',function($scope,$state) {
+            $scope.change= function(){
+                console.log('1111');
+                //根据输入的值跳转
+                $state.go('music');//state名就ok
+            }
+        }])
+    </script>
+</body>
+
+</html>

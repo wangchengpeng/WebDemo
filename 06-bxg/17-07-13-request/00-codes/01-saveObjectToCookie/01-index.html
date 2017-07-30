@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./jquery-3.2.0/jquery-3.2.0.js"></script>
+  <script src="./jquery-cookie-master/src/jquery.cookie.js"></script>
+  <script>
+
+      var obj = {
+        tc_avater: '123.jpg',
+        tc_name: 'numberimage'
+      };
+
+      $.cookie( 'userInfo', JSON.stringify( obj ) );
+
+
+  </script>
+</body>
+</html>

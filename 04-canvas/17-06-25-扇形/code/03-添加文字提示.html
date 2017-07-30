@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03-添加文字提示</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+		// 1 确定圆心点坐标
+		var x = w / 2,
+			y = h / 2;
+
+		var r = 140;
+		var colors = 'darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray'.split( ',' );
+
+		var start = -90,
+			end;
+
+		// 创造数据 即时通讯工具的使用情况
+		var data = [
+			{ name: 'QQ', value: 500 },
+			{ name: 'Momo', value: 300 },
+			{ name: 'YY', value: 100 },
+			{ name: 'Wechat', value: 600 },
+			{ name: 'Feiq', value: 50 },
+			{ name: 'Tantan', value: 300 },
+			{ name: 'Aliwan', value: 150 }
+		];
+
+		// 求样本总和
+		var sum = 0;
+		data.forEach( function( v ) {
+			sum += v.value;
+			// console.log(sum);
+		} );
+		data.forEach( function( v, i ) {
+			v.angle = v.value * 360 / sum;
+			// 绘制扇形
+			end = start + v.angle;
+			ctx.beginPath();
+			ctx.moveTo( x, y );
+			ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+			// console.log( ctx.arc);
+			ctx.fillStyle = colors[ i ];
+			ctx.fill();
+			// 在绘制下一个扇形时，起始角度 为 当次end
+			start = end;
+		} );
+
+		// 绘制指示线
+		var tipLength = r + 16; // 指示线长度
+		var tipExt = 10; // 指示线的延长线
+		var align = 'left'; // 文字对齐方式
+		start = -90; // 上面绘制过程中，改变了start值。复位
+		data.forEach( function( v, i ) { 
+			var a = v.angle / 2 + start;
+			var x1 = x + tipLength * Math.cos( a * Math.PI / 180 ),
+				y1 = y + tipLength * Math.sin( a * Math.PI / 180 );
+
+			if( x1 - x < 0 ){
+				tipExt = -10;
+				align = 'right';
+			}
+
+			// 绘制指示线
+			ctx.beginPath();
+			ctx.moveTo( x, y );
+			ctx.lineTo( x1, y1 );
+			ctx.lineTo( x1 + tipExt, y1 );
+			ctx.strokeStyle = colors[ i ];
+			ctx.stroke();
+
+			// 绘制文字
+			ctx.textAlign = align;
+			ctx.textBaseline = 'bottom';
+			ctx.fillStyle = colors[ i ];
+			ctx.fillText( ' name: ' + v.name, x1 + tipExt, y1 );
+			ctx.textBaseline = 'top';
+			ctx.fillText( ' value: ' + v.value + ' ', x1 + tipExt, y1 );
+
+			start += v.angle;
+		} );
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>08-面试题6</title>
+</head>
+<body>
+  <script>
+    var n = 10;
+    var m = 20;
+    function foo(){
+      var n = 20;
+      function fn(){
+        var n = 30;
+        console.log( n );   //30;
+        console.log( m );   // 20;
+      }
+      fn();
+      console.log( n );   //20;
+      console.log( m );   //20;
+      console.log( p );
+    }
+  </script>
+</body>
+</html>

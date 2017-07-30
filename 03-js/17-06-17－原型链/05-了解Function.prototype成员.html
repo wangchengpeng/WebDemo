@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>05-了解Function.prototype成员</title>
+</head>
+<body>
+  <script>
+    console.log( Function.prototype );
+    //call方法
+    function fn( n, m ){
+      console.log( this );
+      console.log( this.name );
+      console.log( n + m );  // 3
+    }
+
+    var obj = { name: 'guoguo' };
+    // fn.call( obj, 1, 2 );
+
+    //fn.call( null, 2, 3 );
+    //fn.call( ndefined, 3, 3 );
+    //apply 方法
+
+    fn.apply( obj, [ 6, 9 ]); 
+  </script>
+</body>
+</html>

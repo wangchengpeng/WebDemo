@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15-水平对齐方式</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		// 绘制文本基点
+		var x = w / 2,
+			y = 50;
+
+		ctx.font = '16px simsun';
+
+		var texts = [ 'start', 'end', 'left', 'right', 'center' ];
+		for( var i = 0; i < 5; i++, y += 50 ){
+			ctx.beginPath();
+			ctx.arc( x, y, 4, 0, 2 * Math.PI );
+			ctx.fill();
+			ctx.textAlign = texts[ i ];
+			ctx.fillText( texts[ i ], x, y );
+		}
+
+	</script>
+</body>
+</html>

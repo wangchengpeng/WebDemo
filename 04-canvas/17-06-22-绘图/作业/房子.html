@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas'),
+      ctx = canvas.getContext('2d');
+
+    var h = canvas.height,
+      w = canvas.width;
+
+    var x = w / 2,
+      y = h / 4,
+      size = y;
+
+
+    ctx.lineTo(0, 0);
+    ctx.lineTo(w, 0);
+    ctx.lineTo(w, h);
+    ctx.lineTo(0, h);
+    ctx.closePath();  // 回到原点闭合  
+
+    // ctx.beginPath();  创建行的路径
+    ctx.moveTo(x, y);
+    ctx.strokeStyle = 'hotpink';
+    ctx.lineTo(x - 2 * size, y * 2);
+    ctx.lineTo(x - size, y * 2);
+    ctx.lineTo(x - size, y * 3);
+    ctx.lineTo(x + size, y * 3);
+    ctx.lineTo(x + size, y * 2);
+    ctx.lineTo(x + 2 * size, y * 2);
+    ctx.lineTo(x, y);
+    ctx.closePath();
+    // ctx.fill();
+    ctx.fillStyle = '#daa520';
+    ctx.fill('evenodd');
+  </script>
+</body>
+
+</html>

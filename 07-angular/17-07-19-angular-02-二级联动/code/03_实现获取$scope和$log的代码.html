@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>03_原生实现$scope的获取</title>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        
+        //  app.controller('myc',function($scope,$log){
+        //     //以面向对象的方式做属性的初始化，可以吧当前函数想象成一个构造函数
+        //     this.name = 'jack';
+        //     this.age = 18;
+        //     $scope.sex = '男';
+        //     $log.log('aaaa')
+        // })
+
+        //声明函数 myController(name,fn){     
+        //          
+        //          //2:知道fn中描述的参数顺序以及名称
+        //          //核心就是fn.toString()
+        //          
+        //          //调用该函数
+        //          fn(通过2,传递参数)
+        //   }
+
+        function myController(name,fn){
+
+            var myScope = '我是$scope';
+            var myLog = '我是$log';
+
+            // console.log(fn.toString());
+            var fnStr = fn.toString();
+            //  以( 或者) 来作为条件切割 ($scope,$log)
+            // console.log(fnStr.split(/\(|\)/));
+            var props = fnStr.split(/\(|\)/)[1];
+            //获取元素1  $scope,$log,继续以逗号切割
+            var p1 = props.split(',')[0];
+            var p2 = props.split(',')[1];
+
+            //判断
+            if(p1 === '$scope' && p2 === '$log'){
+                    //第一个参数要传递scope
+                    fn(myScope,myLog)
+            }else if(p1 === '$log' && p2 === '$scope'){
+                fn(myLog,myScope);
+            }else if(p1 === '$scope'){
+                fn(myScope);
+            }else{
+                fn(myLog);
+            }
+            
+        }
+
+
+
+        //调用    
+        // myController('myc',function($scope,$log){
+        //     console.log($scope); //我是$scope
+        //     console.log($log);
+        // })
+        // myController('myc',function($log,$scope){
+        //     console.log($scope); //我是$scope
+        //     console.log($log);
+        // })
+        // myController('myc',function($log){
+        //     console.log($log);//我是$log
+        // })
+        //  myController('myc',function($scope){
+        //     console.log($scope);//我是$scope
+        // })
+    </script>
+
+
+</body>
+</html>

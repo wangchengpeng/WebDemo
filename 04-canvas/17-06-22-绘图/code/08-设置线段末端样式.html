@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08-设置线段末端样式</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		ctx.lineWidth = 10;
+		ctx.strokeStyle = 'rgb( 0, 255, 0 )';
+		ctx.lineCap = 'butt';
+		ctx.moveTo( 50, 70 );
+		ctx.lineTo( 550, 70 );
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.lineCap = 'round';
+		ctx.strokeStyle = 'rgba( 0, 255, 255, .5 )';
+		ctx.moveTo( 50, 90 );
+		ctx.lineTo( 550, 90 );
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.lineCap = 'square';
+		ctx.strokeStyle = '#daa520';
+		ctx.moveTo( 50, 110 );
+		ctx.lineTo( 550, 110 );
+		ctx.stroke();
+	</script>
+</body>
+</html>

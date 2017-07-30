@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form onsubmit="return func();">
+    <input type="text" name="uid">
+    <input type="submit">
+  </form>
+  <script>
+    var form = document.querySelector( 'form' );
+
+    // form.addEventListener( 'submit', function ( e ) {
+    //   console.log( '触发提交' );
+
+    //   return false;
+    //   // e.preventDefault();
+
+    // });
+
+    // form.onsubmit = function () {
+    //   return false;
+    // };
+
+    function func() {
+
+
+      return false;
+    }
+
+  </script>
+</body>
+</html>

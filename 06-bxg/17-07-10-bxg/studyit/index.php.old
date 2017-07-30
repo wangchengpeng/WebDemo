@@ -1,0 +1,62 @@
+<?php
+
+
+
+// include_once()
+// 包含, 相当于 js 中 html 中的 script, link 等标签
+// 其作用就是将 一个路径中的文件直接导入到当前位置
+// include_once( './1.txt' );
+// 等价于
+// 123
+
+
+// include_once( './htmls/index.html' );
+// include_once( './htmls/teacher/teacher_list.html' );
+// include_once( './htmls/advert/advert_list.html' );
+
+
+// get 可以考虑访问 $_GET 数组
+// 锚点
+// 直接在 index.php 后面写上 /index 呢?
+// 
+
+// print_r($_SERVER);
+
+
+
+// 获得用户输入的 地址信息
+// $path_info = $_SERVER[ 'PATH_INFO' ];
+// $path_info = $_GET[ 'PATH_INFO' ];
+
+// if ...
+
+
+// echo $path_info;
+
+// include_once( './htmls' . $path_info . '.html' );
+// print_r( $_SERVER );
+// print_r( $_GET );
+
+// 约定一些规则
+// 如果输入了 index, login, repass 等这类文字, 表示直接访问 htmls 下的文件
+// include_once( './htmls' + ... + '.html' )
+// 如果输入了 teacher/list, user/list 等两个级别的文件夹结构, 那么拼接字符串
+// include_once( './htmls' + ...  + '.html' )
+
+// 如果 $_SERVER 中没有 'PATH_INFO', 会报警告. 还需要判断服务器中是否可以访问到该数据
+// 默认如果不提供任何数据显示的应该是 index 主页
+
+// 如果想要处理的更加完整, 还有判断页面中是否存在该页面
+
+
+
+// $arr = array();
+
+// $arr[ 'name1' ] = 123;
+// $arr[ 'name2' ] = 456;
+
+// // print_r( $arr );
+
+// echo $arr[ 'name3' ];
+
+?>

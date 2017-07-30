@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>03_筛选型的过滤器filter</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    
+    <ul>
+    <!--obj 有什么key，就会去与persons中的元素比较
+
+    {name:'jack'}
+    
+        persons当中的元素，哪一个name属性的值是jack，就显示其，其他的就过滤了
+
+
+    -->
+        <li ng-repeat="person in persons | filter:obj">
+            {{person}}
+        </li>
+    </ul>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        angular.module('app',[])
+        .controller('myc',['$scope',function($scope) {
+
+            $scope.persons = [{
+                name:'小丽',
+                isGood:true
+            },{
+                name:'小红',
+                isGood:true
+            },{
+                name:'小强',
+               isGood:false
+            },{
+                name:'小猪',
+                isGood:false
+            }];
+            //根据条件匹配，满足的情况下显示
+            $scope.obj = {};  //空对象没有key就是无条件
+            $scope.obj = {isGood:true};          
+
+        }])
+
+    </script>
+
+</body>
+</html>

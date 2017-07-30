@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>09-封装混入式继承</title>
+</head>
+<body>
+  <script>
+    function extend( target ){
+      //判断是否传入继承者
+      if( !target ){
+        // 提前返回；
+        return
+      }
+      //  传入来的继承者
+      // 通过argumetns 对象获取被继承的对象
+      var i = 1;
+          l = arguments.length;
+
+      var obj ,
+          k;
+      
+      for( ; i < l ; i++){
+        obj = arguments[ i ];
+
+        for( k in obj ){
+          target[ k ] = obj[ k ];
+          // alert(1);
+        }
+      }
+
+      //将继承者，作为 extend方法的返回值
+      return target;
+    };
+
+    var child = { age: 190 };
+    extend( child, {
+      talk: function(){
+        console.log( 'i just cheduzi.');
+      }
+    },{
+      name: 'guoguo',
+      say: function(){
+        console.log( 'hello, my name is ' + this.name + ',who are u ? ');
+      }
+    })
+
+    /*var child = extend({},{
+      talk: function(){
+        console.log( 'i just cheduzi. ');
+      },{
+        name:'guoguo',
+        say: function(){
+          console.log('hello, my name is ' + this.name + ',who are u ? ');
+        }
+      }
+    }) */
+
+    
+    //  F12 输入child
+  </script>
+</body>
+</html>

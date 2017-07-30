@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>10_检查用户暗号</title>
+</head>
+<body>
+        
+    <div ng-app="app" ng-controller="myController">
+        <input type="text" name="" ng-model="pwd" >
+        {{msg}}
+    </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        app.controller('myController',function($scope){
+            $scope.pwd = '';
+           //监视$scope.pwd属性值的改变，由于页面中的元素已经与内存产生了双向数据绑定，
+        //    由此监视内存中属性的改变，等同于监视页面keyup后值的改变
+           //$scope.$watch($scope.属性||'$scope的属性名',fn(newV,oldV){
+           //               
+           //})
+           $scope.$watch('pwd',function(newV,oldV){
+            console.log('旧值：'+ oldV+'，新值：'+newV);
+                if(newV === '我爱你我爱你'){
+                    $scope.msg = '欢迎亲爱的';
+                }else{
+                    $scope.msg = '走你！';
+                }
+           });
+        })
+    </script>
+</body>
+</html>

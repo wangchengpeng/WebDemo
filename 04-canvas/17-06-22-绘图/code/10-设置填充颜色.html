@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10-设置填充颜色</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		ctx.beginPath();
+		ctx.fillStyle = 'rgb( 255, 0, 0 )';
+		ctx.fillRect( 50, 50, 50, 50 );
+
+		ctx.beginPath();
+		ctx.fillStyle = 'rgba( 0, 255, 0, .5 )';
+		ctx.fillRect( 100, 100, 50, 50 );
+
+		ctx.beginPath();
+		ctx.fillStyle = '#daa520';
+		ctx.fillRect( 150, 150, 50, 50 );
+
+		ctx.beginPath();
+		ctx.fillStyle = 'hotpink';
+		ctx.fillRect( 200, 200, 50, 50 );
+	</script>	
+</body>
+</html>

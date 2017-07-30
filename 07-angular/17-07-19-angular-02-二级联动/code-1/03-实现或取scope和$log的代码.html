@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-03-原生实现$scope的获取</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //  app. controller('myc',function($scope,$log){
+        //     以面向对象的方式做属性的初始化， 可以吧当前的函数想象成一个构造函数
+        //      this.name = 'jack';
+        //      this.age = 18;
+        //      $scope.sex = '男';
+        //      $log.log('aaa')
+        //  })
+
+        // // 声明函数 myController(name,fn){
+
+        //     2.知道fn中描述的参数顺序以及名称
+        //     核心就是fn.toString()
+        //     fn(通过2，传递参数)
+        // }
+
+
+        function myController(name,fn){
+            var myScope = '我是$scope';
+            var myLog = '我是$log';
+
+            var fnStr = fn.toString();
+            // 以(或者)来作为调节切割( $scope,$log)
+            //console.log(fnStr.split(/\(|\)/));
+            var props = fnStr.split(/\(|\)/)[1];
+            var p1 = props.split(',')[0];
+            var p2 = props.split(',')[1];
+
+            if( p1 == '$scope' && p2 === '$log'){
+                fn(myScope,myLog)
+            }else if(p1 === '$log' && p2 === '$scope'){
+                fn(myLog,myScope);
+            }else if(p1 === '$scope'){
+                fn(myScope);
+            }else{
+                fn(muLog);
+            }
+        }
+    </script>
+</body>
+</html>

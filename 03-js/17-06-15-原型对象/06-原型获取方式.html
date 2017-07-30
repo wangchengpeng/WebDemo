@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>06-获取原型</title>
+</head>
+<body>
+  <script>
+    function Person ( name, age ){
+      this.name = name;
+      this.age = age;
+    };
+
+  /*  1. 在默认原型上扩展
+    person.prototype.say = function (){
+      console.log( 'hello girl go play.');
+    };
+    preson.prototype.say = function (){
+      console.log( 'we are cheduzi together. ok? ');
+    };  
+    2 替换默认的原型
+     给函数的prototype属性赋值为其他对象 
+    */
+    
+    Person.prototype = {
+      say:function(){
+        console.log( 'hello xiaoxianrou go play');
+      },
+      talk: function(){
+        console.log( 'we are cheduzi you together. ok?');
+      }
+    };
+
+    var gougou = new Person( 'guo', 19 );
+    var jingjing = new Person( 'jing', 20);
+
+    gougou.say();
+    gougou.talk();
+
+    jingjing.say();
+    jingjing.talk();
+
+
+    console.log( gougou.say == jingjing.say );  //true;
+
+    console.log( guoguo.talk == jingjing.talk ); // true;
+
+    console.log( guoguo.talk == jingjing.talk ); //true 
+
+  </script>
+</body>
+</html>

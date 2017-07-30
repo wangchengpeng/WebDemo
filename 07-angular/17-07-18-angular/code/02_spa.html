@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>02_我们的SPA</title>
+    <style>
+        .h{
+            background-color: hotpink;
+            height: 50px;
+        }
+        .f{
+            background-color: yellowgreen;
+            height: 50px;
+        }
+        .b{
+            background-color: skyblue;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="h">
+        <a href="">首页</a>
+        <a href="#/music">我的音乐</a>
+        <a href="#/movie">我的电影</a>
+        <a href="#/friend">我的好友</a>
+    </div>
+    <div class="b">
+          欢迎光临首页
+    </div>
+    <div class="f">
+            版权所有  违者必须究
+    </div>
+
+    <script type="text/javascript" src="./assets/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+        //当页面被加载，开始注册锚点值的监听事件
+        window.addEventListener('hashchange',function(){
+            // console.log(location.hash);
+            // 判断用户的行为，获取数据并插入到DOM中
+            var myUrl = '';
+            switch(location.hash){
+                case '#/music':
+                    myUrl = './music.json';
+                    break;
+                 case '#/movie':
+                    myUrl = './movie.json';
+                    break;
+                 case '#/friend':
+                    myUrl = './friend.json';
+                    break;
+            }
+
+            //file -> http 
+            //协议的改变  （协议、主机、端口发生改变，就跨域了）
+            $.ajax({
+                url:myUrl,
+                type:'get',
+                dataType:'json',  //将数据转化成json格式
+                success:function(data){
+                    $('.b').html(data);
+                }
+            })
+
+
+
+
+
+
+        })
+
+
+    </script>
+
+</body>
+</html>

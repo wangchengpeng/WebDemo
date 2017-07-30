@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09-设置相交线拐点样式</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		var deep = 200;
+		var x = 50,
+			y = 50;
+
+		ctx.moveTo( x, y );
+		ctx.lineTo( w / 2, deep + y );
+		ctx.lineTo( w - x, y );
+		ctx.lineJoin = 'bevel';
+		ctx.lineWidth = 24;
+		ctx.stroke();
+
+		y += 50;
+		ctx.beginPath();
+		ctx.moveTo( x, y );
+		ctx.lineTo( w / 2, deep + y );
+		ctx.lineTo( w - x, y );
+		ctx.lineJoin = 'round';
+		ctx.lineWidth = 24;
+		ctx.stroke();
+
+		y += 50;
+		ctx.beginPath();
+		ctx.moveTo( x, y );
+		ctx.lineTo( w / 2, deep + y );
+		ctx.lineTo( w - x, y );
+		ctx.lineJoin = 'miter';
+		ctx.lineWidth = 24;
+		ctx.stroke();
+
+	</script>
+</body>
+</html>

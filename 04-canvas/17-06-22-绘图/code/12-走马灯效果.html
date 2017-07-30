@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		// 清楚指定矩形范围内的所有图形
+		var offset = 0;
+		ctx.setLineDash( [ 4, 8, 5 ] );
+		window.setInterval( function() {
+			ctx.lineDashOffset = --offset;
+			ctx.clearRect( 0, 0, w, h );
+			ctx.beginPath();
+			ctx.moveTo( 50, 50 );
+			ctx.lineTo( 350, 50 );
+			ctx.lineTo( 350, 250 );
+			ctx.lineTo( 50, 250 );
+			ctx.closePath();
+			ctx.stroke();
+		}, 20 );
+	</script>
+</body>
+</html>

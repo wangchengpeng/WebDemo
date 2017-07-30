@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body ng-app="app" ng-controller="myc">
+    开发语言类别<select ng-model="p" ng-options="city.roleName for city in city in ctiys" ng-change="change()">
+        <option value=""> 请选择学科</option>
+        </select>
+
+    学科<select ng-model="s" ng-options="sub.roleName for sub in subs" >
+            <option value="">请选择学科</option>
+    </select>
+
+    <script src="./assets/angular/angular.js"></script>
+    <script>
+        angular.module('app', [])
+        .controller('myc',[$scope],function($scope){
+            $scope.p ={};
+            $scope.subs = [];
+            //当父级下拉改变
+            $scope.change = function(){
+                console.log($scope.p);
+            }
+        })
+    </script>
+</body>
+
+</html>

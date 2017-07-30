@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>17-测量文本</title>
+		<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		var str = 'hello boy';
+
+		console.log( ctx.font );
+
+		var mt = ctx.measureText( str );
+		console.log( mt.width );
+
+		ctx.font = '24px simsun';
+		mt = ctx.measureText( str );
+		console.log( mt.width );
+	</script>
+</body>
+</html>

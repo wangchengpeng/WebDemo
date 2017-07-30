@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="key"><br>
+  <input type="text" id="value"><br>
+  <button id="save"> 保存数据 </button><br>
+  <a href="./subsub/02-cookie02.html"> 跳转02 </a>
+  <a href="../03-cookie03.html"> 跳转03 </a>
+  <a href="./serve/01-index.php">请求 php</a>
+  <script>
+    document.querySelector( '#save' ).onclick = function () {
+
+      document.cookie = document.querySelector( '#key' ).value + '=' + document.querySelector( '#value' ).value;
+
+      alert( 'success' );
+    };
+  </script>
+</body>
+</html>

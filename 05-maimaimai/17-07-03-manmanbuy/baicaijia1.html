@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--引入第三方框架-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--引入自己的css 文件-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/baicaijia.css">
+
+
+
+
+</head>
+
+<body>
+    <!--header start  -->
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img src="images/header_logo.png" alt=""></a>
+        </div>
+        <div class="app-download">
+            <a href="#"><img src="images/header_app.png" alt=""></a>
+        </div>
+    </header>
+    <!--header start  -->
+
+    <!--导航栏 start-->
+    <div id="wrapper" class="clearfix">
+        <ul class="clearfix baicaijia-title ul-wapper">
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+            <li>菜单</li>
+        </ul>
+    </div>
+
+    <!--导航栏 end-->
+
+
+
+
+    <!--footer  start -->
+    <footer id="footer">
+        <div class="loginbox clearfix">
+            <div class="login">
+                <a href="#">登录</a>
+            </div>
+            <div class="resgiter">
+                <a href="#">注册</a>
+            </div>
+            <div class="goTop">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">
+                <a href="#">返回顶部</a>
+            </div>
+        </div>
+        <div class="login-bottom">
+            <p class="p-top">
+                <span>手机APP下载</span>
+                <span>慢慢买手机版</span>
+                <span> -- 掌上比价平台</span>
+            </p>
+            <p>
+
+                m.manmanbuy.com
+
+            </p>
+        </div>
+    </footer>
+    <!--fotter start  -->
+    <!--菜单展示模板  start-->
+    <script type="text/html" id="categoryTitleListTpl">
+        {{each result as value index}}
+        <li>
+            <a href="./productlist.html?category={{value.category}}&categoryid={{value.categoryId}}&pageid=1">{{value.category}}</a>
+        </li>
+        {{/each}}
+    </script>
+    <!--菜单展示模板  end-->
+
+
+    <!--categoryTitlTpl展示模板  start-->
+    <script type="text/html" id="baicaijiaTitleTpl">
+        {{each result as value index}}
+        <li data-titleid={{value.titleId}}>
+            <a href="#">
+
+                {{value.title}}
+            </a>
+
+        </li>
+
+
+        {{/each}}
+    </script>
+    <!--categoryTitlTpl列表展示模板  end-->
+
+    <!--引入js文件-->
+    <!--<script src="./lib/jquery/jquery.min.js"></script>-->
+    <!--<script src="./lib/bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="./js/zepto.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="js/url.js"></script>
+
+    <!--引入自己的js-->
+    <script src="js/baicaijia2.js"></script>
+
+</body>
+
+</html>
+

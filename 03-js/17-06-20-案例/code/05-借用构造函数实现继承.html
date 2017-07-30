@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-借用构造函数</title>
+</head>
+<body>
+	<script>
+		function Parent( name, age, gender ){
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+		}
+
+
+
+		function Child( name, age, gender,address ){
+			// 通过call方法 去改变parent函数中this 的指向
+			Parent.call( this, name, age, gender );
+			this.address = address;
+		}
+
+		var child = new Child( 'child', 20, 'lady', 'china' );
+		console.log( child );
+	</script>
+</body>
+</html>

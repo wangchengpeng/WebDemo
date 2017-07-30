@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>15-面向对象绘制大饼图</title>
+</head>
+<body>
+	<div id="pie"></div>
+	<script>
+		// 需要Pie对象去绘制大饼图
+		// 属性
+		// 数据 data
+		// 扇形的颜色 colors
+		// 目标容器 target
+		// 方法
+		// 封装绘制扇形方法 sector
+		// 计算每个扇形角度的方法 computedAngle
+		// 绘制文字提示的方法 drawTip
+		function Pie( options ) {
+			this.data = options.data;
+			this.colors = options.colors || 'blueviolet,brown,burlywood,cadetblue,chartreuse,chocolate,coral,cornflowerblue,cornsilk'.split( ',' );
+			this.target = options.target;
+			var canvas = document.createElement( 'canvas' );
+			canvas.width = 600;
+			canvas.height = 400;
+			this.context = canvas.getContext( '2d' );
+
+			this.init();
+		}
+
+		Pie.prototype = {
+			constructor: Pie,
+			sector: function( x, y, r, start, end, color ) {
+				var ctx = this.context;
+				ctx.beginPath();
+				ctx.moveTo( x, y );
+				ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+				ctx.closePath();
+				ctx.fillStyle = color;
+				ctx.fill();
+			},
+			computedAngle: function() {
+				var total = this.data.total, // 样本总和
+					list = this.data.list;   // 数据数组
+				// 遍历数据
+				list.forEach( function( v ) {
+					v.angle = v.value * 360 / total;
+				} );
+			},
+			drawSectors: function () {
+				var self = this; // 缓存Pie对象
+				var list = this.data.list;
+				var start = -90,
+					end;
+
+				var ctx = this.context; 
+
+				// 先计算扇形占用角度
+				this.computedAngle();
+
+				ctx.save();
+				ctx.translate( 300, 200 );
+				list.forEach( function( v, i ) {
+					end = start + v.angle;
+					self.sector( 0, 0, 140, start, end, self.colors[ i ] );
+					start = end;
+				} );
+				ctx.restore();
+				// 绘制文字指示线
+				this.drawTip();
+			},
+			init:function() {
+				this.drawSectors();
+				document.querySelector( this.target ).appendChild( this.context.canvas );
+			},
+			drawTip: function() {
+				var me = this;
+				var ctx = this.context,
+					list = this.data.list;
+
+				var start = -90;
+
+				var tipLength = 140 + 20,
+					tipExt = 10,
+					align = 'left';
+				ctx.save();
+				ctx.translate( 300, 200 );
+				list.forEach( function( v, i ) {
+					var angle = v.angle / 2 + start;
+					var x = Math.cos( angle * Math.PI / 180 ) * tipLength,
+						y = Math.sin( angle * Math.PI / 180 ) * tipLength;
+
+					if( x < 0 ){
+						tipExt = -10;
+						align = 'right';
+					}
+
+					ctx.beginPath();
+					ctx.moveTo( 0, 0 );
+					ctx.lineTo( x, y );
+					ctx.lineTo( x + tipExt, y );
+					ctx.fillStyle = ctx.strokeStyle = me.colors[ i ];
+					ctx.stroke();
+					// 绘制文本
+					ctx.textAlign = align;
+					ctx.textBaseline = 'bottom';
+					ctx.fillText( ' name: ' + v.name + ' ', x + tipExt, y );
+					ctx.textBaseline = 'top';
+					ctx.fillText( ' value: ' + v.value + ' ', x + tipExt, y );
+					start += v.angle;
+				} );
+			}
+		};
+		var data = { total: 2000, list: [
+			{ name: 'QQ', value: 500 },
+			{ name: 'Tantan', value: 300 },
+			{ name: 'YY', value: 100 },
+			{ name: 'Wechat', value: 600 },
+			{ name: 'Feiq', value: 50 },
+			{ name: 'Momo', value: 300 },
+			{ name: 'Aliwan', value: 150 }
+		] };
+
+		new Pie( {
+			target: '#pie',
+			data: data
+		} )
+	</script>
+</body>
+</html>

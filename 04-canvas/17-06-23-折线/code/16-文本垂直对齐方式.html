@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>16-文本垂直对齐方式</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		ctx.font = '24px simsun';
+		ctx.textAlign = 'center';
+		var baselines = 'alphabetic|top|hanging|middle|ideographic|bottom'.split( '|' );
+		var x = 50,
+			y = 50;
+
+		for( var i = 0; i < 6; i++, y += 50 ){
+			ctx.beginPath();
+			ctx.moveTo( x, y );
+			ctx.lineTo( w - x, y );
+			ctx.stroke();
+
+			ctx.textBaseline = baselines[ i ];
+			ctx.fillText( baselines[ i ], w / 2 - x, y );
+		}
+	</script>
+</body>
+</html>

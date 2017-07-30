@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06-扇形动画</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		var x0 = w / 2,
+			y0 = h / 2;
+
+		var step = 0; // 度数
+		// 度数 转 弧度
+		function toRadian( angle ) {
+			return angle * Math.PI / 180;
+		}
+
+		// 1: 固定起始角度
+		var start = toRadian( -30 );
+		var end;
+
+		var timer = window.setInterval( function() {
+			// 获取扇形终止角度
+			end = start + toRadian( step );
+			if( end < toRadian( -150 ) ){
+				window.clearInterval( timer );
+				alert( 'complete.')
+				return; // 提前返回
+			}
+			// 开始绘制扇形
+			ctx.beginPath();
+			ctx.moveTo( x0, y0 );
+			ctx.arc( x0, y0, 160, start, end, true );
+			ctx.closePath();
+			ctx.stroke();
+			ctx.fill();
+			// 让步伐自增
+			step--;
+		}, 20 );
+
+		// ctx.beginPath();
+		// ctx.moveTo( x0, y0 );
+		// ctx.arc( x0, y0, 160, -30 * Math.PI / 180, -150 * Math.PI / 180, true );
+		// ctx.closePath();
+		// ctx.stroke();
+	</script>
+</body>
+</html>

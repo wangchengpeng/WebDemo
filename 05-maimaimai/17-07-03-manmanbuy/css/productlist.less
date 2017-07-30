@@ -1,0 +1,93 @@
+//  product  start
+#product{
+    .product-title-list{
+          height: 38px;
+          padding:0 10px;
+          line-height: 38px;
+         background-color: #ebebeb;
+        >.left{
+            float: left;
+            
+            span{
+                margin-left: 2px;
+                &:after{
+                    content:">"
+                   
+                }
+            }
+        }
+        >.right{
+            float: right;
+            border-radius:10px;
+                height: 28px;
+                line-height: 28px;
+                display: block;
+                padding: 0 16px;
+                margin-top: 4px;
+                 background-color: #d0d0d0;
+           
+        }
+    }
+    .product-list{
+        li{
+            padding:10px;
+            border:1px solid #e7e7e7;
+            box-sizing: content-box;
+           a{
+                .pic{
+                width: 110px;
+                float: left;
+                img{
+                    width: 100px;       
+                    height: 100px;
+                }
+            }
+            .info{
+                padding-left: 110px;
+                h3{
+                    color: #333333;
+                    line-height: 22px;
+                    min-height: 44px;
+                    margin-top: 0;
+                    word-break: break-all;
+                }
+                .prize{
+                    font-size:18px;
+                        font-size: 18px;
+                        color: #ea3900;
+                        
+                }
+                .other{
+                        color: #a1a1a1;
+                        font-size: 12px;
+                        margin-top: 5px;
+                }
+            }
+           }
+        }
+
+    }
+    .page{
+        display: flex;
+        span{
+            flex:1;
+            text-align: center;         
+            >a{
+                font-size: 14px;
+                line-height: 32px;
+                overflow: hidden;
+                padding: 8px 20px;
+                border-radius:5px;
+                background-color: #d4d4d4;
+            }
+            >select{
+                border: 1px solid #bababa;
+                font-size: 16px;
+                padding: 2px 15px;
+                height: 34px;
+            }
+        }
+    }
+}
+
+//  product  :end

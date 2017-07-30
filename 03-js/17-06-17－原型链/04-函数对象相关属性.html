@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>04-函数对象相关属性</title>
+</head>
+<body>
+  <script>
+
+    //caller 返回调用函数的函数
+    function foo(){
+      console.log( arguments.callee ); //输出  foo 函数。
+      console.log( arguments );
+      fn();
+    }
+    function fn(){
+      console.log( fn.caller );  //foo
+    }
+    foo();
+
+    var f2 = new Function( 'alert(1)' );
+    // ==> var f2 function(){ alert(1) };
+    var  f3 = new Function( 'n', 'alert( n )' );
+    //==> var f3 = function( n ){ alert( n );} ;
+    var f4 = new Function('n', 'm', 'alert( n + m );');
+    
+    console.log( f2.length );
+    console.log( f3.length );
+    console.lgo( f4.length );
+  </script>
+</body>
+</html>

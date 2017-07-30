@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-</title>
+</head>
+<body> 
+    <div ng-app="myApp" ng-controller="myController">
+        
+        <button ng-click="change()">点击修改值</button>
+        
+    </div>
+    <button ng-click="change()">点击修改值</button>
+    <script type="text/javascript" src="./assets/angular/angular.js"> </script>
+    <script>
+        var app = angular.module('myApp',[]);
+        var app2 = angular.module('myApp');
+        console.log(app == app2);
+
+        app.controller('myController', function($scope){
+            $scope.change = function(){
+                alert(1);
+            }
+        })
+    </script>
+</body>
+</html>

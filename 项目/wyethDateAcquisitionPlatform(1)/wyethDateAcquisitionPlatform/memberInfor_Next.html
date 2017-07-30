@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>会员资料下一步-memberInfor_Next</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/memberInformation.css"/>
+		<script type="text/javascript" src="js/rem.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		<form action="">
+			<!--主体模块设置mainBox-->
+			<div class="mainBox">
+				<!--产品类型模块设置productTypeBox-->
+				<div class="productTypeBox">
+					<!--每一小块产品类型设置productType  1-->
+					<p class="productType productType_bg1">启赋</p>
+					<!--每一小块产品类型设置productType  复制   2-->
+					<p class="productType productType_bg1">金装经典版</p>
+					<!--每一小块产品类型设置productType  复制   3-->
+					<p class="productType productType_bg1">金装旗舰版</p>
+					<!--每一小块产品类型设置productType  复制   4-->
+					<p class="productType productType_bg1">BabyNew</p>
+					<!--每一小块产品类型设置productType  复制 5-->
+					<p class="productType productType_bg1">港版</p>
+					<!--每一小块产品类型设置productType  复制  6-->
+					<p class="productType productType_bg1">铂臻</p>
+				</div>
+				<!--产品表格模块设置proTab-->
+				<table class="proTab">
+					<tr class="tr1">
+						<td>产品名称</td>
+						<td>出货量</td>
+					</tr>
+					<tr>
+						<td>总开单数</td>
+						<td>点击输入</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+					<tr>
+						<td>启赋一阶段400g</td>
+						<td>
+							<input type="text" value="2" class="shipment" />
+						</td>
+					</tr>
+				</table>
+				<!--按钮模块设置btnBox-->
+				<div class="btnBox">
+					<input type="button" value="提交" class="tjBtn" />
+					<input type="button" value="取消" class="qxBtn" />
+				</div>
+			</div>
+		</form>
+		<script>
+			$('.productType').click(function(){
+				$(this).removeClass('productType_bg1');
+				$(this).addClass('productType_bg2');
+				$(this).siblings().removeClass('productType_bg2');
+				$(this).siblings().addClass('productType_bg1');
+			});
+		</script>
+	</body>
+</html>

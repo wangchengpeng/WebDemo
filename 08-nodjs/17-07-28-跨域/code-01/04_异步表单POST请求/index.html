@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>04yi步的方式提交POST请求</title>
+</head>
+<body>
+    <!-- 异步提交action，不需要了 -->
+    <form>
+        用户名:<input type="text" name="">
+        密码:<input type="password" name="">
+        <input type="submit" name="" value="登录">
+    </form>
+
+    <script type="text/javascript">
+      document.querySelector('form').onsubmit = function(e){
+
+        //接受值
+            var username = document.querySelectorAll('input')[0].value;
+            var password = document.querySelectorAll('input')[1].value;
+
+            //formdata
+            var qs = 'username=' +username + '&password=' + password;
+
+            //1:创建对象
+            var xhr = new XMLHttpRequest();
+            //2:打开连接
+            xhr.open('post','/login');
+
+            //2.5 设置键值对的头
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+            //3:设置响应
+            xhr.onreadystatechange = function(){
+                if(xhr.status === 200 && xhr.readyState === 4){
+                   //{"code":"001","msg":"ç™»å½•æˆåŠŸ"}
+                   var obj = JSON.parse(xhr.responseText);
+                   if(obj.code === '001'){
+                        alert(obj.msg);
+                   }else{
+                        // 也可以跳转到一些别的页面 window.location = '/xxx'
+                        alert(obj.msg);
+                   }
+                }
+            }
+            //4:发送
+            xhr.send(qs);
+
+            return false;
+      }
+// 笔记开始 console.log(xhr.responseText); 
+//<html>
+// <head>
+//     <meta charset="UTF-8">
+//     <title>Document</title>
+// </head>
+// <body>
+//     成功
+// </body>
+// </html>
+// 
+// 
+// 
+// 
+// 服务器 <span>哈哈</span>
+// 服务器 响应 哈哈     页面来决定<span></span>
+// 
+// 笔记结束
+    </script>
+
+</body>
+</html>

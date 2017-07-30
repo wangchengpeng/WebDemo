@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-绘制镂空的矩形</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="500"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var x = 100,
+			y = 100;
+
+		var outw = 400,
+			outh = 300;
+
+		var innerw = 200,
+			innerh = 150;
+
+		// 绘制外层的矩形 - 逆时针
+		ctx.moveTo( x, y );
+		ctx.lineTo( x, y + outh );
+		ctx.lineTo( x + outw, y + outh );
+		ctx.lineTo( x + outw, y );
+		ctx.closePath();
+		// 绘制内层的矩形 - 顺时针
+		x += 100;
+		y += 75;
+
+		/*ctx.moveTo( x, y );
+		ctx.lineTo( x + innerw, y );
+		ctx.lineTo( x + innerw, y + innerh );
+		ctx.lineTo( x, y + innerh );*/
+		// 改成逆时针绘制
+		ctx.moveTo( x, y );
+		ctx.lineTo( x, y + innerh );
+		ctx.lineTo( x + innerw, y + innerh );
+		ctx.lineTo( x + innerw, y );
+		ctx.closePath();
+
+		
+
+		// ctx.fill();
+		// 使用奇偶原则填充
+		ctx.fill( 'evenodd' );
+	</script>
+</body>
+</html>

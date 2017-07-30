@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06-线宽</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		ctx.lineWidth = 4;
+		ctx.moveTo( 50, 50 );
+		ctx.lineTo( 550, 50 );
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.moveTo( 50, 150 );
+		ctx.lineTo( 550, 150 );
+		ctx.stroke();
+	</script>
+</body>
+</html>

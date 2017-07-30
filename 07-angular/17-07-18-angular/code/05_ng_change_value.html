@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>05_一向数据绑定</title>
+</head>
+<body>
+    <div ng-app ng-init=" num = 8">
+
+            改变输入数据出发Num值改变：
+            <input type="text" name="" ng-change="num = num + 1" ng-model="tmp">
+        
+            <hr/>
+            {{num}}
+            <!-- {{也可以用于给属性输出}} -->
+            <input type="text" name="" value="{{num}}">
+    </div>
+
+    
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+</body>
+</html>

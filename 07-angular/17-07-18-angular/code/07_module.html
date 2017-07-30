@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>07_模块的使用</title>
+</head>
+<body>
+<!-- ng-app="xxx" 使用指定的module来管理 -->
+    <div ng-app="myApp" ng-controller="myController">
+        
+        
+        <button ng-click="change()">点击后修改值</button>
+
+
+    </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        
+        //创建模块对象
+        var app = angular.module('myApp',[]); //如果第二个参数没有传递就是获取模块,传递了就是创建模块
+        //获取一个模块
+        var app2 = angular.module('myApp');
+        console.log(app === app2);
+
+        //控制器,所有模块相关的功能都由模块对象来创建
+        //很多时候我们都用app.xxxx ||| app.xxxxx
+        app.controller('myController',function($scope){
+            //$scope挂载函数
+            $scope.change = function(){
+                alert(1);
+            }
+        });
+
+        //以上代码类似 var xxx = fn;
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-spa.html</title>
+    <style>
+        header {
+            background-color: #cd1;
+            height: 50px;
+        }
+        footer{
+            background-color: #392;
+            height: 50px;
+        }
+        .bodyer{
+            background-color: #1dd;
+            height: 300px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="">首页</a>
+        <a href="#/music">我的音乐</a>
+        <a href="#/movie">我的电影</a>
+        <a href="#/friend">我的好友</a>
+    </header>
+    <div class="bodyer">
+        欢迎光临首页
+    </div>
+    <footer>
+        版权所有
+    </footer>
+
+    <script src="./assets/jquery/dist/jquery.js"></script>
+    <script>
+        //当页面被加载，开始注册锚点值的监听事件
+        window.addEventListener('hashchange', function(){
+            // console.log(location.hash);
+            // 判断用户的行为，获取数据并插入到DOM中
+            var myUrl = '';
+            switch(location.hash){
+                case '#/music':
+                    myUrl = './music.json';
+                    break;
+                case '#/movie':
+                    myUrl = './movie.json';
+                    break;
+                case '#/friend':
+                    myUrl = './friend.json';
+                    break;
+            }
+
+            $.ajax({
+                url:myUrl,
+                type:'get',
+                dataType:'json',
+                success:function(data){
+                    $('.bodyer').html(data);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>00-作业题</title>
+</head>
+
+<body>
+
+
+    <!--
+        replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+
+        toUpperCase() 方法用于把字符串转换为大写。
+
+ -->
+
+
+    <div id="parent">
+        <p>123</p>
+        <a>456</a> akjfdk
+        <p>789</p>
+        <span> JQK </span>
+    </div>
+
+
+    <script>
+        // 2. 定义一个日期格式化函数，将日期格式 转换成 yyyy-MM-dd
+
+
+        function dateFormat(date) {
+            date = new Date(date);
+            var years = date.getFullYear();
+            month = 
+        }
+        function addZero(val) {
+            return val < 10 ? '0' + val : val;
+        }
+
+dateFormat( '2017/1/2' );
+
+
+ 
+        // 1. 扩展replace方法, 鸭子模型 Docking Type
+        //转换驼峰命名
+
+
+        //方法一 
+
+        function toCamel(val) {
+            // 1 将val以 - 切割字符串，得到所有单词。将第二个单词开始 首字母变成大写即可
+            // 得到所有单词
+            var words = val.split('-')
+            var i = 1, l = words.length;
+            var word;
+            // 从第一个单词开始遍历
+            for (; i < l; i++) {
+                word = words[i];
+                // 获取当前单词的第一个字符
+                var firstChar = word.charAt(0).toUpperCase(); // Bbb
+                words[i] = firstChar + word.slice(1);
+            }
+            // words ==> [ 'aaa' 'Bbb', 'Ccc', 'Ddd' ]
+            return words.join('');
+        }
+        console.log(toCa mel('aaa-bbb-ccc-ddd'));
+
+
+        //方法二
+        function toCamel(val) {
+            return val.replace(/-(\w)/g, function (whole, group, i, h) {
+                console.log(h);
+                //toUpperCase(); 字母大写；
+                return group.toUpperCase();
+            });
+        }
+
+
+        console.log(toCamel('aaa-bbb-ccc-ddd-eee'));
+
+
+
+        // 3. 用两种方式（使用非兼容性的属性）获取指定div下的所有元素节点
+
+        function getChildren(parent) {
+            var ret = [];
+            //获取所有子节点
+            var childs = parent.childnNodes;
+            //alert("子元素"+childs);
+            //子元素的个数
+            var i = 0;
+            l = childs.lenght;
+            for (; i < l; i++) {
+                //判断当前子节点是否为元素节点
+                if (childs[i].nodeType == 1) {
+                    //如果是就把它添加到数组中；                    
+                    ret.push(childs[i]);
+                }
+            }
+            //反回这个数组；
+            return ret;
+            alert(1);
+        }
+        console.log(getChldren(document.getElementById("parent")));
+
+
+        //while  循环
+        function getChldren(parent) {
+            var ret = [],
+                node = parent.firstChild;
+            console.log("node" + node);
+            while (node) {
+                if (node.nodeType == 1) {
+                    ret.push(node);
+                }
+                node = node.nextSibling
+            }
+            return ret;
+        }
+
+        console.log(getChldren(document.getElementById("parent")));
+
+
+        function getChildren(parent) {
+            var ret = [];
+            node = node.firstChild;
+
+            do {
+                if (node.node.nodeType == 1) {
+                    ret.push(node);
+                }
+            } while (node = node.nextSibling);
+            return ret;
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>

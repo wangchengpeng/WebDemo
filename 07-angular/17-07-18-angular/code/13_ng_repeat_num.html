@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>13_通过数组中的num来做ng-repeat</title>
+</head>
+<body>
+    
+    <div ng-app="app" ng-controller="myC">
+        <ul>
+            <li ng-repeat="num in nums track by $index">{{num}}</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        //通过app的模块对象创建小弟
+        app.controller('myC',function($scope){
+            $scope.nums = [1,2,3,4,5,1];
+            //ng-repeat中不允许重复的元素
+        });
+    </script>
+</body>
+</html>

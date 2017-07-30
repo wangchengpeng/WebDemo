@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学IT - 后台管理系统</title>
+    <?php include_once( './htmls/common/styles.html' ) ?>
+</head>
+<body>
+    <!-- 登录 -->
+    <div class="login">
+        <div class="login-wrap">
+            <div class="avatar">
+                <img src="/uploads/monkey.png" class="img-circle" alt="">
+            </div>
+            <form id="loginForm" class="col-md-offset-1 col-md-10">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input type="text" class="form-control" name="tc_name" placeholder="用户名" value="前端学院">
+                </div>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key"></i>
+                    </span>
+                    <input type="password" class="form-control" name="tc_pass" placeholder="密码" value="123456">
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">登 录</button>
+            </form>
+        </div>
+    </div>
+    
+    <?php include_once( './htmls/common/script.html' ) ?>
+    <script>
+
+
+        // 进行登录操作
+        $( '#loginForm' ).on( 'submit', function () {
+
+            // 发送 ajax 请求
+            $.ajax({
+                url: '/api/login',
+                type: 'post',
+                data: $( this ).serialize(),
+                success: function ( info ) {
+                    if ( info.code == 200 ) {
+                        // 表示登录成功
+                        alert( '登录成功' );
+
+                        // 将用户的数据存储到 cookie 中
+                        $.cookie( 'userInfo', JSON.stringify( info.result ), { path: '/', expires: 1 } );
+
+                        location.pathname = '/';
+                        // console.log( info );
+                    }
+                }
+            })
+
+            return false;
+        } )
+
+    </script>
+</body>
+</html>

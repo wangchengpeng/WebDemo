@@ -1,0 +1,23 @@
+#wrapper {
+  overflow: hidden;
+}
+#wrapper ul {
+  overflow: hidden;
+}
+#wrapper ul li {
+  float: left;
+  height: 38px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 36px;
+}
+#wrapper ul li.active a {
+  color: red;
+  border-bottom: 2px solid red;
+}
+#wrapper ul li a {
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 0 12px;
+}

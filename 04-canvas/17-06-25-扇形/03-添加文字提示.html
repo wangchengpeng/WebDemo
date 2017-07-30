@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>03-添加文字提示</title>
+  <!--cc:ie6-->
+  <style>
+    #canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas'),
+      ctx = canvas.getContext('2d');
+
+    var w = canvas.width,
+      h = canvas.height;
+
+    // 找到中心
+    var x = w / 2,
+      y = h / 2;
+
+    // 圆到的半径
+    var r = 140;
+    var colors = 'darkolivegreen,darkorange,darkorchid,darkred,darksalmon,darkseagreen,darkslateblue,darkslategray'.split(',');
+
+    // 开始的角度是-90度；
+    var start = -90,
+      end;
+
+    //  获取到的数据；
+    var data = [
+      { name: 'QQ', value: 500 },
+      { name: 'Momo', value: 300 },
+      { name: 'YY', value: 100 },
+      { name: 'Wechat', value: 600 },
+      { name: 'Feiq', value: 50 },
+      { name: 'Tantan', value: 300 },
+      { name: 'Aliwan', value: 150 }
+    ];
+
+    // 求数据的总和； 
+    var sum = 0;
+    data.forEach(function (v) {
+      sum += v.value;
+    });
+
+    //求每个数据所占的比例 并在扇形图里按比例画出；
+    data.forEach(function (v, i) {
+      v.angle = v.value * 360 / sum;
+      //结束角度
+      end = start + v.angle;
+      ctx.beginPath();
+      // 中心点 
+      ctx.moveTo(x, y);
+      // 绘制扇形
+      ctx.arc(x, y, r, start * Math.PI / 180, end * Math.PI / 180);
+      // 扇形颜色
+      ctx.fillStyle = colors[i];
+      // 填充颜色 
+      ctx.fill();
+      // 让结束角度等于下一个的开始角度
+      start = end;
+    });
+
+    // 绘制文字提示信息
+    // 线条的长度
+    var tipLength = r + 16;
+    // 横线的长度
+    var tipExt = 10;
+    // 文本对齐
+    var align = 'left';
+    // 扇形的起始角度
+    start = -90;
+
+    data.forEach(function (v, i) {
+      // 找到扇形的二分之一度数
+      var a = v.angle / 2 + start;
+      // 计算线条的结束坐标 x1,  y1 
+      var x1 = x + tipLength * Math.cos(a * Math.PI / 180),
+        y1 = y + tipLength * Math.sin(a * Math.PI / 180);
+
+      // 如果结束坐标的x值小于开始坐标的x值说明线条在饼图的左边
+      // 就让横线的方向为反方向画，  文本对齐方式为右对齐；
+      if (x1 - x < 0) {
+        tipExt = -10;
+        align = 'right';
+      }
+
+      // 绘制指示线
+      ctx.beginPath();
+      // 开始坐标
+      ctx.moveTo(x, y);
+      // 结束坐标
+      ctx.lineTo(x1, y1);
+      //横线的结束坐标
+      ctx.lineTo(x1 + tipExt, y1);
+      // 线条颜色
+      ctx.strokeStyle = colors[i];
+      // 描边
+      ctx.stroke();
+
+      // 内容对齐方式
+      ctx.textAlign = align;
+      // 文本下对齐
+      ctx.textBaseline = 'bottom';
+      // 字体颜色
+      ctx.fillStyle = colors[i];
+      // 文本内容
+      ctx.fillText(' name: ' + v.name, x1 + tipExt, y1);
+      // 文本对齐方式
+      ctx.textBaseline = 'top';
+      // 文本内容
+      ctx.fillText(' value: ' + v.value + ' ', x1 + tipExt, y1);
+
+      // 让角度为下一个扇形开始角度 
+      start += v.angle;
+    });
+  </script>
+</body>
+
+</html>

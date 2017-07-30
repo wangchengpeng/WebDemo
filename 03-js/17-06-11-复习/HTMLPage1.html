@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+    var divH = document.getElementById("h");
+    var divM = document.getElementById("m");
+    var divS = document.getElementById("s");
+    function clock() {
+        var date = new Date();
+        var ms = date.getMilliseconds();  //过去的毫秒；
+        console.log(date.getSeconds());  //过去的秒;
+        //var s = date.getSeconds() + ms / 1000;  //过去的秒加过去的毫秒；
+        divS.style.transform = "rotate(" + (s * 6) + "deg)";
+        var m = date.getMinutes() + s / 60;
+        divM.style.transform = "rotate(" + (m * 6) + "deg)";
+        var h = date.getHours() + m / 60;//过去了的分钟数 也要算上 比如过去了30分钟 30/60 = 0.5
+        divH.style.transform = "rotate(" + (h * 30) + "deg)";
+    }
+    clock();
+    setInterval(clock, 50);
+    </script>
+
+</body>
+</html>
+

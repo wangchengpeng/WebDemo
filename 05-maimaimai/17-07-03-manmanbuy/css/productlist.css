@@ -1,0 +1,78 @@
+#product .product-title-list {
+  height: 38px;
+  padding: 0 10px;
+  line-height: 38px;
+  background-color: #ebebeb;
+}
+#product .product-title-list > .left {
+  float: left;
+}
+#product .product-title-list > .left span {
+  margin-left: 2px;
+}
+#product .product-title-list > .left span:after {
+  content: ">";
+}
+#product .product-title-list > .right {
+  float: right;
+  border-radius: 10px;
+  height: 28px;
+  line-height: 28px;
+  display: block;
+  padding: 0 16px;
+  margin-top: 4px;
+  background-color: #d0d0d0;
+}
+#product .product-list li {
+  padding: 10px;
+  border: 1px solid #e7e7e7;
+  box-sizing: content-box;
+}
+#product .product-list li a .pic {
+  width: 110px;
+  float: left;
+}
+#product .product-list li a .pic img {
+  width: 100px;
+  height: 100px;
+}
+#product .product-list li a .info {
+  padding-left: 110px;
+}
+#product .product-list li a .info h3 {
+  color: #333333;
+  line-height: 22px;
+  min-height: 44px;
+  margin-top: 0;
+  word-break: break-all;
+}
+#product .product-list li a .info .prize {
+  font-size: 18px;
+  color: #ea3900;
+}
+#product .product-list li a .info .other {
+  color: #a1a1a1;
+  font-size: 12px;
+  margin-top: 5px;
+}
+#product .page {
+  display: flex;
+}
+#product .page span {
+  flex: 1;
+  text-align: center;
+}
+#product .page span > a {
+  font-size: 14px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: #d4d4d4;
+}
+#product .page span > select {
+  border: 1px solid #bababa;
+  font-size: 16px;
+  padding: 2px 15px;
+  height: 34px;
+}

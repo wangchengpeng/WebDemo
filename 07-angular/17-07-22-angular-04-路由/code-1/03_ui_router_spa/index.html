@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_SPA</title>
+</head>
+<style type="text/css">
+    .h {
+        background-color: yellowgreen;
+        height: 50px;
+    }
+
+    .b {
+        background-color: hotpink;
+        height: 250px;
+    }
+
+    .f {
+        background-color: skyblue;
+        height: 50px;
+    }
+</style>
+
+<body ng-app="app">
+    <div class="h">
+        <a ui-sref="music">音乐</a>
+        <a ui-sref="movie">视频</a>
+        <a ui-sref="game">游戏</a>
+    </div>
+    <div class="b" ui-view></div>
+    <div class="f"></div>
+    <script type="text/javascript" src="..//node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+        // angular.module('app',['ui-router'])
+        // .config(['$stateProvider',function($stateProvider){
+        //     $stateProvider.state('music',{
+        //         url:'music.html',
+        //         templateUrl:'./music.html'
+        //     }).state('movie',{
+        //         url:'movie.html',
+        //         templateUrl:'./movie.html'
+        //     }).state('game',{
+        //         url:'game.html',
+        //         templateUrl:'./game.html'
+        //     })
+        // }])
+
+        angular.module('app', ['ui.router'])
+            //配置路由规则
+            .config(['$stateProvider', function ($stateProvider) {
+                $stateProvider.state('music', {
+                    url: 'music.html',
+                    templateUrl: './music.html'
+                }).state('movie', {
+                    url: 'movie.html',
+                    templateUrl: './movie.html'
+                }).state('game', {
+                    url: 'game.html',
+                    templateUrl: './game.html'
+                })
+
+            }])
+    </script>
+</body>
+
+</html>

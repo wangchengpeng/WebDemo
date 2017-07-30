@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>03_用js实现点击按钮值加一</title>
+</head>
+<body>
+    
+    目标：<input type="text" name="" >
+    <button>点击值加一</button>
+    
+    <script type="text/javascript">
+        
+        //获取按钮元素，给其添加点击事件
+        var btn = document.querySelector('button');
+        btn.onclick = function(){
+            //首先获取原值，进行加一
+            var input = document.querySelector('input');
+            var sum = (input.value - 0) + 1;
+            //将新值赋值给Input元素
+            input.value = sum;
+        }
+
+    </script>
+</body>
+</html>

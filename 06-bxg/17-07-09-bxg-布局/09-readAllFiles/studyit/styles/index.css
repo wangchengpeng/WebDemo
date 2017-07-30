@@ -1,0 +1,16 @@
+body,
+div {
+  margin: 0;
+  padding: 0;
+}
+.aside {
+  width: 180px;
+  height: 500px;
+  background-color: #2F4050;
+  position: fixed;
+}
+.main {
+  height: 500px;
+  background-color: #F4F6F8;
+  margin-left: 180px;
+}

@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>08_控制器</title>
+</head>
+<!-- 告诉当前dom元素及其子元素被叫做app的模块所管理，由此就可以使用app模块下的资源对象，例如控制器 -->
+<body ng-app="app" ng-init="sex='男'">
+        
+
+        {{sex}}
+        
+    <!-- 猜报错的同学，每一个变量的所在域是独立的 -->
+    <!-- 不报错，继承的感觉 -->
+        <div ng-controller="myController">
+            {{name}} {{age}} {{sex}}
+        </div>
+          <div ng-controller="myController2">
+            {{name}} {{age}} {{sex}}
+        </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+    //创建模块对象
+        var app = angular.module('app',[]);
+        //创建控制器,最终页面展现前调用回调函数
+        app.controller('myController',function($scope){
+            //$scope用来连接视图和数据之间的桥梁
+            // console.log('a');
+            // $scope.change = function(){}
+            $scope.name = 'c1';
+            $scope.age = '17';
+            $scope.sex = '女';
+        });
+        app.controller('myController2',function($scope){
+            //$scope用来连接视图和数据之间的桥梁
+            // console.log('a');
+            // $scope.change = function(){}
+            $scope.name = 'c2';
+            $scope.age = '18';
+        });
+
+    </script>
+</body>
+</html>

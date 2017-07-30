@@ -1,0 +1,74 @@
+body {
+  background-color: #F5F5F5;
+}
+header {
+  height: 50px;
+  background-color: #FF841D;
+  padding: 10px;
+}
+header .logo {
+  height: 100%;
+}
+header .logo img {
+  height: 25px;
+}
+header .app {
+  height: 34px;
+  float: right;
+}
+header .app img {
+  height: 34px;
+}
+#search {
+  height: 50px;
+  background-color: #fff;
+  padding: 10px 80px 10px 10px ;
+  position: relative;
+}
+#search input {
+  border-radius: 15px;
+}
+#search input[type="search"] {
+  background-color: #F5F5F5;
+  border: none;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  padding-left: 15px;
+}
+#search input[type="submit"] {
+  float: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #FF841D;
+  border: none;
+  width: 63px;
+  height: 30px;
+  color: #fff;
+}
+#menu {
+  background-color: #fff;
+  padding: 10px 0 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+#menu ul li {
+  float: left;
+  width: 25%;
+  padding: 10px 15px 0 ;
+  text-align: center;
+}
+#menu ul li a {
+  display: block;
+}
+#menu ul li a img {
+  height: 50px;
+}
+#menu ul li a p {
+  font-size: 12px;
+  text-align: center;
+}
+#menu ul li:nth-child(n+9) {
+  display: none;
+}

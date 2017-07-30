@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../require.js/require.js"></script>
+  <script>
+    // 1, 使用 require 的 config 方法进行配置, 其参数是一个 对象, 需要配置两个属性
+    require.config({
+      baseUrl: '/20170713-bxg/codes/05-requirejs/05-loadModuleType/03-config/moduleA/',// 配置基础路径
+      paths: {
+        // 模块的名字: 模块的路径
+        m2: '02-module',
+        m3: 'moduleB/moduleC/moduleD/03-module'
+      }
+    });
+
+
+    // 2, 使用加载模块的时候只需要使用 名字即可
+    require( [ 'm2' ] );
+  </script>
+</head>
+<body>
+</body>
+</html>

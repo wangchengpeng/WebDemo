@@ -1,0 +1,145 @@
+*{
+	font-family: "微软雅黑";
+	color:#000;
+}
+input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/*主体模块设置main*/
+.main{
+	width:96%;
+    margin:0.2rem 2%;
+    height:auto!important;
+    height:10.0rem;
+    min-height:10.0rem;
+   	padding-bottom:2.0rem;
+    background:#f5b8a7;/*肉色*/
+   	background-size:100% 100%;
+   	-webkit-background-size:100% 100%;
+   	overflow: hidden;
+}
+/*配额查询（查看详情）quotaQuery_details.html页面 CSS设置*/
+/*活动模块设置activeBox*/
+.activeBox{
+	width:90%;
+	margin:0.1rem 1%;
+	padding-left:5%;
+	padding-right:3%;
+	padding-bottom:0.2rem;
+	background:#d26d4d;/*橘黄色*/
+}
+.activeBox p{
+	width:100%;
+	padding-top:0.2rem;
+	display: flex;
+	display: -webkit-flex;
+}
+.activeBox p span{
+	color:#fff;
+	font-size:0.18rem;
+}
+.activeBox p span:nth-child(1){
+	width:20%;
+}
+.activeBox p span:nth-child(2){
+	width:80%;
+}
+/*表格模块设置Table_1*/
+.Table_1{
+	width:98%;
+	margin:0 auto;
+	margin-top:0.2rem;
+	border-collapse:collapse;
+	/*display: none;*/
+}
+.Table_1 tr{
+	width:100%;
+}
+.Table_1 tr:not(.tr_1){
+	border-bottom:2px solid #f6b29f;/*肉色*/
+}
+.tr_1{
+	background:#d26d4d;/*橘黄色*/
+}
+.tr_1 td{
+	color:#fff;
+	letter-spacing: 1px;
+}
+.Table_1 tr:not(.tr_1) td{
+	background:#fff;
+	border-right:2px solid #f6b29f;/*肉色*/
+}
+.Table_1 tr td{
+	padding:0.1rem 0;
+	font-size:0.18rem;
+	text-align: center;
+}
+/*返回按钮模块设置btnBox*/
+.btnBox{
+	width:100%;
+	margin-top:0.8rem;
+	display: flex;
+	display:-webkit-flex;
+	justify-content: center;
+}
+.btnBox input{
+	width:30%;
+	margin:0 35%;
+	height:0.6rem;
+	background:#a11a1b;
+	line-height:0.6rem;
+	text-align: center;
+	color:#fff;
+	font-size:0.24rem;
+	letter-spacing: 1px;
+}
+/*配额查询页quotaQuery.html   CSS样式设置*/
+
+/*表格模块设置Table1*/
+.Table1{
+	width:98%;
+	margin:0 auto;
+	margin-top:0.1rem;
+	border-collapse:collapse;
+	/*display: none;*/
+}
+.Table1 tr{
+	width:100%;
+}
+.Table1 tr:not(.tr_1){
+	border-bottom:2px solid #f6b29f;/*肉色*/
+}
+.tr1{
+	background:#d26d4d;/*橘黄色*/
+}
+.tr1 td{
+	color:#fff;
+	letter-spacing: 1px;
+}
+.Table1 tr:not(.tr1) td{
+	background:#fff;
+	border-right:2px solid #f6b29f;/*肉色*/
+}
+.Table1 tr td{
+	padding:0.1rem 0;
+	font-size:0.18rem;
+	text-align: center;
+}
+.quota{
+	width:20%;
+}
+.quota input{
+	width:100%;
+	height:0.5rem;
+	background:#d26d4d;/*橘黄色*/
+	line-height:0.5rem;
+	text-align: center;
+	color:#fff;
+	font-size:0.18rem;
+	letter-spacing: 1px;
+}
+.Table1 .quota{
+	padding:0;
+}

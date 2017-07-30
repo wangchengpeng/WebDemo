@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-小人原地踏步</title>
+	<style>
+		canvas {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="200"></canvas>
+	<script>
+		var canvas = document.querySelector( '#canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var frame = 0;
+		var w = 40,
+			h = 65;
+		var x = frame * w,
+			y = 0;
+
+		var x1 = 0,
+			y1 = 0;
+
+		var img = new Image();
+		img.src = './imgs/NPC1.png';
+		img.onload = function() {
+			ctx.drawImage( img, x, y, w, h, 0, 0, w, h );
+			setInterval( function() {
+				frame = ++frame % 4;
+				// 清楚上一次小人
+				ctx.clearRect( 0, 0, canvas.width, canvas.height );
+				// 获取下一个小人的坐标
+				x = frame * w;
+				y = 0;
+				// 绘制小人
+				ctx.drawImage( img, x, y, w, h, x1, y1++, w, h );
+			}, 120 );
+		}
+	</script>
+</body>
+</html>

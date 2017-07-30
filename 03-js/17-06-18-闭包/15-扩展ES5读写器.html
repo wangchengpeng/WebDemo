@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>14-扩展ES5读写器</title>
+</head>
+<body>
+  <script>
+    function person( name, age ){
+      return {
+        get name (){
+          return name;
+        },
+        get age (){
+          return age;
+        },
+        set age ( val ){
+          age = val;
+        }
+      };
+    }
+
+    var guo = person( 'guoguo', 19 );
+    console.log( guo.name );
+    console.log( guo.age );
+    guo.age = 21;
+    guo.name = 'jingjing';  //默默的失败
+    console.log( guo.age );
+    console.log( guo.name ); //guoguo 
+  </script>
+</body>
+</html>

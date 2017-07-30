@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>13_link相关函数参数</title>
+</head>
+<body ng-app="app" ng-init="text=123;age=1">
+       {{text}} {{age}}
+       <!-- my-div="text" 我告诉你，你link监视我哪个属性 -->
+    <div my-div="age"  my-test="123"  hahah="xixi"></div>
+
+
+    <!-- <div ng-controller="xxx"></div> -->
+
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        angular.module('app',[])
+        .directive('myDiv',function(){
+            return {
+                template:'<h1>哈哈</h1>',
+                //根据参数顺序传递的scope,element,attrs
+                link:function(scope,element,attrs){
+                    console.log(scope.text);
+                    // console.log(element[0]);
+                    // console.log(attrs);
+                    //   myDiv: "text"
+                    //   attrs.myDiv
+                     console.log(attrs.myDiv);
+                // scope.$watch(attrs.myDiv)
+
+
+                }
+        }
+
+        })
+
+
+    </script>
+</body>
+</html>

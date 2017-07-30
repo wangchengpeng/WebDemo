@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-自定义指令</title>
+</head>
+<body ng-app="app" ng-init="isShow = false">
+    {{isShow}}
+    <div ng-show="isShow">
+        我是ng-show
+    </div>
+    <!-- <div ng-show="true">
+        我是ng-show
+    </div> -->
+    <div my-div="isShow">
+        
+    </div>
+    <button ng-click="isShow = !isShow">点击改变xxx的值</button>
+
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+     <script>
+     // alert(1)
+     //  module   模板
+     // angular.module('app',[])
+     // directive   指令   
+    angular.module('app',[]).directive('myDiv',function(){
+        return{
+            template:'<h1>{{text}}</h1>',
+                //该属性在指令初始化的时候会执行一次
+                link:function(scope,element,attrs){
+                    //等同于$scope的对象
+                    scope.text = '自定义指令';
+                    console.log('link执行了');
+                    console.log(attrs);
+                }
+        }
+    })
+    </script> 
+</body>
+</html>

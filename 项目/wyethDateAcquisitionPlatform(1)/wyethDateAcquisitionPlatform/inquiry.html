@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>新客查询-inquiry</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/comStyle.css"/>
+		<link rel="stylesheet" type="text/css" href="css/inquiry.css"/>
+		<script type="text/javascript" src="js/rem.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		<form action="">
+			<!--头部模块设置top-->
+			<div class="top">
+				<a href="###"><img src="img/memberCenterImg/left_sj.png"/>返回</a>
+				<span>新客查询</span>
+				<div class="dian_3" style="font-size: 0;">
+					<img src="img/memberCenterImg/3dian.png"/> 
+				</div>
+			</div>
+			<!--主体模块设置main-->
+			<div class="main">
+				<div class="main-1">
+					<!--信息模块设置infroBox-->
+					<div class="infroBox">
+						<!--手机号模块设置-->
+						<div class="infro">
+							<span>手机号</span>
+							<input type="text" value="18848829865" class="tel"/>
+						</div>
+						<!--验证码模块设置-->
+						<div class="infro">
+							<span>验证码</span>
+							<input type="text" value="188488" class="code"/>
+							<div class="codeImg" style="font-size: 0;">
+								<img src="img/inquiryImg/ma.png" /> 
+							</div>
+						</div>
+					</div>
+					<!--查询按钮模块设置chaBtn-->
+					<div class="chaBtnBox" style="font-size:0;">
+						<input type="button" value="查询" class="chaBtn"/>
+					</div>
+					<!--表格模块设置table-->
+					<table class="table">
+						<tr>
+							<th>手机号</th>
+							<th>订单日期</th>
+							<th>购买来源</th>
+							<th class="proName">产品名称</th>
+							<th>品牌</th>
+							<th>段数</th>
+						</tr>
+						<tr>
+							<td>18848829865</td>
+							<td>2017-05-09</td>
+							<td>ylyato</td>
+							<td class="proName">妈妈奶粉</td>
+							<td>惠氏</td>
+							<td>3阶段</td>
+						</tr>
+						<tr>
+							<td>18848829865</td>
+							<td>2017-05-09</td>
+							<td>ylyato</td>
+							<td class="proName">妈妈奶粉</td>
+							<td>惠氏</td>
+							<td>3阶段</td>
+						</tr>
+						<tr>
+							<td>18848829865</td>
+							<td>2017-05-09</td>
+							<td>ylyato</td>
+							<td class="proName">妈妈奶粉</td>
+							<td>惠氏</td>
+							<td>3阶段</td>
+						</tr>
+						<tr>
+							<td>18848829865</td>
+							<td>2017-05-09</td>
+							<td>ylyato</td>
+							<td class="proName">妈妈奶粉</td>
+							<td>惠氏</td>
+							<td>3阶段</td>
+						</tr>
+					</table>
+					<!--销售情况模块设置record-->
+					<p class="record">无销售记录！</p>
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript">
+			$('.chaBtn').click(function(){
+				$('.record').show();
+				$('.table').hide();
+			});
+		</script>
+	</body>
+</html>

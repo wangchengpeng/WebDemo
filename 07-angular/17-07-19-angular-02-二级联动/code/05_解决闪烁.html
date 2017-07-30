@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>05_解决闪烁问题</title>
+    <style type="text/css">
+        .ng-cloak{
+            display: none;
+        }
+        /*有兼容性问题*/
+       /* [ng-cloak]{
+            display: none;
+        }*/
+    </style>
+</head>
+<body ng-app ng-init="text=123" class="ng-cloak">
+<!-- ng-cloak -->
+<!--        <div class="ng-cloak">
+            {{text}}
+       </div> -->
+
+        <div ng-bind="text">
+       </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+</body>
+</html>

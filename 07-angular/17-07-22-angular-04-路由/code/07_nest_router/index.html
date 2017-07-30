@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_SPA</title>
+</head>
+<style type="text/css">
+.h {
+    background-color: yellowgreen;
+    height: 50px;
+}
+
+.b {
+    background-color: hotpink;
+    height: 250px;
+}
+
+.f {
+    background-color: skyblue;
+    height: 50px;
+}
+</style>
+
+<body ng-app="app">
+    <div class="h">
+        <a ui-sref="music">进入音乐模块</a>
+    </div>
+    <div class="b" ui-view></div>
+    <div class="f">
+        版权所有 违者必究
+    </div>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+    //创建模块及依赖模块
+    angular.module('app', ['ui.router'])
+        //配置路由规则
+        .config(['$stateProvider', function($stateProvider) {
+            $stateProvider.state('music', {
+                    //   href="#!/music2" - > 匹配  如下url
+                    //   点击以后的行为  配，配url属性
+                    url: '/music',
+                    templateUrl:'./music.html'
+                })
+            //必须这么写声明路由的父子关系，因为ui-view已经产生嵌套包含关系
+                .state('music.oumei', {
+                    url: '/oumei',  
+                    template: '<h1>i love you、i need you</h1>'
+                })
+                .state('music.rihan', {
+                    url: '/rihan',  
+                    template: '<h1>棒子啊、思密达</h1>'
+                })
+                .state('music.guochan', {
+                    url: '/guochan',  
+                    template: '<h1>我爱你中国、亲爱的毛主席、亲爱的习大大</h1>'
+                });
+
+        }])
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ng-bind和html</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    
+    <span ng-bind="text"></span>
+    <input type="text" name="" ng-bind="text">
+
+
+    <div ng-bind-html="html">
+        
+    </div>
+
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript" src="./assets/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',['ngSanitize']);
+        app.controller('myc',['$scope',function($scope){
+            $scope.text = '<h1>我是text</h1>';
+            $scope.html = '<h1>我是html</h1>';
+        }]);
+    </script>
+</body>
+</html>

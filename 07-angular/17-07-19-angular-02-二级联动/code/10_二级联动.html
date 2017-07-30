@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>10_二级联动</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    
+    开发语言类别<select ng-model="p" ng-options="city.roleName for city in citys" ng-change="change()">
+            <option value="">请选择</option>
+    </select>
+    学科<select ng-model="s" ng-options="sub.roleName for sub in subs" >
+            <option value="">请选择学科</option>
+    </select>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        angular.module('app',[])
+        .controller('myc',['$scope',function($scope){
+            $scope.p = {};
+            $scope.subs = [];
+            //当父级下拉改变
+            $scope.change = function(){
+                console.log($scope.p);
+                if(!$scope.p){
+                    //清空子列表
+                    $scope.subs = [];
+                    return;
+                }
+                $scope.subs = $scope.p.children;//把数组赋值给子菜单
+            }
+
+            $scope.citys = [{
+            "roleName": "软件开发",
+            "children": [{
+                "roleName": "软件AAA",
+                "children": []
+            }, {
+                "roleName": "软件BBB",
+                "children": []
+            }, {
+                "roleName": "软件CCC",
+                "children": []
+            }, {
+                "roleName": "软件DDD",
+                "children": []
+            }, {
+                "roleName": "软件EEE",
+                "children": []
+            }, {
+                "roleName": "软件FFF",
+                "children": []
+            }]
+        }, {
+            "roleName": "硬件开发",
+            "children": [{
+                "roleName": "硬件AAA",
+                "children": []
+            }, {
+                "roleName": "硬件BBB",
+                "children": []
+            }, {
+                "roleName": "硬件CCC",
+                "children": []
+            }, {
+                "roleName": "硬件DDD",
+                "children": []
+            }, {
+                "roleName": "硬件EEE",
+                "children": []
+            }, {
+                "roleName": "硬件FFF",
+                "children": []
+            }]
+        }, {
+            "roleName": "嵌入式开发",
+            "children": [{
+                "roleName": "嵌入式AAA",
+                "children": []
+            }, {
+                "roleName": "嵌入式BBB",
+                "children": []
+            }, {
+                "roleName": "嵌入式CCC",
+                "children": []
+            }, {
+                "roleName": "嵌入式DDD",
+                "children": []
+            }, {
+                "roleName": "嵌入式EEE",
+                "children": []
+            }, {
+                "roleName": "嵌入式FFF",
+                "children": []
+            }]
+        }];
+        }])
+
+
+    </script>
+</body>
+</html>

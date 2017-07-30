@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-坐标系平移</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		ctx.translate( w / 2, h / 2 );
+		// 绘制 坐标轴
+		ctx.beginPath();
+		ctx.moveTo( w / 2, 0 );
+		ctx.lineTo( 0, 0 );
+		ctx.lineTo( 0, h / 2 );
+		ctx.strokeStyle = 'blue';
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc( 0, 0, 120, 0, 2 * Math.PI );
+		ctx.fillStyle = '#daa520';
+		ctx.fill();
+	</script>
+</body>
+</html>

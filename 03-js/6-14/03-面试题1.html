@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-面试题1</title>
+</head>
+<body>
+    <script>
+        var a; // ==> window.a = undefined;
+        // in 用来判断 对象是否能访问到指定属性
+        // 在in运算符左边 必须 是字符串 或 数字，去指定属性名称。如果不是 就转换成字符串。
+        // 如果是变量，就判断变量的值 是否 为右边对象能访问到属性。
+        /*if( 'a' in window ){
+            a = 10;
+        } else {
+            a = 20;
+        }
+        console.log( a ); // 10*/
+        /*var a; // window.a = undefined
+        if( a in window ){ // 'undefined' in window
+            a = 10;
+        } else {
+            a = 20;
+        }
+        console.log( a );*/
+        var a = 100;
+        if( a in window ){
+            var a = 10;
+        } else {
+            var a = 20;
+        }
+        console.log( a );
+        // A: 10 B: 20 C: undefined D:error E: unknown
+    </script>
+</body>
+</html>

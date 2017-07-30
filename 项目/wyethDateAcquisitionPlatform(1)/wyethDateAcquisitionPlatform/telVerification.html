@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>手机验证-telVerification</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/telVerification.css"/>
+		<script type="text/javascript" src="js/rem.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		<form action="">
+			<!--主题模块设置main-->
+			<div class="main">
+				<!--二维码图片设置ewmBox-->
+				<div class="ewmBox" style="font-size:0;">
+					<img src="img/telVerificationImg/ewm.png" /> 
+				</div>
+				<!--会员手机号输入框模块设置telInputBox-->
+				<div class="telInputBox" style="font-size:0;">
+					<input type="text" value="请输入会员手机号" class="telInput" />
+				</div>
+				<!--验证模块设置yzBtnBox-->
+				<div class="yzBtnBox" style="font-size:0;">
+					<input type="button" value="验证" class="yzBtn" />
+				</div>
+			</div>
+			<!--body遮罩层设置-->
+			<div class="cover"></div>
+			<!--弹框模块设置tanKuang-->
+			<div class="tanKuang">
+				<!--图片设置chadui-->
+				<div class="chadui" style="font-size:0;">
+					<img src="img/telVerificationImg/cha.png" class="cha"/> 
+					<img src="img/telVerificationImg/dui.png" class="dui"/> 
+				</div>
+				<!--信息提示tishi-->
+				<p class="tishi fail">手机号验证失败</p>
+				<p class="tishi success">手机号验证成功</p>
+				<!--确定按钮设置qdBtnBox-->
+				<div class="qdBtnBox" style="font-size:0;">
+					<input type="button" value="确定" class="qdBtn" />
+				</div>
+			</div>
+		</form>
+		<script>
+			$('.yzBtn').click(function(){
+				$('.cover').show();
+				$('.tanKuang').show();
+			});
+			$('.qdBtn').click(function(){
+				$('.cover').hide();
+				$('.tanKuang').hide();
+			});
+		</script>
+	</body>
+</html>

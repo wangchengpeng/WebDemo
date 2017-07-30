@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>服务器A:sublime启动的服务器</title>
+</head>
+<body>
+    1111
+
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+        //请求node  url : /testJsonp
+        xhr.open('put','http://127.0.0.1:80/testCors');
+
+        //来上自定义的头,浏览器会自动多发一起请求，OPTIONS,去获取服务器是否允许该头的行为
+        xhr.setRequestHeader('myheader','sobig');
+
+        xhr.onreadystatechange = function(){
+            if(xhr.status === 200 && xhr.readyState === 4){
+                console.log(xhr.responseText);
+            }
+        }
+        xhr.send();
+
+    </script>
+</body>
+</html>

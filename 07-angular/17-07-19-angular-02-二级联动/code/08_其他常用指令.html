@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>08_其他常用指令</title>
+</head>
+
+<body ng-app ng-init="isOk = true">
+    - ng-checked:
+    <input type="checkbox" name="" ng-checked="isOk">
+    <hr/> - ng-selected：
+    <select>
+        <option value="">请选择</option>
+        <option value="111" ng-selected="isOk">是我</option>
+    </select>
+    <hr/> - ng-disabled：
+    <button ng-disabled="isOk">ng-disabled</button>
+    <hr/> - ng-readonly:
+    <input type="text" name="" ng-readonly="isOk">
+    <button ng-click="isOk = !isOk">切换</button>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+</body>
+
+</html>

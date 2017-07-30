@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-控制器</title>
+
+</head>
+
+<body>
+    <div ng-app="app" ng-init="sex='男'">
+        {{sex}}
+
+        <div ng-controller="myController">
+            {{name}} {{age}} {{sex}}
+        </div>
+        <div ng-controller="myController2">
+            {{name}} {{age}} {{sex}}
+        </div>
+    </div>
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script>
+        var app = angular.module('app',[]);
+        app.controller('myController',function($scope){
+            $scope.name = 'c1';
+            $scope.aage = '17';
+            $scope.sex = '女';
+        })
+        app.controller('myController2',function($scope){
+            $scope.name = 'c2';
+            $scope.age = '18';
+        })
+    </script>
+</body>
+
+</html>

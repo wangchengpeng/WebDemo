@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00-复习</title>
+</head>
+<body>
+	<div id="pie"></div>
+	<script src="pie.js"></script>
+	<script>
+		var data = { total: 2000, list: [
+			{ name: 'QQ', value: 500 },
+			{ name: 'Tantan', value: 300 },
+			{ name: 'YY', value: 100 },
+			{ name: 'Wechat', value: 600 },
+			{ name: 'Feiq', value: 50 },
+			{ name: 'Momo', value: 300 },
+			{ name: 'Aliwan', value: 150 }
+		] };
+
+		new Pie( {
+			target: '#pie',
+			data: data
+		} );
+	</script>
+</body>
+</html>

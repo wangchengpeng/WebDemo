@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-状态保持与恢复</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+		// 绘制图形的默认配置
+		ctx.translate( w / 2, h / 2 );
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = 'blue';
+		ctx.fillStyle = 'hotpink';
+
+		// 其他操作
+		ctx.rotate( Math.PI / 3 );
+		ctx.beginPath();
+		ctx.moveTo( 0, 0 );
+		ctx.lineTo( 100, 0 );
+		ctx.lineWidth = 8;
+		ctx.strokeStyle = 'red';
+		ctx.stroke();
+		ctx.fillStyle = '#daa520';
+		ctx.fillRect( 100, 50, 50, 50 );
+
+		// 还原默认的配置
+		ctx.rotate( -Math.PI / 3 );
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = 'blue';
+		ctx.fillStyle = 'hotpink';
+
+		ctx.beginPath();
+		ctx.moveTo( 0, 0 );
+		ctx.lineTo( 100, 0 );
+		ctx.stroke();
+		ctx.fillRect( 100, 50, 50, 50 );
+
+		
+	</script>
+</body>
+</html>

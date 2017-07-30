@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>04_ng实现值加一</title>
+</head>
+<body>
+    <div ng-app>
+    <!-- 闪烁之后就没了,如果在angular中直接使用一个变量，没有赋值，默认就是空串来显示-->
+        <span>{{num}}</span> 
+        <!-- 能否自动转换数据类型，并显示 -->
+        <button ng-click="num = num + 1">点击后值加一</button>
+    </div>
+    <!-- 1:引包 -->
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+</body>
+</html>

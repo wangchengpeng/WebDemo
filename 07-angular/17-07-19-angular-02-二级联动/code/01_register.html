@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到注册页面</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    
+    <form ng-submit="doRegister()">
+    用户名:<input type="text" name="username" ng-model="username">
+    <br/>
+    密码:<input type="text" name="password" ng-model="password">
+    {{msg}}
+    <br/>
+        <input type="submit" name="" value="注册">
+    </form>
+
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+
+        var users = [{username:'tjx',password:'tjx'}];
+
+        var app = angular.module('app',[]);
+        app.controller('myc',function($scope){
+            //1:初始化数据
+            $scope.username = '';
+            $scope.password = '';
+            $scope.msg = '';
+            console.log($scope.username);
+            //2:初始化函数
+            $scope.doRegister = function(){
+                // console.log('触发了提交函数');
+                //1:获取数据
+                for (var i = users.length - 1; i >= 0; i--) {
+                    if(users[i].username === $scope.username){
+                        //给予提示
+                        $scope.msg = '用户名已经存在';
+                        return;
+                    }
+                }
+                //判断是否进入了if代码块，将用户数据加入到数组中
+                users.push({
+                    username:$scope.username,
+                    password:$scope.password
+                });
+                //提示用户
+                $scope.msg = '恭喜您，注册成功';
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>

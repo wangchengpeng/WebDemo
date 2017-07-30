@@ -1,0 +1,643 @@
+@import "setting";
+//样式表
+@import "normalize";
+//为了是在浏览器的默认样式
+@import "base"; //为了弥补normalize中没有的浏览器的默认样式
+
+.fixbar {
+  display: none;
+  width: 100%;
+  height: 57px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid $BorderColor;
+  z-index: 100;
+  padding: 0 200px;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in;
+  .menu {
+    float: left;
+    margin-top: 15px;
+  }
+  .center {
+    float: right;
+    margin-top: 20px;
+    color: #586a80;
+  }
+}
+
+//侧边栏
+.fixaside {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  background-color: #8d8d8d;
+  z-index: 100;
+  transition: all 0.25s ease-in;
+}
+
+.container {
+  transition: all 0.25s ease-in;
+}
+
+//顶部导航栏
+.topnav {
+  width: $width;
+  border-bottom: 1px solid $BorderColor;
+  height: $topNavHeight;
+  ul {
+    width: $baseWidth;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+    line-height: $topNavHeight;
+    text-align: center;
+    font-size: 12px;
+    border-right: 1px solid $BorderColor;
+    color: $topNavColor;
+    &.qrcode {
+      width: $qrcodeWidth;
+    }
+    &.service {
+      width: $serviceWidth;
+    }
+    &.extra {
+      width: $extraWidth;
+    }
+    &.join {
+      width: $joinWidth
+    }
+    //最后一个li标签右侧没边框
+    &:last-child {
+      //background-color: #000;
+      border-right: none;
+    }
+    a {
+      color: $topNavColor;
+    }
+    .signin, .signup {
+      font-size: 14px;
+    }
+    .signup {
+      background-color: $primaryColor;
+      color: #fff;
+      padding: 2px 6px;
+      text-align: center;
+      margin-right: 5px;
+      border-radius: $topNavButtonRadius;
+    }
+  }
+}
+
+//2，导航
+.nav {
+  width: $width;
+  height: $navHeight;
+  border-bottom: 1px solid $BorderColor;
+  ul {
+    width: $baseWidth;
+    height: $navHeight;
+    margin: 0 auto;
+    overflow: hidden;
+    li {
+      float: left;
+      height: 100%;
+      padding: 0 15px;
+      line-height: $navHeight;
+      position: relative;
+      //改变li尺寸的计算方式
+      box-sizing: border-box;
+    }
+    a {
+      width: $width;
+      height: 100%;
+      color: $linkNormalColor;
+      line-height: $navHeight;
+    }
+    li.logo {
+      padding: 0;
+      margin-right: 30px;
+      img {
+        width: $logoWidth;
+        height: auto;
+        margin-top: 15px;
+      }
+    }
+    li.active {
+      border-bottom: 1px solid $primaryColor;
+    }
+    li.center {
+      float: right;
+      margin-right: 50px;
+    }
+    li:hover {
+      border-bottom: 1px solid $primaryColor;
+      a {
+        color: $linkActiveColor;
+      }
+    }
+  }
+}
+
+//3,轮播图
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  .swipe-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  .swipe-wrap > li {
+    float: left;
+    width: 100%;
+    position: relative;
+    height: 300px;
+
+    &:nth-child(1) {
+      background-color: hotpink;
+    }
+    &:nth-child(2) {
+      background-color: pink;
+    }
+    &:nth-child(3) {
+      background-color: lightpink;
+    }
+    &:nth-child(4) {
+      background-color: deeppink;
+    }
+  }
+}
+
+//4,专长
+.specialty {
+  width: $width;
+  border-bottom: 1px solid $BorderColor;
+  .specialty-container {
+    max-width: $longWidth;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px;
+  }
+  dl {
+    float: left;
+    width: 33.3333333%;
+    padding: 0.15px;
+    box-sizing: border-box;
+  }
+  dt {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: $defaultFontColor;
+  }
+  dd {
+    font-size: 14px;
+    color: $circleFontColor;
+    line-height: 28px;
+    span {
+      font-family: $circleFontFamily;
+      margin-right: 5px;
+    }
+  }
+}
+
+//5，通知
+.notify {
+  width: $width;
+  border-bottom: 1px solid $BorderColor;
+  ul {
+    width: $longWidth;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    li {
+      padding: 5px 0;
+      span {
+        color: $notifyColor;
+        a {
+          color: $notifyColor;
+          border-bottom: 1px dashed $notifyColor;
+        }
+      }
+      i > a {
+        color: #428bca;
+      }
+    }
+    li:nth-child(3) {
+      position: absolute;
+      right: 110px;
+      top: 26px;
+      img {
+        height: 38px;
+      }
+    }
+  }
+}
+
+//6,借贷
+.loan {
+  width: $width;
+  padding: 20px 0;
+  background-image: url(../images/box-style-bg.png);
+  .loan-wrap {
+    max-width: 1170px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    //1，选项卡
+    .top-wrap {
+      overflow: hidden;
+      border-bottom: 1px solid $BorderColor;
+      ul {
+        padding-left: 10px;
+        li {
+          float: left;
+          &.active > a {
+            border-bottom: 3px solid #e61e25;
+          }
+          a {
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 26px;
+            font-size: 15px;
+            box-sizing: border-box;
+
+            &:hover {
+              border-bottom: 3px solid #e61e25;
+            }
+          }
+        }
+      }
+    }
+    //2，介绍
+    .intro {
+      width:auto;
+      height: 40px;
+      margin-top: 20px;
+      padding-left: 10px;
+      background-color: #fff;
+      border: 1px solid $BorderColor;
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px $BorderColor;
+      position: relative;
+      p {
+        font-size: 14px;
+        line-height: 40px;
+      }
+      i {
+        position: absolute;
+        border-top: 10px solid rgba(255, 255, 255, 0);
+        border-left: 10px solid rgba(255, 255, 255, 0);
+        border-right: 10px solid rgba(255, 255, 255, 0);
+        border-bottom: 10px solid #fff;
+        top: -18px;
+        left: 54px;
+      }
+    }
+    //3，项目
+    .items {
+      margin-top: 15px;
+      text-align: justify;
+      .item {
+        display: inline-block;
+        width: 31.5%;
+        //height: 148px;
+        padding: 10px 110px 10px 0;
+        position: relative;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+        background-color: #fff;
+        border-radius: 3px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        .brief {
+          padding: 0 15px;
+          height: 100%;
+          box-sizing: border-box;
+          dt {
+            font-weight: 700;
+            font-size: 15px;
+          }
+          dd {
+            &.title {
+              font-size: 12px;
+              line-height: 38px;
+              color: $BorderColor;
+            }
+          }
+        }
+        .rate {
+          width: 100px;
+          position: absolute;
+          top: 0px;
+          right: 0;
+          height: 100%;
+          box-sizing: border-box;
+          border-left: 1px dashed $BorderColor;
+          text-align: center;
+          //半圆
+          &:before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: 12px;
+            height: 12px;
+            background-color: #f0f0f0;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+          }
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: -6px;
+            width: 12px;
+            height: 12px;
+            background-color: #f0f0f0;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            //inset 内阴影
+            box-shadow: 0px 2px 2px #d8d8d8 inset;
+          }
+          .addr {
+            margin-top: 15px;
+            display: block;
+            width: $width;
+            font-size: 12px;
+            line-height: 12px;
+            text-align: center;
+            span {
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+            }
+            .hubei {
+              color: #399;
+              border: 1px solid #399;
+            }
+            .bao {
+              color: #e61e25;
+              border: 1px solid #e61e25;
+            }
+          }
+          h6 {
+            font-size: 33px;
+            color: #e61e25;
+            margin-top: 18px;
+            line-height: 57px;
+            small {
+              margin-left: -10px;
+              font-size: 15px;
+            }
+          }
+          .extra {
+            p {
+              color: #721786;
+              font-size: 16px;
+              margin-top: -10px;
+              font-weight: 700;
+            }
+            span {
+              font-size: 12px;
+              color: $BorderColor;
+              line-height: 35px;
+            }
+          }
+        }
+      }
+      .blank {
+        width: 31.5%;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// 新闻(没有变量在setting中)
+.news {
+  max-width: $longWidth;
+  margin: 0 auto;
+  padding-top: 30px;
+  .title {
+    width: 100px;
+    border-bottom: 1px solid $BorderColor;
+    padding-left: 10px;
+    padding-bottom: 12px;
+    float: left;
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 110px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: -7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: 1px solid $BorderColor;
+
+    }
+  }
+  .types {
+    float: left;
+    position: relative;
+    margin-left: 40px;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 27px;
+      height: 100%;
+      width: 1px;
+      border-left: 1px dashed $BorderColor;
+    }
+    span {
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-color: $dotNormalBgColor;
+      border-radius: 50%;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 1;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:hover, &.active {
+        background-color: $dotHoverBgColor;
+      }
+    }
+  }
+  ul {
+    float: left;
+    margin-left: 50px;
+    li {
+      line-height: 2;
+      font-size: 14px;
+      margin: 15px 0;
+    }
+    a {
+      color: #444;
+    }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  //顶部导航
+  .topnav {
+    ul {
+      width: 750px;
+      margin: 0 auto;
+    }
+    .qrcode {
+      display: none;
+    }
+  }
+  //导航
+  .nav {
+    ul {
+      width: $Zwidth;
+      @include center;
+    }
+    .center {
+      display: none;
+    }
+  }
+  //专长
+  .specialty {
+    .specialty-container {
+      width: $Zwidth;
+      @include center;
+    }
+  }
+  //通知
+  .notify {
+    ul {
+      width: $Zwidth;
+      @include center;
+    }
+    li:last-child {
+      display: none;
+    }
+  }
+  //借贷
+  .loan{
+    .loan-wrap{
+      width:750px;
+      margin: 0 auto;
+    }
+    .items .item{
+      width:48%;
+    }
+  }
+  //新闻
+  .new {
+    width: 750px;
+    @include center;
+    .title {
+      float: none;
+      width: auto;
+      margin: 0;
+    }
+    .types {
+      //justify 自动两端对齐
+      text-align: justify;
+      float: none;
+      margin: 0;
+      &:before{
+        display: none;
+      }
+      &:after{
+        content: '';
+        display: inline-block;
+        width: $width;
+        overflow: hidden;
+      }
+      span{
+        display: inline-block;
+        margin: 25px 0 0 ;
+      }
+    }
+    ul{
+      margin-left:0;
+    }
+  }
+}
+
+//760以下会变化一次
+@media only screen and ( max-width: 760px) {
+  //固定导航
+  .fixbar{
+    display: block;
+    padding: 0 20px ;
+  }
+  //侧边导航
+  .fixaside{
+    display: block;
+    left:-240px;
+  }
+  //顶部导航
+  .topnav{
+    display: none;
+  }
+  .pull-right{
+    transform:translateX(240px);
+  }
+  //导航
+  .nav{
+    display: none;
+  }
+  .swipe{
+    padding-top:57px;
+  }
+  //专长
+  .specialty{
+    display: none;
+  }
+  //通知
+  .notify{
+    padding:0 10px;
+    border-sizing: border-box;
+  }
+  //借贷
+  .loan .items .item{
+    width:$width;
+  }
+  //新闻
+  .news{
+    width:$width;
+    .title{
+      box-sizing:border-box;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

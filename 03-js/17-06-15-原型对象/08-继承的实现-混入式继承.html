@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var parent = {
+            name: 'guoguo',
+            say: function(){
+                console.log( 'hello, my name is ' + this.name = ‘, who are u ?’);
+            }
+            }
+
+            var child = {};
+
+            for( var k in parent ){
+                child[ k ] = parent[ k ];
+            }
+
+            child.say();*/
+
+            var grandpa = {
+                talk: function(){
+                    console.log( 'i just cheduzi.');
+                }
+            };
+            var parent = {
+                name: 'guoguo',
+                say: function(){
+                    console.log( 'hello, my name is ' + this.name + ',who are u ?');
+                }
+            };
+
+            var child = {};
+
+            for(var k in parent ){
+                child[ k ] = parent[ k ];
+            }
+
+            for( k in grandpa ){
+                child[ k ] = grandpa[ k ];
+            }
+
+            child.say();
+            child.talk();
+    </script>
+</body>
+</html>

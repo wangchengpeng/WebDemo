@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-面向函数实现给元素添加样式</title>
+    <style>
+        div,p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        div1
+    </div>
+    <div>
+        div2
+    </div>
+    <p>
+        p1
+    </p>
+    <p>
+        p2
+    </p>
+    <script>
+        // 根据标签名字 获取dom元素
+        function getByTag( tag ){
+            return document.getElementsByTagName( tag );
+        }
+        // 将dom数组或伪数组中的所有dom元素进行设置样式操作
+        /*function setStyles( doms ){
+            var i = 0,
+                l = doms.length;
+
+            for( ; i < l; i++ ){
+                doms[ i ].style.border = '2px solid yellowgreen';
+            }
+        }
+
+        setStyles ( getByTag( 'div' ) );
+        setStyles ( getByTag( 'p' ) );*/
+        function setStyles( doms, callback ){
+            var i = 0,
+            l = doms.length;
+
+            for( ; i < l; i++ ){
+                // 对当前dom元素 进行的操作交给回调函数
+                callback( doms[ i ] );
+            }
+        }
+
+        setStyles( getByTag( 'div' ), function( elem ){
+            // 怎么拿到当前遍历到的div
+            // 通过在回调函数中定义形参来接收当前遍历到的dom元素
+            // Is the mule or Is the horse, six one six
+            elem.style.backgroundColor = 'yellowgreen';
+        } );
+        setStyles( getByTag( 'p' ), function( elem ){
+            // 怎么拿到当前遍历到的div
+            // 通过在回调函数中定义形参来接收当前遍历到的dom元素
+            // Is the mule or Is the horse, six one six
+            elem.style.backgroundColor = 'hotpink';
+        } );
+        // 在使用回调函数时，之所以可以在回调函数中定义形参接收当前遍历到的元素，是因为在实现
+        // setStyles时每一次循环执行都会调用一次回调函数，
+        // 并且将当前遍历到的元素作为实参传给回调函数。
+    </script>
+</body>
+</html>

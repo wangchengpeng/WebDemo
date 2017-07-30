@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="dv"></div>
+  <script type="text/template" id="tpl">
+    <div>{{ html }}</div>
+    <div>{{@ html }}</div>
+    <div><%- html %></div>
+  </script>
+  <script src="./template-web.js"></script>
+  <script>
+    var obj = {
+      html: '<h1>标题</h1>'
+    };
+
+    var html = template( 'tpl', obj );
+
+    var dv = document.getElementById( 'dv' );
+    dv.innerHTML = html;
+
+  </script>
+</body>
+</html>

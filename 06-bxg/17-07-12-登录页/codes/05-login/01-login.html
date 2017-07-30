@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.2.0/jquery-3.2.0.js"></script>
+</head>
+<body>
+  <form>
+    用户名: <input type="text" name="tc_name" value="前端学院" /><br />
+    密码: <input type="text" name="tc_pass" value="123456" /><br>
+    <input type="submit" value="登录" />
+  </form>
+
+  <script>
+    // 阻止表单的默认提交行为, 转为使用 ajax 代替
+    // 组织默认行为的方法就是给 表单的 submit 事件注册事件处理函数, 并返回 false
+    $( 'form' ).on( 'submit', function () {
+      // console.log( 'submit' );
+
+      
+
+      // 登录
+      $.ajax({
+        url: '/api/login',
+        type: 'post',
+        data: $( this ).serialize(),
+        success: function ( info ) {
+          // console.log( info );
+          if ( info.code == 200 ) {
+            // ...
+          }
+        }
+      });
+
+
+      return false;
+    });
+  </script>
+</body>
+</html>

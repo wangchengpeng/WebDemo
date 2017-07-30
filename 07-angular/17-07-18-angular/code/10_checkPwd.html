@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>10_检查用户暗号</title>
+</head>
+<body>
+        
+    <div ng-app="app" ng-controller="myController">
+        <input type="text" name="" ng-model="pwd" ng-change="checkPwd()">
+  <!--  
+        当程序逻辑需要根据多个入口来做操作的时候，可以抽离出其共同操作的数据对象或者行为，
+        监视器行为或者数据对象即可
+       <input type="text" name="" ng-model="pwd" ng-change="checkPwd()">
+        <input type="text" name="" ng-model="pwd" ng-change="checkPwd()">
+        <input type="text" name="" ng-model="pwd" ng-change="checkPwd()">
+        <input type="text" name="" ng-model="pwd" ng-change="checkPwd()">
+        <input type="text" name="" ng-model="pwd" ng-change="checkPwd()">
+        <input type="text" name="" ng-model="pwd" ng-change="checkPwd()"> -->
+
+        {{msg}}
+    </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        app.controller('myController',function($scope){
+            $scope.pwd = '';
+            $scope.checkPwd = function(){
+                if($scope.pwd === '我爱你我爱你'){
+                    $scope.msg = '欢迎回来，亲爱的！';
+                }else{
+                    $scope.msg = '走你！';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

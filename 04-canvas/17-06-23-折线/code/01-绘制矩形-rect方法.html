@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-rect绘制矩形路径</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		ctx.rect( 50, 50, 200, 100 );
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = 'red';
+		ctx.stroke();
+		ctx.fillStyle = 'green';
+		ctx.fill();
+	</script>
+</body>
+</html>

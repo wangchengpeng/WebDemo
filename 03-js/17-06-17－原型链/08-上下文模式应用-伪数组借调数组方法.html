@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>08-上下文模式应用-伪数组借调数组方法</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      0: 1,
+      1: 2,
+      2: 3,
+      length: 3 
+    };
+
+    //要给obj添加4， 5, 6 , 元素
+    //原生js实现
+    /*
+    obj[ obj.length ] = 4;
+    obj.length = obj.legnth + 1;
+    obj[ obj.length ] = 5;
+    obj.length = obj.length + 1;
+    obj[ obj.length ] = 6;
+    obj.length = obj.legnth + 1;*/
+    Array.prototype.push.call( obj, 4, 5, 6, 7, 8, 9 );
+    console.log( obj );
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>04-绘制图像-普通绘制</title>
+  <style>
+  #canvas{
+    border: 1px solid #000;
+  }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  <img src="./eilv.jps" alt="大镁铝">
+  <script>
+    var canvas = document.getElementById( 'canvas' ),
+    ctx = canvas.getContext( '2d' );
+
+    var img = document.getElementsByTagName( 'img' )[ 0 ];
+    img.src = './meilv.jpg';
+    img.onload = function()  {
+      ctx.drawImage( img, 100, 50 );
+    };
+  </script>
+</body>
+</html>

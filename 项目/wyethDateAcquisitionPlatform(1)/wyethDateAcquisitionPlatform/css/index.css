@@ -1,0 +1,71 @@
+*{
+	font-family: "微软雅黑";
+	color:#fff;
+	font-size:0.28rem;
+}
+/*主体模块设置mainBox*/
+.mainBox{
+	width:96%;
+    margin:0.2rem 2%;
+   	overflow: hidden;
+}
+/*背景颜色设置*/
+.bg_1{
+	background:#f6b29f;/*肉色*/
+}
+.bg_2{
+	background:#d26d4d;/*橘黄色*/
+}
+.bg_3{
+	background:#d06868;/*粉红色*/
+}
+.bg_4{
+	background:#d8b866;/*黄色*/
+}
+.bg_5{
+	background:#7bb8b1;/*青色*/
+}
+/*会员查询模块设置membersearchBox*/
+.membersearchBox{
+	width:100%;
+	height:2.12rem;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+}
+.img{
+	width:15%;
+	margin-right:2%;
+}
+.img img{
+	width:100%;
+}
+/*小块整体模块设置Box*/
+.Box{
+	width:100%;
+}
+.Box dl{
+	float: left;
+	margin-top:0.2rem;
+	width:49%;
+	height:2.12rem;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+}
+.Box dl:nth-child(odd){
+	margin-right:2%;
+}
+.Box dl:last-child{
+	margin-bottom:0.2rem;
+}
+.Box dl dt{
+	font-size: 0;
+	width:25%;
+	margin-right:5%;
+}
+.Box dl dt img{
+	width:100%;
+}

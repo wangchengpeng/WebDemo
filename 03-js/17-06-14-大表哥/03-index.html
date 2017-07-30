@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>03-面向对象实现大表哥</title>
+  <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+
+<body>
+  <div id="list">
+
+  </div>
+  <script>
+    //构造函数
+    function Table(target, url, tableClass, type, async, data) {
+      this.target = target;
+      this.url = url || location.href;
+      this.tableClass = tableClass || 'grid-table';
+      this.type = type || 'get';
+      this.async = async || true;
+      this.data = data || '';
+      this.load = function () {
+        var self = this;
+        var xhr = this.createRequest();
+        xhr.open( this.type, this.url, this.async)
+        xhr.onreadystatechange = function () {
+          var state = xhr.readyState,
+            status = xhr.status;
+          if (state == 4) {
+            if (status >= 200 && status < 300 || status == 304) {
+              self.tableData = JSON.parse(xhr.responseText);
+              // alert(1);
+              
+              self.draw();
+            } else {
+              alert("请求数据失败");
+            }
+          }
+        };
+        xhr.send();
+      };
+      this.draw = function () {
+        var table = document.createElement("table");
+        table.className = this.tableClass;
+        table.appendChild(this.drawHead());
+        table.appendChild(this.drawBody());
+        document.querySelector(this.target).appendChild(table);
+      };
+      this.drawHead = function () {
+        var thead = document.createElement("thead"),
+          tr = document.createElement('tr'),
+          th;
+
+        var k, obj;
+
+        obj = this.tableData[0];
+
+        for (k in obj) {
+          th = document.createElement('th');
+          th.innerHTML = k;
+          tr.appendChild(th);
+        }
+        thead.appendChild(tr);
+
+        return thead;
+      };
+      this.drawBody = function () {
+
+        var data = this.tableData;
+
+        var tbody = document.createElement('tbody'),
+          tr,
+          td;
+
+        var i = 0,
+          l = data.length,
+          k,
+          obj;
+
+        for (; i < l; i++) {
+          obj = data[i];
+          tr = document.createElement('tr');
+          for (k in obj) {
+            td = document.createElement('td');
+            td.innerHTML = obj[k];
+            tr.appendChild(td);
+          }
+          tbody.appendChild(tr);
+        }
+        return tbody;
+      };
+      this.createRequest = function () {
+        return XMLHttpRequest ?
+          new XMLHttpRequest() :
+          new ActiveXObject('XMLHTTP');
+      };
+    }
+     // 工厂函数     
+    function table( target, url, tableClass, type, async, data ){
+            // 过滤无效参数
+            // 如果使用者没有传入参数，就不能创建Table对象
+            if( !target ){
+                return null;
+            }
+
+            return new Table( target, url, tableClass, type, async, data );
+        }
+
+    var t = table( '#list', 'data.json' );
+        t.load();
+  </script>
+</body>
+
+</html>

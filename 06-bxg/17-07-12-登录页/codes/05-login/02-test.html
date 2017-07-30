@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jquery-3.2.0/jquery-3.2.0.js"></script>
+</head>
+<body>
+  <button> click </button>
+  <script>
+    $( 'button' ).click( function () {
+
+      $.ajax({
+        url: 'http://jk.com/20170712-bxg/codes/06-review/01-index.php',
+        dataType: 'jsonp',
+        success: function ( info ) {
+          console.log( info );
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>

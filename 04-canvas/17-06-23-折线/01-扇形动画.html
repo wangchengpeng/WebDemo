@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="400"></canvas>
+  <script>
+    var canvas = document.getElementById("canvas");
+    ctx = canvas.getContext('2d');
+
+    var w = canvas.width,
+      h = canvas.height;
+
+    var x0 = w / 2,
+      y0 = h / 2;
+
+    var step = 1;
+    function toRadian(angle) {
+      return angle * Math.PI / 180;
+    }
+
+    var start = toRadian(0);
+    var end;
+    console.log(y0);
+    var timer = window.setInterval(function () {
+      if (start > toRadian(5)) {
+        window.clearInterval(timer);
+        console.log(start);
+        alert('complete.');
+        return;
+      }
+      console.log( start );
+      end = start + toRadian(step);
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.arc(x0, y0, 160, start, end);
+      ctx.closePath();
+      ctx.stroke();
+
+
+      start = end;
+    }, 20);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../require.js/require.js"></script>
+  <script>
+    require.config({
+      baseUrl: '/20170715-bxg/codes/02-require/07-nonModuleDeps',
+      paths: {
+        jquery: 'jquery-3.2.0',
+        bootstrap: 'bootstrap',
+
+        myModule: 'myModule'
+      },
+      shim: {
+        bootstrap: {
+          deps: [ 'jquery' ]
+        }
+      }
+    });
+
+
+
+    //  require( [ 'myModule' ] );
+    require( [ 'bootstrap' ] );
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

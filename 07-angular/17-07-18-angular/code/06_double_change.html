@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>06_双向数据绑定</title>
+</head>
+<body>
+    <div ng-app ng-init=" num = 8">
+
+            <!--
+                ng-model会将元素的value与内存中对象进行绑定
+                1:当内存中的对象发生改变，影响页面的改变
+                2:当有ng-model元素的value发生改变会影响内存的改变
+            -->
+            <input type="text" name="" value="" ng-model="num">
+            <hr/>
+            内存中该值是:
+            {{num}}
+            <hr/>
+            <button ng-click="num = num + 1">从内存的改变影响页面ng-model的value</button>
+
+    </div>
+ 
+    
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+</body>
+</html>

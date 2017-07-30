@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>15_逐行变色的英雄列表</title>
+    <style>
+        .r{
+            background-color: hotpink;
+        }
+        .g{
+            background-color: yellowgreen;
+        }
+        /*需要，根据奇偶继续做颜色的选择，并且，每个元素都是大大的字*/
+        .big{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div ng-app="app" ng-controller="myC">
+    <h1>奇偶数显示漂亮的列表</h1>
+        <ul>
+            <li ng-repeat="hero in heros track by $index" ng-class="$index % 2 === 0?'r':'g'">
+                 {{hero.name}}
+            </li>
+        </ul>
+    <h1>选择多个,选中r ||g 各自加上big的样式</h1>
+    <ul>
+        <li ng-repeat="hero in heros track by $index" ng-class="{'big':true,'r':$index %2 ===0,'g':$index %2 !== 0}">
+            {{hero.name}}
+        </li>
+    </ul>
+    <h1>选择一个，但是根据当前英雄的能力来判断取一个</h1>
+    <ul>
+        <li ng-repeat="hero in heros track by $index" ng-class="{'A':'r','D':'g'}[hero.score]">
+            {{hero.name}}
+        </li>
+    </ul>
+    </div>
+    
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        app.controller('myC',function($scope){
+
+            $scope.heros = [{
+                id:1,
+                name:'李白',
+                score:'A', //红色
+            },{
+                id:2,
+                name:'韩信',
+                score:'A', //红色
+            },{
+                id:3,
+                name:'王昭君',
+                score:'A', //红色
+            },{
+                id:4,
+                name:'大乔',
+                score:'D', //绿色
+            },{
+                id:5,
+                name:'小乔',
+                score:'D', //绿色
+            }];
+        })
+    </script>
+</body>
+</html>

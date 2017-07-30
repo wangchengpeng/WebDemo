@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>04_测试依赖注入的好处</title>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        
+        function ttt(fn){
+            var n1 = 1;
+            var n2 = 2;
+            var n3 = 3;
+            var n4 = 4;
+            fn(n1,n2)
+        }
+
+        //如果是依赖注入ttt(function(n100){ //操作n100}  )
+        ttt(function(n1,n2,n3,n4){
+            console.log(n4);
+        })
+
+    </script>
+</body>
+</html>

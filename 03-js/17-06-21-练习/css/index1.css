@@ -1,0 +1,31 @@
+.w{
+  width: 1190px;
+  margin: 0 auto;
+}
+
+/*顶部广告start*/
+.event{
+  background-color: #160a38;
+  display: none;
+}
+.event a{
+  position: relative;
+}
+.event a span{
+  position: absolute;
+  top: -26px;
+  right: 5px;
+  color: #fff;
+}
+.event a span:hover{
+  background-color: rgba(0, 0, 0, 0.54); 
+}
+/*顶部广告end*/
+
+/*顶部工具栏start*/
+.shortcut{
+  background-color: #e3e4e5;
+  height: 31px;
+  font-size: 12px;
+}
+/*顶部工具栏end*/

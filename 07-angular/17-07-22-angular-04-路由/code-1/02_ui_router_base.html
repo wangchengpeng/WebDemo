@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>02_ui-router基本使用</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    
+    <div>
+        我是头
+    </div>
+
+
+    <div ui-view>
+        <!-- 留坑 -->
+    </div>
+
+    <div>   
+        我是脚
+    </div>
+
+    <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+        //声明模块依赖
+        angular.module('app',['ui.router'])
+        //配置路由规则
+        .config(['$stateProvider',function($stateProvider){    //$stateProvider(配置路由规则) $urlRouterProvider(404找不到页面的显示)
+            // console.log('config执行了');
+            //配置路由规则(state)
+            $stateProvider.state('home',{
+                url:'/home',    //    127.0.0.1:8080#!/home
+                template:'<h1>哈哈</h1>'
+            })
+            .state('login',{
+                url:'/login',
+                templateUrl:'./01_mvc.html'
+            })
+        }])
+        .controller('myc',[function(){
+            //运行期
+            console.log('控制器执行了')
+        }])
+
+
+    </script>
+</body>
+</html>

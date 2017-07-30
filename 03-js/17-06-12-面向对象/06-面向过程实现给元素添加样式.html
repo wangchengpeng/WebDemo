@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-面向过程实现给元素添加样式</title>
+    <style>
+        div,
+        p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        div1
+    </div>
+    <div>
+        div2
+    </div>
+    <p>
+        p1
+    </p>
+    <p>
+        p2
+    </p>
+    <script>
+        // 1 获取所有div
+        var divs = document.getElementsByTagName('div');
+        // 2 获取所有p
+        var ps = document.getElementsByTagName('p');
+        // 3 遍历所有div
+        for (var i = 0, l = divs.length; i < l; i++) {
+            // 3.1 给当前遍历到的div设置边框样式
+            divs[i].style.border = '2px solid red';
+        }
+        // 4：遍历所有p
+        for (i = 0, l = ps.length; i < l; i++) {
+            // 4.1 给当前遍历到的p设置边框样式
+            ps[i].style.border = '2px solid #daa520';
+        }
+    </script>
+</body>
+
+</html>

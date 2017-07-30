@@ -1,0 +1,5 @@
+<ul>
+    <li ng-repeat="stu in stus track by $index">
+        {{stu.name}}    <a href="#!/detail?id={{stu.id}}&name={{stu.name}}">查看详情</a>
+    </li>
+</ul>

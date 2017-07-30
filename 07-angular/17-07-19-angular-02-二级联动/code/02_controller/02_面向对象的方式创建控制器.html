@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>02_面向对象的方式创建控制器</title>
+</head>
+<body ng-app="app">
+    
+        <div ng-controller="myc as obj">
+            {{obj.name}}
+            {{obj.age}}
+            {{sex}}
+        </div>
+
+
+    <script type="text/javascript" src="../assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        app.controller('myc',function($scope,$log){
+            //以面向对象的方式做属性的初始化，可以吧当前函数想象成一个构造函数
+            this.name = 'jack';
+            this.age = 18;
+            $scope.sex = '男';
+            $log.log('aaaa')
+        })
+        // var app=angular.module("app",[]);app.controller("myc",function(a){this.name="jack";this.age=18;a.sex="男"});
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买2</title>
+    <!--bootstrap -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!--base -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!--lindex-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!--less-->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--头部 start-->
+    <!--顶部log-->
+    <header>
+        <a class="logo" href=""><img src="./images/header_logo.png" alt=""></a>
+        <a class="app" href=""><img src="./images/header_app.png" alt=""></a>
+    </header>
+    <!--搜索-->
+    <section id="search">
+        <form>
+            <input type="search" placeholder="MACbook">
+            <input type="submit" value="search">
+        </form>
+    </section>
+    <!--头部 end-->
+    <!--菜单栏 start-->
+    <section id="menu" class="clearfix">
+        <ul class="roww">
+        </ul>
+    </section>
+    <!--菜单 end-->
+
+    <!--商品推介 start-->
+    <section id="recommend">
+        <!--更多优惠 start-->
+        <div class="recommend_title">
+            <span>更多优惠信息</span>
+            <img src="http://www.zuyushop.com/wap/images/more.png" alt="">
+        </div>
+        <!--更多优惠 end-->
+    </section>
+    <!--菜单模板 end-->
+    <script type="text/html" id="indexMenuTpl">
+        {{each result as value index}}
+        <li>
+            <a href="{{value.titlehref}}">
+                    {{#value.img}}
+                    <p>{{value.name}}</p>
+                </a>
+        </li>
+        {{/each}}
+    </script>
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

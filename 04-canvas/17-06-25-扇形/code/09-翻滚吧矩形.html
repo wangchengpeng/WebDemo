@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09-翻滚吧矩形</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		ctx.translate( w / 2, h / 2 );
+		ctx.strokeRect( -100, -100, 200, 200 );
+
+		setInterval( function() {
+			ctx.rotate( 1 * Math.PI / 180 );
+			ctx.clearRect( -w / 2, -h / 2, w, h );
+			ctx.strokeRect( -100, -100, 200, 200 );
+		}, 25 );
+	</script>
+</body>
+</html>

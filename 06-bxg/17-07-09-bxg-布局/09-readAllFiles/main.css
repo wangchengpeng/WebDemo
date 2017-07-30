@@ -1,0 +1,21 @@
+.aside {
+  position: fixed;
+  width: 180px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.aside .profile {
+  text-align: center;
+  padding: 30px 0;
+}
+.aside .profile img {
+  width: 100px;
+  height: 100px;
+}
+.main p {
+  color: red;
+}
+.main p span {
+  color: blue;
+}

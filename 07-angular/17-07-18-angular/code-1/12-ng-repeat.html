@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12-1-输出英雄列表</title>
+</head>
+
+<body>
+    <div ng-app="app" ng-controller="myC">
+        <ul>
+            <li ng-repeat="hero in heros">
+                {{hero.name}}
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+
+        app.controller('myC',function($scope){
+            $scope.heros=[{
+                id:1,
+                name:'海信'
+            },{
+                id:2,
+                name:'暴君'
+            },{
+                id:3,
+                name:'王邵军'
+            }]
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-绘制相切弧</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		var x = w / 2 - 100,
+			y = h / 2 - 100;
+
+		ctx.moveTo( x, y - 50 );
+		ctx.arcTo( x, h / 2 + 100, w / 2 + 100, h / 2 + 100, 200 );
+		ctx.stroke();
+
+		ctx.strokeStyle = 'red';
+		ctx.strokeRect( x, y, 200, 200 );
+	</script>
+</body>
+</html>

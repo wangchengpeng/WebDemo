@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-闭包的深入</title>
+</head>
+<body>
+    <script>
+        function outer(){
+            var n = Math.random();
+            var m = Math.random() * 10 + 1;
+
+            function inner1(){
+                return n;
+            }
+            function inner2(){
+                return m;
+            }
+
+            return {
+                getN: inner1,
+                getM: inner2
+            };
+        }
+
+        var obj = outer();
+
+        console.log( obj.getN() );
+        console.log( obj.getN() );
+
+        console.log( obj.getM() );
+        console.log( obj.getM() );
+        obj = null;
+
+        function out(){
+            var n = Math.random();
+            var m = Math.random() * 10 + 1;
+
+            return {
+                getN: function(){
+                    return n;
+                },
+                getM: function(){
+                    return m;
+                },
+                setN: function( val ){
+                    n = val;
+                }
+            }
+        }
+        var obj = out();
+        console.log( obj.getN() );
+        console.log( obj.getM() );
+        obj.setN( 1 );
+        console.log( obj.getN() ); // 1
+    </script>
+</body>
+</html>

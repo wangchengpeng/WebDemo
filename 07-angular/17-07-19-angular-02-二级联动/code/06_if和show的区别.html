@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_ng-if和ng-show</title>
+</head>
+
+<body ng-app="app" ng-controller="myc">
+    ng-show
+    <div ng-show="isShow">
+        {{text}}
+    </div>
+<hr/>
+
+        ng-if
+    <div ng-if="isShow">
+        {{text}}
+    </div>
+<hr/>
+
+    <button ng-click="change()">改变显示开关</button>
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        app.controller('myc',['$scope',function($scope){
+            $scope.isShow = true;
+            $scope.text = '哈哈1';
+            $scope.change = function(){
+
+                // $scope.isShow = !$scope.isShow;
+                $scope.isShow = '12121';
+            }
+        }])
+    </script>
+</body>
+
+</html>

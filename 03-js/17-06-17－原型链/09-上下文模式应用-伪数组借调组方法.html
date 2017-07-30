@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>09-上下文模式应用-伪数组借调组方法</title>
+</head>
+<body>
+  <script>
+    var arr = [ 1, 2, 3 ,5];
+    var newArr = arr.slice();
+    var obj = {
+      0: 1,
+      1: 2,
+      2: 3,
+      3: 4,
+      length: 5
+    };
+    var arr2 = Array.prototype.slice.call( obj );
+    console.log( arr2 );
+    console.log( arr2 instanceof Array );
+    console.log( newArr == arr );
+
+  </script>
+</body>
+</html>

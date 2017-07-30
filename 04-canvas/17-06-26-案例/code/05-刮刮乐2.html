@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05-刮刮乐实现2</title>
+	<style>
+		canvas {
+			position: absolute;
+			margin: 50px 400px;
+			left: 0;
+			top: 0;
+			border: 1px solid #000;
+		}
+
+	</style>
+</head>
+<body>
+	<canvas id="back" width="200" height="50"></canvas>
+	<canvas id="front" width="200" height="50"></canvas>
+	<script>
+		var frontCan = document.querySelector( '#front' ),
+			backCan = document.querySelector( '#back' );
+
+		var fCtx = frontCan.getContext( '2d' ),
+			bCtx = backCan.getContext( '2d' );
+
+
+		var w = frontCan.width,
+			h = frontCan.height;
+
+		// 1 模拟中奖算法
+		var awards = [ '宝宝别哭', '宝宝别哭', '一只美女', '宝宝别哭',  '5元代金', '再来一次', '10代金券', '5元代金', '宝宝别哭', '再来一次', '5元代金',  '10元代金', '宝宝别哭'];
+
+		var index = Math.floor( Math.random() * awards.length );
+		var award = awards[ index ];
+
+		// 2 将中奖信息绘制在back Canvas上
+		bCtx.beginPath();
+		bCtx.textAlign = 'center';
+		bCtx.textBaseline = 'middle';
+		bCtx.font = '24px 微软雅黑';
+		bCtx.fillText( award, w / 2, h / 2 );
+
+		// 3 在front Canvas上绘制一个矩形遮罩层
+		fCtx.fillStyle = '#eee';
+		fCtx.fillRect( 0, 0, w, h );
+
+		// 4 实现刮奖
+		var flag = false;
+		// 4.1 绑定mousedown事件
+		frontCan.addEventListener( 'mousedown', function() {
+			flag = true;
+		} );
+		// 4.2 绑定mousemove
+		frontCan.addEventListener( 'mousemove', function( e ) {
+			if( flag ){
+				var x = e.clientX - frontCan.offsetLeft,
+					y = e.clientY - frontCan.offsetTop;
+
+				fCtx.clearRect( x - 3, y - 3, 6, 6 );
+			}
+		} );
+		// 4.3 绑定mouseup
+		frontCan.addEventListener( 'mouseup', function() {
+			flag = false;
+		} );
+	</script>
+</body>
+</html>

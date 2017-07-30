@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01-面向过程实现大表哥</title>
+  <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+
+<body>
+  <div id="list">
+
+  </div>
+
+  <script>
+    //1, 创建table标签
+    var table = document.createElement('table'),
+      thead = document.createElement('thead'), // 创建表头标签
+      tbody = document.createElement('tbody'); // 创建表体标签
+
+    table.className = 'grid-table';
+    //创建行 ， 表头 ，  列 ；
+    var tr, // 行
+      th, // 表头列
+      td; // 数据列
+
+    //获取数据  是否兼容 IE
+    var xhr = XMLHttpRequest ?
+      new XMLHttpRequest() :
+      new ActiveXObject('XMLHTTP');
+
+    //2.2调用open方法
+    //2.3监听请求
+    xhr.open('get', 'data.json', true);
+    xhr.onreadystatechange = function () {
+      var readystate = xhr.readyState,
+        status = xhr.status;
+      if (readystate == 4) {
+        if (status >= 200 && status < 300 || status == 304) {
+          //success eval()       evel慎用 （坚决不用）
+          //获取数据 解析数据
+          // console.log(xhr.responseText);
+
+           var data = JSON.parse( xhr.responseText );
+          // console.log(data);
+          //3 绘制表头
+          tr = document.createElement('tr');
+          // 3.2 获取数据中第一个对象
+          var obj = data[0];
+          console.log(obj);
+   //创建表头
+          // 3.3遍历对象所有的属性
+          for (var k in obj) {
+            th = document.createElement('th');
+            // console.log(k);
+            // 添加 表头的内容；
+            th.innerHTML = k;
+            //将th添加到tr上
+            tr.appendChild( th );
+          }
+          //3.4将tr添加都表头 thead 上；
+          thead.appendChild( tr ) 
+          // console.log(thead);
+  //4绘制表体
+          var i = 0;
+              l = data.length;
+          //4.1 遍历所有数据 
+          for(; i < l ; i++){
+            obj = data[ i ];
+            tr = document.createElement('tr');
+            for( k in obj){
+              td = document.createElement('td');
+              td.innerHTML = obj[k];
+              tr.appendChild( td );
+            }
+            tbody.appendChild( tr );
+          } 
+          //将thead添加到表格里
+          table.appendChild( thead );
+          //将tbody添加到表格里；
+          table.appendChild( tbody );
+          document.querySelector( '#list' ).appendChild( table );
+        } else {
+          console.log("数据请求失败");
+        }
+      }
+
+    }
+    xhr.send();
+  </script>
+</body>
+
+</html>

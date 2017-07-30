@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-04-测试依赖注入蒂的好处</title>
+</head>
+<body>
+    <script type="text/javascript">
+    function ttt(fn){
+        var n1 = 1;
+        var n2 = 2;
+        var n3 = 3;
+        var n4 = 4;
+        fn(n1, n2)
+    }
+
+    ttt(function(n1,n2,n3,n4){
+        console.log(n4);
+    })
+    </script>
+</body>
+</html>

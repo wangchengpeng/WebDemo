@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-双向数据绑定</title>
+</head>
+<body>
+    <div ng-app ng-init="num = 8">
+        <input type="text" name="" value="" ng-model="num">
+        <he/>
+        内存中该值是：
+        {{num}}
+        <br>
+        <button type="" ng-click="num = mum + 1">
+            从内存的改变影响页面ng-model的value
+        </button>
+    </div>
+    <script src="./assets/angular//angular.js"></script>
+</body>
+</html>

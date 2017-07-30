@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>服务器A:sublime启动的服务器</title>
+</head>
+<body>
+    1111
+
+    <script type="text/javascript">
+        // var xhr = new XMLHttpRequest();
+        // //请求node  url : /testJsonp
+        // xhr.open('get','http://127.0.0.1:80/testJsonp')
+        // xhr.onreadystatechange = function(){
+        //     if(xhr.status === 200 && xhr.readyState === 4){
+        //         console.log(xhr.responseText);
+        //     }
+        // }
+        // xhr.send();
+
+        //动态创见script标签,link可以自动执行css，script自动执行js
+        var script = document.createElement('script');
+        var cbName = 'callback_' + Date.now();
+        //设置src属性
+        script.src = 'http://127.0.0.1:80/testJsonp?callback=' + cbName;
+
+        alert('此时全局挂载了一个函数'+ cbName);
+        //挂载函数
+        window[cbName] = function(data){
+            //数据响应回来，自动执行js.触发该函数的被调用
+            console.log(data);
+        }
+
+        //插入文档对象，
+        document.body.appendChild(script); //立刻发起请求
+
+    </script>
+</body>
+</html>

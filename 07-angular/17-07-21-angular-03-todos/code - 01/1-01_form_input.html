@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="myc">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1-01-关于表单练习</title>
+    <style>
+        .tishi{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li ng-repeat="person in persons">
+            {{person}}
+        </li>
+    </ul>
+
+    <p class="tishi">{{msg}}</p>
+
+    <!-- action="" made 
+    指定处理该表单的动态页或脚本的路径 -->
+    <form action="" ng-submit="addPerson()">
+
+        昵称<input type="text" name="nickname" ng-model="nickname"><br/> 性别:
+        <input type="radio" name="sex" value="男" ng-model="sex">男
+        <input type="radio" name="sex" value="女" ng-model="sex">女<br/> 出生年:
+        <select ng-model="year" ng-options="year for year in years">
+            <option value="">请选择</option>
+        </select><br/>
+
+         出生月:
+        <select ng-model="month" ng-options="month for month in months">
+            <option value="">请选择</option>
+        </select><br/> 兴趣爱好:
+        <input type="checkbox" name="eat" ng-model="eat"> 吃
+        <input type="checkbox" name="drink" ng-model="drink"> 喝<br/>
+        <input type="submit" value="提交">
+    </form>
+
+    <script src="./assets/angular/angular.js"></script>
+    <script>
+        angular.module('app',[])
+        .controller('myc',['$scope',function($scope){
+            //初始化值
+            $scope.nickname = '';
+            $scope.sex = '女';
+            //数组
+            $scope.persons = [];
+            //提示
+            $scope.msg = '';
+
+
+            //声明工具函数
+            $scope.makeDate = function(begin,end){
+                var arr = [];
+                for (var i = begin; i <= end; i++) {
+                    arr.push(i+'');
+                }
+                return arr;
+            }
+            //和函数
+            $scope.years = $scope.makeDate(1980,1999);
+            $scope.months = $scope.makeDate(1,12);
+
+
+                //点击提交获取数据
+                $scope.addPerson = function(){
+                    // console.log($scope.nickname, $scope.sex, $scope.year, $scope.month, $scope.eat, $scope.drink);
+                    // if ($scope.nickname.length < 6 || $scope.nickname.length > 12 || $scope.nickname.trim() === '') {
+                    //     // alert(1);
+                    //     $scope.msg ='用户名不合法'; 
+                    //    
+                    // } alert(1);
+
+                    // if($scope.year == undefined){
+                    //     $scope.msg = '请输入出生年月';
+                    // }
+                    // if($scope.month === undefined ){
+                    //     $scope.msg = '请输入出生月';
+                    // }
+
+
+                    // $socpe.persons.push({
+                    //     nickname:$scope.nickaname,
+
+                    //     sex:$scope.sex,
+                    //     year:$scope.year,
+                    //     month:$scope.month,
+                    //     eat:$scope.eat,
+                    //     drink:$scope.drink,
+                    // })
+                    // 
+                    // 
+                    if($scope.nickname.length < 6 || $scope.nickname.length > 12 || $scope.nickname.trim() === ''){
+                    $scope.msg = '用户名不合法';
+                    return;
+                }
+
+                console.log($scope.year);
+                if($scope.year === undefined){
+                    $scope.msg = '请输入出生年';
+                    return;
+                }
+                 if($scope.month === undefined){
+                    $scope.msg = '请输入出生月';
+                    return;
+                }
+
+
+                $scope.persons.push({
+                    nickname:$scope.nickname,
+                    sex:$scope.sex,
+                    year:$scope.year,
+                    month:$scope.month,
+                    eat:$scope.eat,
+                    drink:$scope.drink
+                })
+
+                }
+            }])
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_SPA</title>
+</head>
+<style type="text/css">
+.h {
+    background-color: yellowgreen;
+    height: 50px;
+}
+
+.b {
+    background-color: hotpink;
+    height: 250px;
+}
+
+.f {
+    background-color: skyblue;
+    height: 50px;
+}
+</style>
+
+<body ng-app="app">
+    <div class="h">
+    <!-- 这里会自动生成href 根据state名叫music的对象中的url属性生成 -->
+        <a  ui-sref="music">我的音乐</a>
+        <a ui-sref="movie">我的电影</a>
+        <a ui-sref="game">我的游戏</a>
+         <a ui-sref="music">我的音乐</a>
+        <a ui-sref="movie">我的电影</a>
+        <a ui-sref="game">我的游戏</a>
+         <a ui-sref="music">我的音乐</a>
+        <a ui-sref="movie">我的电影</a>
+        <a ui-sref="game">我的游戏</a>
+    </div>
+    <div class="b" ui-view></div>
+    <div class="f">
+        版权所有 违者必究
+    </div>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+        //创建模块及依赖模块
+        angular.module('app',['ui.router'])
+        //配置路由规则
+        .config(['$stateProvider',function($stateProvider){
+            $stateProvider.state('music',{
+            //   href="#!/music2" - > 匹配  如下url
+            //   点击以后的行为  配，配url属性
+                url:'/music2',
+                templateUrl:'./music.html'
+            })
+            .state('movie',{
+                url:'/movie3',
+                templateUrl:'./movie.html'
+            })
+            .state('game',{
+                url:'/game4',
+                templateUrl:'./game.html'
+            })
+        }])
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-创建对象方式-工厂模式</title>
+</head>
+<body>
+    <script>
+        /*function createPerson( name, age, sex ){
+            // 1: 字面量方式 实现对象的创建
+            var obj = {};
+            obj.name = name;
+            obj.age = age;
+            obj.sex = sex;
+            return obj;
+        }*/
+        function Person( name, age, sex ){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        function createPerson( name, age, sex ){
+            // 1: 构造函数方式 实现对象的创建
+            // var obj = new Person( name, age, sex );
+            // return obj;
+            return new Person( name, age, sex );
+        }
+
+        var jingjing = new createPerson( 'jingjing', 20, 'man' );
+        var duoduo = createPerson( 'duoduo', 21, 'lady' ); 
+    </script>
+</body>
+</html>

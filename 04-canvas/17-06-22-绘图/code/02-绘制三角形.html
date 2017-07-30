@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-绘制三角形</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<!-- 1 创建Canvas -->
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		// 2 获取绘图工具
+		var canvas = document.getElementById( 'canvas' ),
+			// 绘制平面图形的一套方法 如果绘制立体的 传 'webgl'
+			ctx = canvas.getContext( '2d' ); 
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		// 3 绘制图形
+		var x = w / 2,
+			y = 50;
+console.log( x );
+console.log( y );
+		var h = 100;
+		var l = 300;
+
+		ctx.moveTo( x, y );
+		ctx.lineTo( x - l / 2, y + h );
+		ctx.lineTo( x + l / 2, y + h );
+		ctx.lineTo( x, y );
+
+		// 4 填充或描边
+		ctx.stroke(); // 描边
+		ctx.fill();
+	</script>
+</body>
+</html>

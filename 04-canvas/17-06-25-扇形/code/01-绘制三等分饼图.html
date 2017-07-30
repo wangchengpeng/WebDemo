@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01-三等分饼图</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+		// 1 确定圆心点坐标
+		var x = w / 2,
+			y = h / 2;
+
+		var r = 160;
+
+		var start = -90,
+			end;
+
+		var colors = [ 'red', 'blue', 'green' ];
+		// 使用for循环绘制
+		for( var i = 0; i < 3; i++, start = end ){
+			end = start + 120;
+			ctx.beginPath();
+			ctx.moveTo( x, y );
+			ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+			ctx.fillStyle = colors[ i ];
+			ctx.fill();
+		}
+
+		/*// 画红的扇形
+		end = start + 120;
+		// 第一个
+		ctx.beginPath();
+		ctx.moveTo( x, y );
+		ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+		ctx.closePath();
+		ctx.fillStyle = 'red';
+		ctx.fill();
+		//  第二个
+		start = end;
+		end = start + 120;
+		ctx.beginPath();
+		ctx.moveTo( x, y );
+		ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+		ctx.closePath();
+		ctx.fillStyle = 'green';
+		ctx.fill();
+		// 第三个
+		start = end;
+		end = start + 120;
+		ctx.beginPath();
+		ctx.moveTo( x, y );
+		ctx.arc( x, y, r, start * Math.PI / 180, end * Math.PI / 180 );
+		ctx.closePath();
+		ctx.fillStyle = 'blue';
+		ctx.fill();*/
+	</script>
+</body>
+</html>

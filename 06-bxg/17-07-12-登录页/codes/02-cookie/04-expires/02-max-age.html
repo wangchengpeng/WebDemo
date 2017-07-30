@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn_save"> save </button>
+  <script>
+    var btn_save = document.getElementById( 'btn_save' );
+    btn_save.onclick = function () {
+      document.cookie = 'name=tom; max-age=' + ( 60 * 60 );
+    };
+  </script>
+</body>
+</html>

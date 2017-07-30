@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>03-使用Function创建函数</title>
+</head>
+
+<body>
+  <script>
+    var str = 'alert( 1 )';
+    //use eval
+    evel(str);
+    //use Function
+    //将str当作生成函数的函数体部分，然后在执行函数。那么str就就可以当作js代码执行了
+    /* var fn = new Function( str );
+    fn();*/
+    ( new Function( str )() );
+  </script>
+</body>
+
+</html>

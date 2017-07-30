@@ -1,0 +1,230 @@
+*{
+	font-family: "微软雅黑";
+	color:#000;
+}
+input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/*主体模块设置mainBox*/
+.mainBox{
+	width:96%;
+    margin:0.2rem 2%;
+    /*background:#f5b8a7;*//*肉色*/
+   	overflow: hidden;
+}
+/*搜索模块设置searchBox*/
+.searchBox{
+	width:100%;
+	height:1.0rem;
+	background:#d16d4d;/*橘黄色*/
+	display: flex;
+	display:-webkit-flex;
+	justify-content: center;
+	align-items: center;
+}
+.search{
+	width:96%;
+	margin:0 2%;
+	height:0.52rem;
+	background:#fff;
+	/*overflow: hidden;*/
+	position:relative;
+}
+.searchInput{
+	width:97%;
+	padding-left:3%;
+	height:0.52rem;
+	line-height:0.52rem;
+	background:#fff;
+	font-size:0.28rem;
+	color:#8f8e8e;/*灰色*/
+	letter-spacing: 1px;
+	position: absolute;
+}
+.searchImg{
+	height:0.35rem;
+	position: absolute;
+	top:0.1rem;
+	right:2%;
+}
+/*信息模块设置xinxiBox*/
+.xinxiBox{
+	margin-top:0.1rem;
+	width:100%;
+	padding:0.2rem 0;
+	background:#f6b29f;/*肉色*/
+	display: flex;
+	display:-webkit-flex;
+	justify-content: center;
+}
+.xinxiBox-1{
+	width:96%;
+	margin:0 2%;
+}
+/*会员信息整体模块设置memberInforBox*/
+.memberInforBox{
+	width:100%;
+}
+/*会员信息模块设置memberInfor*/
+.memberInfor{
+	width:96%;
+	padding:0 2%;
+	background:#fff;
+	padding-bottom:0.2rem;
+}
+
+.memberInfor_borderBottom{
+	border-bottom: 1px solid #ccc;
+}
+.memberInfor p,.memberInfor p span{
+	font-size:0.28rem;
+}
+.memberInfor p{
+	margin-top:0.2rem;
+}
+.memberInfor p span{
+	padding-left:0.2rem;
+}
+.member{
+	width:100%;
+	display: flex;
+	display:-webkit-flex;
+}
+.member p:nth-child(1){
+	margin-right:7%;
+}
+/*购买表格模块设置buyTabBox*/
+.buyTabBox{
+	width:100%;
+	display: none;
+}
+/*表格设置buyTab*/
+.buyTab{
+	width:100%;
+	/*border-collapse: separate;
+	border-spacing: 2px 2px;*/
+	border-collapse: collapse;
+	overflow: hidden;
+}
+.buyTab tr{
+	width:100%;
+	border-bottom:2px solid #d26d4d;/*橘黄色*/
+}
+.buyTabBox .buyTab tr:last-child{
+	border-bottom:none;
+}
+.buyTab tr:not(.tr1) td:nth-child(2){
+	border-left:2px solid #d26d4d;/*橘黄色*/
+	border-right:2px solid #d26d4d;/*橘黄色*/
+}
+.buyTab td{
+	height:0.47rem;
+	text-align: center;
+	line-height:0.47rem;
+	font-size: 0.24rem;
+}
+.tr1 td{
+	color:#fff;
+}
+.tr1{
+	background:#d26d4d;/*橘黄色*/
+}
+.buyTab tr:not(.tr1){
+	background:#fff;
+}
+.buyTab tr td:nth-child(1){
+	width:50%;
+	overflow: hidden;
+}
+.buyTab tr td:nth-child(2){
+	width:30%;
+}
+.buyTab tr td:nth-child(3){
+	width:20%;
+}
+.buyTab tr td input{
+	width:100%;
+	height:0.47rem;
+	line-height:0.47rem;
+	text-align: center;
+	font-size: 0.24rem;
+}
+/*表单按钮模块设置tabBtnBox*/
+.tabBtnBox{
+	width:100%;
+	height:0.8rem;
+	background:#d26d4d;/*橘黄色*/
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+}
+.tabBtnBox input{
+	width:20%;
+	height:0.47rem;
+	background:#a11a1b;/*深红色*/
+	line-height:0.47rem;
+	text-align: center;
+	color:#fff;
+	font-size: 0.28rem;
+	letter-spacing: 1px;
+}
+.tabBtnBox input:nth-child(1){
+	margin-right:10%;
+}
+/*body遮罩层设置*/
+.cover {
+	position:fixed; 
+    top:0; 
+    right:0;
+    left:0; 
+    bottom:0;
+    opacity:0.6;
+    -moz-opacity:0.6;
+    filter: alpha(opacity=60);
+    background-color: #fff;
+    display: none;
+}
+/*弹框模块设置tanKBox*/
+.tanKBox{
+	width:70%;
+    margin:0 15%;
+    height:4.5rem;
+    background:#d26d4d;/*橘黄色*/
+   	position:absolute;
+	left:0;
+	top:20%;
+	display: none;
+}
+/*文字提示tishiTxt*/
+.tishiTxt{
+	margin-top:1.0rem;
+	padding:0 10%;
+	text-align: center;
+	color:#fff;
+    font-size:0.34rem;
+    letter-spacing: 2px;
+}
+/*按钮模块设置BtnBox*/
+.BtnBox{
+	margin-top:1.0rem;
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+}
+.BtnBox input{
+	width:35%;
+    height:0.5rem;
+    line-height:0.5rem;
+    text-align: center;
+    background:#fff;
+    color:#d26d4d;/*橘黄色*/
+    font-size:0.34rem;
+    letter-spacing: 2px;
+}
+.BtnBox input:first-child{
+	margin-right:5%;
+}

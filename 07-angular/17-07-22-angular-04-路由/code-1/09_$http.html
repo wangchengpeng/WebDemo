@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>09_http</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+    <script type="text/javascript">
+            angular.module('app',[])
+            .controller('myc',['$scope','$http',function($scope,$http){
+                $http.get('http://182.254.146.100:8899/api/getlunbo')
+                .then(function(res){//那么之后
+                    console.log(res.data); //数据
+                })
+                .catch(function(err){//异常
+                    console.log(err);
+                })
+                .finally(function(){  //最终无论如何都执行
+                    console.log('finally');
+                })
+            }])
+
+
+    </script>
+</body>
+</html>

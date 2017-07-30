@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--移动端视口-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--引入第三方 文件-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--引入css文件-->
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/inlanddiscount.less">
+    <!--引入less文件-->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+
+    <!--header  start -->
+    <header id="header">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="app-download">
+            <a href="#">
+                <img src="images/header_app.png" alt="">
+            </a>
+        </div>
+    </header>
+    <!--header  end-->
+
+    <!--main  start-->
+    <main id="main" class="clearfix">
+        <ul class="main-product clearfix">
+            <!--<li>
+                <a href="#">
+                    <div class="main-img">
+                        <img src="http://img10.360buyimg.com/n7/jfs/t1720/256/513904188/195330/ce31e971/55d2cf3eNc2d117d0.jpg" alt="">
+
+                    </div>
+                    <div class="title">西域美农新疆特产五星和田红枣250g*2</div>
+                    <div class="subtit">19.8元(5件99元)</div>
+                    <div class="info">
+                        京东商城 | 10-22 13:28
+                    </div>
+
+                </a>
+            </li>
+-->
+
+
+
+
+        </ul>
+
+    </main>
+    <!--main  end-->
+    <!--loadding  start -->
+    <div class="spinner loadding">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+    <!--loadding  end-->
+    <!--footer  start -->
+    <footer id="footer">
+
+        <div class="loginbox clearfix">
+            <div class="login">
+                <a href="#">登录</a>
+            </div>
+            <div class="resgiter">
+                <a href="#">注册</a>
+            </div>
+            <div class="goTop">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">
+                <a href="#">返回顶部</a>
+            </div>
+        </div>
+        <div class="login-bottom">
+            <p class="p-top">
+                <span>手机APP下载</span>
+                <span>慢慢买手机版</span>
+                <span> -- 掌上比价平台</span>
+            </p>
+            <p>
+
+                m.manmanbuy.com
+
+            </p>
+        </div>
+    </footer>
+    <!--footer  end -->
+    <!--模板编辑 start-->
+    <script type="text/html" id="discountTpl">
+        {{each result as value index}}
+        <li>
+            <a href="#">
+                <div class="main-img">
+                    {{#value.productImg}}
+                </div>
+                <div class="title">{{value.productName}}</div>
+                <div class="subtit">{{value.productPrice}}</div>
+                <div class="info">
+                    {{value.productFrom}} |{{value.productTime}}
+                </div>
+
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <!--模板编辑 end-->
+
+    <!--引入js文件-->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src='js/url.js'></script>
+    <script src="js/indiscount.js"></script>
+
+</body>
+
+</html>

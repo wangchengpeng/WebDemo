@@ -1,0 +1,19 @@
+{
+  "name": "17-05-27-yidong-web-rem-buju",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangchengpeng/WebDemo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangchengpeng/WebDemo/issues"
+  },
+  "homepage": "https://github.com/wangchengpeng/WebDemo#readme"
+}

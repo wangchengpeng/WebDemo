@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-闭包的基本使用</title>
+</head>
+<body>
+    <script>
+        function outer(){
+            var n = Math.random();
+            function inner(){
+                return n;
+            }
+            return inner;
+        }
+
+        var closures = outer(); // closures 就是闭包。
+        var n1 = closures();
+        var n2 = closures();
+
+        console.log( n1 );
+        console.log( n2 );
+        console.log( n1 == n2 );
+
+        var cl2 = outer();
+        var n3 = cl2();
+        var n4 = cl2();
+        console.log( n3 );
+        console.log( n4 );
+        console.log( n3 == n4 );
+
+        console.log( n1 == n3 );
+    </script>
+</body>
+</html>

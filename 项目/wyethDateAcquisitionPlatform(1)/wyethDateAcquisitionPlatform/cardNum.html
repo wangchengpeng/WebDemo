@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>识别卡号-cardNum</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/cardNum.css" />
+		<script type="text/javascript" src="js/rem.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		<form action="">
+			<!--主体模块设置main-->
+			<div class="main">
+				<!--卡号模块设置cardBox-->
+				<p class="cardBox">卡号：<span>26356565232659898</span></p>
+				<!--返回按钮模块设置btn_box-->
+				<div class="btn_box" style="font-size: 0;">
+					<input type="button" value="下一步" class="xy"/>
+				</div>
+			</div>
+			<!--body遮罩层设置-->
+			<div class="cover"></div>
+			<!--弹框模块设置tanKuang-->
+			<div class="tanKuang">
+				<!--图片设置chadui-->
+				<div class="chadui" style="font-size:0;">
+					<img src="img/telVerificationImg/cha.png" class="cha"/> 
+				</div>
+				<!--信息提示tishi-->
+				<p class="tishi fail">卡号验证失败</p>
+				<!--确定按钮设置qdBtnBox-->
+				<div class="qdBtnBox" style="font-size:0;">
+					<input type="button" value="确定" class="qdBtn" />
+				</div>
+			</div>
+		</form>
+		<script>
+			$('.xy').click(function(){
+				$('.cover').show();
+				$('.tanKuang').show();
+			});
+			$('.qdBtn').click(function(){
+				$('.cover').hide();
+				$('.tanKuang').hide();
+			});
+		</script>
+	</body>
+</html>

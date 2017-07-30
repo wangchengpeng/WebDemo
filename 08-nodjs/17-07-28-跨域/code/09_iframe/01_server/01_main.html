@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        var isFirst = true;
+        //动态创建iframe 访问的是同域下的，能否通信
+        
+        var iframe = document.createElement('iframe');
+        // //同域的可以访问top.show
+        // //当前01_main.html是 8001端口
+        // iframe.src='http://127.0.0.1:8001/01_sub.html';
+
+        //跨域的请求资源
+        iframe.src = 'http://127.0.0.1:8002/02_data.html';
+
+        //设置如果加载以后，就改变回来到原来的01_sub.html
+        iframe.onload = function(){
+            if(isFirst){
+                isFirst = false;
+                //找01_sub.html,让其通信我的show函数
+                iframe.src = 'http://127.0.0.1:8001/01_sub.html';
+                
+            }
+            
+        }
+
+        //插入到body中
+        document.body.appendChild(iframe);
+
+        //让iframe把数据传递进来
+    function show(data){
+        alert(data);
+    }
+
+
+
+    </script>
+
+</body>
+</html>

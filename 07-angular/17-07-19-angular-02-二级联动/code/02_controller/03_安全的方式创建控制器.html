@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_安全的方式创建控制器</title>
+</head>
+
+<body ng-app="app" ng-controller="myc">
+    {{text}}
+    <script type="text/javascript" src="../assets/angular/angular.js"></script>
+    <script type="text/javascript">
+    // var app = angular.module('app',[]);
+    // app.controller('myc',['$scope','$log',function($scope,$log){
+    //     $scope.text = '安全吗，代码多';
+    //     $log.log('haha');
+    // }])
+    var app = angular.module("app", []);
+    app.controller("myc", ["$scope", "$log", function(a, b) { a.text = "安全吗，代码多";
+        b.log("haha") }]);
+    </script>
+</body>
+
+</html>

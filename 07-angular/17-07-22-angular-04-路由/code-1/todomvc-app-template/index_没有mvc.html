@@ -1,0 +1,291 @@
+﻿<!doctype html>
+<html lang="en" ng-app="app" ng-controller="myc">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template • TodoMVC</title>
+    <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+    <!-- CSS overrides - remove if you don't need it -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <section class="todoapp">
+        <header class="header">
+            <h1>todos</h1>
+            <form ng-submit="addTask()">
+                <input class="new-todo" placeholder="What needs to be done?" autofocus ng-model="newContent">
+            </form>
+        </header>
+        <!-- This section should be hidden by default and shown when there are todos -->
+        <section class="main">
+            <input class="toggle-all" type="checkbox" ng-model="toggle" ng-change="toggleAll()">
+            <label for="toggle-all">Mark all as complete</label>
+            <ul class="todo-list">
+                <!-- These are here just to show the structure of the list items -->
+                <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+                <li ng-repeat="task in tasks | filter:condition track by $index" ng-class="{'completed':task.isCompleted,'editing':task.id == editingId}">
+                    <div class="view">
+                        <input class="toggle" type="checkbox" ng-model="task.isCompleted">
+                        <label ng-bind="task.content" ng-dblclick="edit(task.id)"></label>
+
+                        <button class="destroy" ng-click="del($index)"></button>
+                    </div>
+
+
+                    
+
+
+                    <form ng-submit="save()">
+                        <input class="edit" ng-model="task.content" my-focus="task.id == editingId" ng-blur="save()">
+                    </form>
+                    结果:{{task.id == editingId}}
+                </li>
+            </ul>
+        </section>
+        <!-- This footer should hidden by default and shown when there are todos -->
+        <footer class="footer ">
+            <!-- This should be `0 items left` by default -->
+            <span class="todo-count "><strong>{{leftNum}}</strong> item left</span>
+            <!-- Remove this if you don't implement routing -->
+            <ul class="filters ">
+                <li>
+                    <a href="#" ng-class="selectedNum == 1?'selected':''">All</a>
+                </li>
+                <li>
+                    <a href="#active" ng-class="selectedNum == 2?'selected':''">Active</a>
+                </li>
+                <li>
+                    <a href="#completed" ng-class="selectedNum == 3?'selected':''">Completed</a>
+                </li>
+            </ul>
+            <!-- Hidden if no completed items are left ↓ -->
+            <button class="clear-completed " ng-show="cleanable" ng-click="cleanCompleted()">Clear completed</button>
+        </footer>
+    </section>
+    <footer class="info ">
+        <p>Double-click to edit a todo</p>
+        <!-- Remove the below line ↓ -->
+        <p>Template by <a href="http://sindresorhus.com ">Sindre Sorhus</a></p>
+        <!-- Change this out with your name and url ↓ -->
+        <p>Created by <a href="http://todomvc.com ">you</a></p>
+        <p>Part of <a href="http://todomvc.com ">TodoMVC</a></p>
+    </footer>
+    <!-- Scripts here. Don't remove ↓ -->
+    <script type="text/javascript" src="../assets/angular/angular.js"></script>
+    <script type="text/javascript">
+    // <!-- Scripts here. Don't remove ↓ -->
+    angular.module('app', [])
+        .controller('myc', ['$scope', '$location','myService', function($scope, $location,myService) {
+            console.log(myService.get());
+            // console.log();
+            //1:显示数据
+            $scope.tasks = [{
+                id: 1,
+                isCompleted: false,
+                content: '老师我们饿了'
+            }, {
+                id: 2,
+                isCompleted: false,
+                content: '同学们请坚持一下，很快'
+            }];
+            //初始化添加任务的框
+            $scope.newContent = '';
+            //初始化存储当前所编辑id的标识
+            $scope.editingId = -1;
+            //全选全不选
+            $scope.toggle = false;
+            //初始化过滤条件
+            $scope.condition = {};
+
+            //2:添加任务
+            $scope.addTask = function() {
+                //2.1 先获取任务，提交函数中
+                var content = $scope.newContent;
+                //2.2获取ID
+                var maxId = 0;
+                for (var i = $scope.tasks.length - 1; i >= 0; i--) {
+                    //判断，当前元素的id，如果大于maxId，将其赋值
+                    if (maxId < $scope.tasks[i].id) {
+                        maxId = $scope.tasks[i].id;
+                    }
+                }
+                //找到数组中目前最大的ID，然后自增
+                maxId++;
+
+                //添加任务
+                $scope.tasks.push({
+                    id: maxId,
+                    content: content,
+                    isCompleted: false
+                });
+
+                //清空输入框的数据
+                $scope.newContent = '';
+
+            }
+
+            //功能3:删除任务
+            $scope.del = function(index) {
+                $scope.tasks.splice(index, 1);
+            }
+            //功能4: 编辑 completed editing样式
+            $scope.edit = function(id) {
+                $scope.editingId = id; //记录起来
+            }
+            //功能5:编辑后的保存
+            $scope.save = function() {
+                $scope.editingId = -1;
+            }
+            //功能6:全选全不选
+            //测试按钮值
+            // $scope.test = function(){
+            //   console.log($scope.toggleAll);
+            // }
+            $scope.toggleAll = function() {
+                //遍历数组
+                for (var i = $scope.tasks.length - 1; i >= 0; i--) {
+                    $scope.tasks[i].isCompleted = $scope.toggle;
+                }
+            }
+            //功能7:根据锚点值改变过滤数据
+            //谁调用监视函数$scope
+            //$watch(必须是$scope的属性)
+            $scope.myLocaltion = $location;
+            $scope.$watch('myLocaltion.url()', function(newV, oldV) {
+                console.log(newV);
+                //                   /
+                // index.html:151 /#active
+                // index.html:151 /#completed
+                // index.html:151 /
+                // index.html:151 /#active
+                // index.html:151 /
+                // index.html:151 /#active
+                // index.html:151 /#all
+
+            //功能8: 根据锚点值改变记录住当前的数字标识
+
+
+                switch (newV) {
+                    case '/#active':
+                        $scope.condition = { isCompleted: false };
+                        //active的这个按钮要加上selected
+                        $scope.selectedNum = 2;
+                        break;
+                    case '/#completed':
+                        $scope.condition = { isCompleted: true };
+                          //completed的这个按钮要加上selected
+                          $scope.selectedNum = 3;
+                        break;
+                    default:
+                        $scope.condition = {};
+                         //all的这个按钮要加上selected
+                         $scope.selectedNum = 1;
+                }
+            });
+
+
+            $scope.leftNum = 0;
+            $scope.$watch('tasks',function(newV,oldV){
+            //默认不显示
+            $scope.cleanable = false;
+
+              $scope.leftNum = 0;  
+              //解决如果当前没有数组元素
+              var hasTasks = true;
+              //功能9: 监视数组实现剩余任务数的统计
+              for (var i = 0; i < $scope.tasks.length; i++) {
+                hasTasks = false;
+                //如果未完成 ，加加
+                    if(!$scope.tasks[i].isCompleted)$scope.leftNum++;
+                    //功能11:是否显示删除已完成的
+                    else $scope.cleanable = true; //如果有一个任务已经完成
+              }
+
+            //功能10:改变全选全不选的状态
+                //为完成，false至少有1个
+              if($scope.leftNum != 0){
+                $scope.toggle = false;
+              }else{
+                //区分一下，有可能吧元素删完了
+                if(hasTasks){
+                    $scope.toggle = false;
+                }else{
+                    //默认的兴趣
+                    $scope.toggle = true;
+                }
+              }
+
+
+
+              //$scope.tasks.length  -> 当前有5个任务
+              //到底有多少个是false ，比如当前有5个任务，1,2,3,4,5
+              //    要么等于5 或者不等于5 
+              //    如果剩余任务数等于5 表示全部没有打钩。上边的按钮就应该是false
+            
+              
+
+            },true); 
+            //第三个参数是深度监视，会监视对象元素的属性
+
+
+            // 功能12:删除全部
+            $scope.cleanCompleted = function(){
+                for (var i = 0; i < $scope.tasks.length; i++) {
+                    if($scope.tasks[i].isCompleted){//已完成
+                        $scope.tasks.splice(i--,1);
+                    }
+                }
+            }
+        }])
+//my-focus
+        .directive('myFocus',['$timeout',function($timeout){
+            //你需要知道哪里可以依赖注入，取决于，你当前函数的参数，名称能否随便写，
+            //如果可以随便写，那么就是按顺序普通参数传递，也就不能依赖注入
+            //反之，可以依赖注入
+            return {
+                restrict:'A',
+                link:function(scope,ele,attrs){
+                    console.log(attrs.myFocus);
+                    //task.id == editingId - > true|false -> 一开始是false，当editingId改变，有可能某个元素的上的这个指令上所监视的这个表达式就是true了
+                   
+
+                    //$watch会优先计算第一个参数的值，变量num:1 - 下次会比较是否和1相同
+                    //如果是表达式，计算来原值就是bool： false，以后如果计算这个表达式的值改变了，变为true了，回调函数也会触发
+                    scope.$watch(attrs.myFocus,function(newV,oldV){
+                        // scope.toggle = false;
+                        // scope.toggle = true;
+                        // scope.toggle = false;
+                        //統計計算，統一進行更新DOM
+                        //js同步代码优先，有些代码需要先进行运行，然后在focus
+                        $timeout(function(){
+                            ele[0].focus();
+                        })
+
+                        // console.log(oldV);
+                        // console.log(newV);
+                        //在能夠更新DOM的合适时机，其他DOM的操作都完毕以后，再进行操作，异步的回调函数中完成
+                    })
+                }
+            }
+        }])
+        //声明一个服务
+        .service('myService',function(){
+            var store = window.localStorage;
+            // console.log('我初始化了')
+            // this.name = 'abc';
+            //  案例中数据就是$scope.tasks,将其保存在localStorage
+            //获取和保存
+            this.get = function(){
+                    //第一次获取有可能是null值，那么给一个[]
+                return JSON.parse(store.getItem('tasks')||'[]');
+            }
+            this.set = function(tasks){
+                store.setItem('tasks',JSON.stringify(tasks));
+            }
+        })
+    </script>
+</body>
+
+</html>

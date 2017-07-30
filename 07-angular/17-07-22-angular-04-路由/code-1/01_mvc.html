@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-01-mvc的案例</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    <ul>
+        <li ng-repeat="stu in stus track by $index">{{stu.name}}</li>
+    </ul>    
+
+    <button type="" ng-click="add()" >添加一个</button>
+    <button type="" ng-click="del()" >删除一个</button>
+    <script src="./assets/angular/angular.js"></script>
+    <script>
+        angular.module('app',[]).controller('myc',['$scope','myService', function($scope,myService){
+            console.log(myService);
+            // 信息
+            $scope.stus =[{
+                id:1,
+                name:'xiaohong'
+            },{
+                id:2,
+                name:'xiaoming'
+            },{
+                id:3,
+                name:'xiaozhu'
+            }];
+
+            $scope.add =function(){
+
+            }
+
+            $scope.del = function()
+{
+    
+}        }])
+    </script>
+</body>
+</html>

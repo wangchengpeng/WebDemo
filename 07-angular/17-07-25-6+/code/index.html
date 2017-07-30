@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    <script>
+        var items = document.querySelectorAll('#list>li');
+        console.log(items);
+        for (var i = 0; i < items.length; i++) {
+            setTimeout(function () {
+                console.log(i)
+            }, 5)
+        }
+        console.log(i);
+
+        items[i - 1].style.backgroundColor = '#ccc';
+    </script>
+</body>
+
+</html>

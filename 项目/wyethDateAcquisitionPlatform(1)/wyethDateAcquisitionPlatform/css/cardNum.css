@@ -1,0 +1,118 @@
+*{
+	font-family: "微软雅黑";
+	color:#fff;
+}
+input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/*主体模块设置main*/
+.main{
+	width:96%;
+    margin:0.2rem 2%;
+    height:auto!important;
+    height:10.0rem;
+    min-height:10.0rem;
+   	padding-bottom:2.0rem;
+    background:#f5b8a7;/*肉色*/
+   	background-size:100% 100%;
+   	-webkit-background-size:100% 100%;
+   	overflow: hidden;
+}
+/*卡号模块设置cardBox*/
+.cardBox{
+	width:90%;
+	margin:0 5%;
+	height:1.6rem;
+	background:#d26d4d;/*橘黄色*/
+	line-height:1.6rem;
+	margin-top:0.3rem;
+	font-size:0.32rem;
+	text-align: center;
+	letter-spacing: 1px;
+}
+/*返回按钮模块设置btn_box*/
+.btn_box{
+	width:100%;
+	margin-top:40%;
+	display: flex;
+	display:-webkit-flex;
+	justify-content: center;
+}
+.btn_box input{
+	width:36%;
+	margin:0 32%;
+	height:0.6rem;
+	background:#a11a1b;/*深红色*/
+	line-height:0.6rem;
+	text-align: center;
+	color:#fff;
+	font-size:0.32rem;
+	letter-spacing: 1px;
+}
+/*body遮罩层设置*/
+.cover {
+	position:fixed; 
+    top:0; 
+    left:0;
+    right:0; 
+    bottom:0;
+    opacity:0.6;
+    -moz-opacity:0.6;
+    filter: alpha(opacity=60);
+    background-color: #fff;
+    display: none;
+}
+/*弹框模块设置tanKuang*/
+.tanKuang{
+	width:70%;
+    margin:0 15%;
+    height:4.5rem;
+    background:#d26d4d;/*橘黄色*/
+   	position:absolute;
+	left:0;
+	top:20%;
+	display: none;
+}
+/*图片设置chadui*/
+.chadui{
+	margin-top:0.3rem;
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+}
+.chadui img{
+	height:1.15rem;
+}
+.cha{
+	/*display: none;*/
+}
+/*信息提示tishi*/
+.tishi{
+	margin-top:0.3rem;
+	text-align: center;
+	color:#fff;
+    font-size:0.32rem;
+    letter-spacing: 1px;
+}
+.fail{
+	/*display: none;*/
+}
+/*确定按钮设置qdBtnBox*/
+.qdBtnBox{
+	margin-top:0.8rem;
+	width:100%;
+}
+.qdBtn{
+	width:46%;
+    margin:0 27%;
+    height:0.5rem;
+    line-height:0.5rem;
+    text-align: center;
+    background:#fff;
+    color:#d26d4d;/*橘黄色*/
+    font-size:0.34rem;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--<script>
+    function func( arr ) {
+      console.log( arr );
+    }
+  </script>
+  <script src="http://www2.com/index.php"></script>  -->
+  <!-- func() -->
+</head>
+<body>
+  <button> send </button>
+  <script>
+    var btns = document.getElementsByTagName( 'button' );
+    btns[ 0 ].onclick = function () {
+
+      var xhr = new XMLHttpRequest();
+      xhr.open( 'GET', './send.php' );
+      xhr.onreadystatechange = function () {
+        if ( xhr.readyState == 4 && xhr.status == 200 ) {
+          console.log( xhr.responseText );
+        }
+      };
+      xhr.send();
+
+
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+@import "setting";     // 样式变量
+@import "normalize";  // 为了设置浏览器的默认样式(没有清除html,body的margin和padding)
+@import "base";       // 为了弥补normalize中的没有的浏览器的默认样式
+
+// 固定导航
+.fixbar{
+  display: none;
+  width:100%;
+  height:57px;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: #f8f8f8;
+  border-bottom:1px solid $BorderColor;
+  z-index: 100;
+  padding: 0 20px;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in;
+  .menu{
+    float: left;
+    margin-top: 15px;
+  }
+  .center{
+    float: right;
+    margin-top: 20px;
+    color:#586a80;
+  }
+}
+// 侧栏导航
+.fixaside{
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:240px;
+  height:100%;
+  background-color: #8d8d8d;
+  z-index: 100;
+  transition: all 0.25s ease-in;
+}
+.container{
+  transition: all 0.25s ease-in;
+}
+// 顶部导航
+.topnav{
+  width:100%;
+  border-bottom:1px solid $BorderColor;
+  height:$topNavHeight;
+  ul{
+    width:$baseWidth;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  li{
+    float: left;
+    text-align: center;
+    line-height:$topNavHeight;
+    border-right:1px solid $BorderColor;
+    color:$topNavColor;
+    font-size:12px;
+    &.qrcode{
+      width:$qrcodeWidth;
+    }
+    &.service{
+      width:$serviceWidth;
+    }
+    &.extra{
+      width:$extraWidth;
+    }
+    &.join{
+      width:$joinWidth;
+    }
+    &:last-child{
+      border-right:none;
+    }
+    a{
+      color:$topNavColor;
+    }
+    .signin,.signup{
+      font-size:14px;
+    }
+    .signup{
+      background-color: $primaryColor;
+      color:#fff;
+      padding:2px 6px;
+      text-align: center;
+      margin-right: 5px;
+      border-radius: $topNavButtonRadius;
+    }
+  }
+
+}
+
+// 导航
+.nav{
+  width:100%;
+  height:$navHeight;
+  border-bottom:1px solid $BorderColor;
+  ul{
+    width:$baseWidth;
+    height:$navHeight;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  li{
+    float: left;
+    height:100%;
+    padding:0 15px;
+    position: relative;
+  }
+  a{
+    width:100%;
+    height:100%;
+    color:$linkNormalColor;
+    line-height:$navHeight;
+  }
+  b{
+    position: absolute;
+    left:0;
+    bottom:-1px;
+    display:none;
+    width:100%;
+    height:2px;
+    background-color: $primaryColor;
+  }
+  li.logo{
+    padding:0;
+    margin-right: 30px;
+      img{
+        width:$logoWidth;
+        height:auto;
+        margin-top: 15px;
+      }
+  }
+  li.center{
+    float: right;
+    margin-right: 50px;
+  }
+  li:hover,li.active{
+    a{
+      color:$linkActiveColor;
+    }
+    b{
+      display: block;
+    }
+  }
+}
+
+// 专长
+.specialty{
+  width:100%;
+  border-bottom: 1px solid $BorderColor;
+  .specialty-container{
+    max-width:$longWidth;
+    margin: 0 auto;
+    overflow: hidden;
+    padding:20px;
+  }
+  dl{
+    float: left;
+    width:33.333333%;
+    padding:0 15px;
+    box-sizing: border-box;
+  }
+  dt{
+    font-size:18px;
+    margin-bottom: 20px;
+    color:$defaultFontColor;
+  }
+  dd{
+    font-size:14px;
+    color:$circleFontColor;
+    line-height:2;
+    span{
+      font-family: $circleFontFamily;
+      margin-right: 5px;
+    }
+  }
+}
+
+// 通知
+.notify{
+  width:100%;
+  border-bottom: 1px solid $BorderColor;
+  ul{
+    max-width: $longWidth;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding:20px 0;
+  }
+  li{
+    font-size:14px;
+    line-height: 1.5;
+    margin: 5px 0;
+    // 伪类选择器 本质是一个交集选择器 既要是a标签还要是父元素的第一个子元素
+    //a:first-child不行的原因
+    a:nth-child(3){
+      margin: 0 10px;
+    }
+  }
+  span{
+    color:$notifyColor;
+  }
+  a{
+    color:$notifyBookColor;
+  }
+  a.book{
+    color:$notifyColor;
+    border-bottom:1px dashed $notifyColor;
+  }
+
+  li.help{
+    margin: 0;
+    position: absolute;
+    top:32px;
+    right:0;
+    img{
+      height:$notifyImgHeight;
+      width:auto;
+      margin-right: 100px;
+
+    }
+  }
+}
+
+// 轮播图
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  .swipe-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  .swipe-wrap > li {
+    float:left;
+    width:100%;
+    position: relative;
+    height:300px;
+
+    &:nth-child(1){
+      background-color: hotpink;
+    }
+    &:nth-child(2){
+      background-color: pink;
+    }
+    &:nth-child(3){
+      background-color: lightpink;
+    }
+    &:nth-child(4){
+      background-color: deeppink;
+    }
+  }
+
+}
+
+// 新闻(没有变量在setting中)
+.news{
+  max-width: $longWidth;
+  margin: 0 auto;
+  padding-top:30px;
+  .title{
+    width:100px;
+    border-bottom:1px solid $BorderColor;
+    padding-left:10px;
+    padding-bottom: 12px;
+    float: left;
+    font-size:15px;
+    font-weight: normal;
+    margin-left: 110px;
+    position: relative;
+
+    &:after{
+      content: '';
+      position: absolute;
+      bottom:-4px;
+      right:-7px;
+      width:6px;
+      height:6px;
+      border-radius: 50%;
+      border:1px solid $BorderColor;
+
+    }
+  }
+  .types{
+    float: left;
+    position: relative;
+    margin-left: 40px;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top:0;
+      left:27px;
+      height:100%;
+      width:1px;
+      border-left:1px dashed $BorderColor;
+    }
+    span{
+      display: block;
+      width:55px;
+      height:55px;
+      background-color: $dotNormalBgColor;
+      border-radius: 50%;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 1;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      &:hover,&.active{
+        background-color: $dotHoverBgColor;
+      }
+    }
+  }
+  ul{
+    float: left;
+    margin-left: 50px;
+    li{
+      line-height: 2;
+      font-size:14px;
+      margin: 15px 0;
+    }
+    a{
+      color:#444;
+    }
+  }
+}
+
+// 借贷((没有变量在setting中))
+.loan{
+  width:100%;
+  padding:20px 0;
+  background-image: url("../images/box-style-bg.png");
+  .loan-wrap{
+    max-width: $longWidth;
+    margin: 0 auto;
+    padding:0 15px;
+    box-sizing: border-box;
+  }
+  .tab-wrap{  
+    overflow: auto;
+    .tab{
+      min-width:570px;
+      border-bottom:1px solid $BorderColor;
+      height:50px;
+      line-height: 38px;
+      font-size:15px;
+      padding-left: 15px;
+      overflow: hidden;
+    }
+    li{
+      display: inline-block;
+      padding:6px 18px;
+      margin-right: 15px;
+      position: relative;
+      &.active{
+        b{
+          display: block;
+        }
+      }
+    }
+    a{
+      color:$defaultFontColor;
+    }
+    b{
+      position: absolute;
+      display: none;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:3px;
+      background-color: $primaryColor;
+
+    }
+  }
+  .intro{
+    height:40px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius:5px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    position: relative;
+    p{
+      line-height: 40px;
+      font-size:14px;
+    }
+    .arrow{
+      position: absolute;
+      left: 50px;
+      top: -8px;
+      width: 0;
+      height: 0;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-bottom: 8px solid #fff;
+      z-index: 10;
+    }
+  }
+   .items{
+     padding-top: 15px;
+     // 居中行内块 行内元素
+     text-align: justify;
+     &:after{
+       content: '';
+       display: inline-block;
+       width:100%;
+       overflow: hidden;
+     }
+     .item{
+       display: inline-block;
+       width:31.5%;
+       height:148px;
+       padding:10px 110px 10px 0;
+       position: relative;
+       box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+       background-color: #fff;
+       border-radius:3px;
+       box-sizing: border-box;
+       margin-bottom: 20px;
+       .brief{
+         padding:0 15px;
+         height:100%;
+         box-sizing: border-box;
+         dl{
+           width:100%;
+         }
+         dt{
+           font-size:15px;
+           font-weight: bold;
+           margin-bottom: 15px;
+         }
+         dd{
+           overflow: hidden;
+           .l{
+             float: left;
+           }
+           .r{
+             float: right;
+           }
+           &.title{
+             font-size:12px;
+             color: $BorderColor;
+             margin: 10px 0;
+           }
+           &.con{
+             font-size:16px;
+             margin-bottom: 10px;
+           }
+         }
+       }
+       .rate{
+         width:110px;
+         position: absolute;
+         top:0;
+         right:0;
+         height: 100%;
+         box-sizing: border-box;
+         border-left:1px dashed $BorderColor;
+         text-align: center;
+         &:before{
+           position: absolute;
+           left: -6px;
+           top:-6px;
+           content: '';
+           display: block;
+           width: 12px;
+           height: 12px;
+           z-index: 2;
+           background-color: #f0f0f0;
+           border-radius: 6px;
+         }
+         &:after{
+           position: absolute;
+           left: -6px;
+           bottom:-6px;
+           content: '';
+           display: block;
+           width: 12px;
+           height: 12px;
+           z-index: 2;
+           background-color: #f0f0f0;
+           border-radius: 6px;
+           box-shadow: 0 2px 2px #d8d8d8 inset
+         }
+         .addr{
+           width:100%;
+           text-align: center;
+           margin-top: 12px;
+           span{
+             display: inline-block;
+             width:13px;
+             height:13px;
+             border:1px solid;
+             font-size:12px;
+             line-height: 12px;
+             text-align: center;
+             &.hubei{
+              border-color:#399;
+               color:#399;
+             }
+             &.bao{
+               border-color:$primaryColor;
+               color:$primaryColor;
+             }
+           }
+         }
+         h6{
+           font-size:30px;
+           line-height: 1;
+           margin-top: 30px;
+           color:$primaryColor;
+           small{
+             font-size:14px;
+           }
+         }
+         .extra{
+          margin-top: 10px;
+           span{
+             font-size:12px;
+             color:$BorderColor;
+           }
+         }
+         p{
+           font-weight: 700;
+           font-size: 16px;
+           color: #721786;
+           margin-bottom: 10px;
+         }
+       }
+     }
+     .blank{
+       width:31.5%;
+       display: inline-block;
+     }
+   }
+}
+
+
+// 响应式调整
+// 980以上是今天写的样式
+// 980以下 会变化一次
+@media only screen and (max-width:980px){
+//  顶部导航
+  .topnav{
+    ul{
+      width:750px;
+      margin: 0 auto;
+    }
+    .qrcode{
+      display: none;
+    }
+  }
+//  导航
+  .nav{
+    ul{
+      width:750px;
+      margin: 0 auto;
+    }
+    .center{
+      display: none;
+    }
+  }
+//  专长
+  .specialty{
+    .specialty-container{
+      width:750px;
+      margin: 0 auto;
+    }
+  }
+//  通知
+  .notify{
+    ul{
+      width:750px;
+      margin: 0 auto;
+    }
+    li:last-child{
+      display: none;
+    }
+  }
+//  借贷
+  .loan{
+    .loan-wrap{
+      width:750px;
+      margin: 0 auto;
+    }
+    .items .item{
+      width:48%;
+    }
+  }
+//  新闻
+  .news{
+    width:750px;
+    margin: 0 auto;
+    .title{
+      float: none;
+      width:auto;
+      margin: 0;
+    }
+    .types{
+      text-align: justify;
+      float: none;
+      margin: 0;
+      &:before{
+        display: none;
+      }
+      &:after{
+        content: '';
+        display: inline-block;
+        width:100%;
+        overflow: hidden;
+      }
+      span{
+        display: inline-block;
+        margin:25px  0 0 ;
+      }
+    }
+    ul{
+      margin-left: 0;
+    }
+  }
+
+}
+// 768以下会变化一次
+@media only screen and (max-width: 768px){
+//  固定导航
+.fixbar{
+  display: block;
+}
+//  侧栏导航
+  .fixaside{
+    display: block;
+    left:-240px;
+  }
+//  顶部导航
+  .topnav{
+    display: none;
+  }
+.pull-right{
+  transform: translateX(240px);
+}
+//  导航
+  .nav{
+    display: none;
+  }
+  .swipe{
+    padding-top: 57px;
+  }
+//  专长
+  .specialty{
+    display: none;
+  }
+//  通知
+  .notify{
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+//  借贷
+  .loan{
+    .items{
+      .item{
+        width:100%;
+      }
+    }
+  }
+//  新闻
+  .news{
+    width:100%;
+    .title{
+      box-sizing: border-box;
+    }
+  }
+
+}
+

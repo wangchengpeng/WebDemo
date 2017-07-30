@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>03_筛选型的过滤器filter</title>
+</head>
+<body ng-app="app" ng-controller="myc">
+    
+    <ul>
+    <!--obj 有什么key，就会去与persons中的元素比较
+
+    {name:'jack'}
+    
+        persons当中的元素，哪一个name属性的值是jack，就显示其，其他的就过滤了
+
+
+    -->
+        <li ng-repeat="person in persons | myFilter1:'a':'b' | myFilter2">
+            {{person}}
+        </li>
+    </ul>
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        angular.module('app',[])
+        .controller('myc',['$scope',function($scope) {
+
+            $scope.persons = [{
+                name:'小丽',
+                score:99,
+                isGood:true
+            },{
+                name:'小红',
+                score:95,
+                isGood:true
+            },{
+                name:'小强',
+                score:70,
+               isGood:false
+            },{
+                name:'小猪',
+                score:59,
+                isGood:false
+            }];
+            //根据条件匹配，满足的情况下显示
+            $scope.obj = {};  //空对象没有key就是无条件
+            $scope.obj = {isGood:true};          
+
+        }])
+        .filter('myFilter1',function(){//返回的也是app
+            //return 的不是一个设置方式（{}），而是一个过滤方式(动词->function)
+            return function(arr,argv1,argv2){ //arr就是persons
+                //console.log(arr,argv1,argv2);//'a':'b'
+                //        persons | myFilter1:'a':'b'
+                
+                //先临时创建一个空数组，满足条件的就加进来
+                var temp = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    if(arr[i].score > 60){
+                        temp.push(arr[i]);
+                    }
+                }
+                //返回过滤后的结果
+                return temp;
+            }
+        })
+        .filter('myFilter2',function(){
+            return function(arr){
+                // console.log(arr);
+                var temp = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    if(!arr[i].isGood) temp.push(arr[i]);
+                }
+                return temp;
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>

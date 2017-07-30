@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>07-继承的实现-原型继承</title>
+</head>
+
+<body>
+  <script>
+    var parent = {
+      say: function () {
+        console.log('saying hello');
+      },
+      talk: function () {
+        console.log('talking lady');
+      }
+    };
+
+    // prenat.sey();
+
+    function Person( name ){
+            this.name = name;
+        }
+
+        /*1,在guoguo的原型上扩展
+         Person.prototype.say= parent.say;
+         person.prototype.talk = parenttalk;
+         */
+
+         //  2 替换原型
+    Person.prototype = parent;
+
+        var guoguo = new Person();
+        guoguo.say();
+        guoguo.talk();
+  </script>
+</body>
+
+</html>

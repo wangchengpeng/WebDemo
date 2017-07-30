@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <ul>
+       {{each heros}}
+        <li>
+            {{$value.name}}
+            <a href="/detail?id={{$value.id}}">通过查询字符串查看</a>
+            <a href="/detail/{{$value.id}}">通过path查看</a>
+        </li>
+       {{/each}}
+   </ul>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../require.js/require.js"></script>
+  <script>
+    // 配置
+    require.config({
+      baseUrl: '/',
+      paths: {
+        moduleA: '20170707-bxg/codes/moduleA/moduleA',
+        moduleB: 'studyit-02/scripts/moduleB/moduleB',
+        moduleC: '20170713-bxg/codes/05-requirejs/06-test/moduleC/moduleC'
+      }
+    });
+
+    // 加载模块 A
+    require( [ 'moduleA' ] );
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02-小人动画</title>
+	<style>
+		canvas {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="200"></canvas>
+	<script src="baby.js"></script>
+	<script>
+		var canvas = document.querySelector( '#canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var b = new Baby( {
+			imgSrc: './imgs/NPC1.png',
+			context: ctx
+		} );
+
+		console.log( b );
+	</script>
+</body>
+</html>

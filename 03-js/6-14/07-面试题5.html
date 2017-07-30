@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-面试题5</title>
+</head>
+<body>
+    <script>
+        var a = 20;
+        var json = {
+            a: 10,
+            b: function(){
+                console.log( this.a );
+            }
+        };
+        function aaa( fn ){
+            fn(); // 普通函数执行模式 this -> window
+        }
+
+        aaa( json.b ); // 20
+        json.b(); // 方法调用模式 10
+    </script>
+</body>
+</html>

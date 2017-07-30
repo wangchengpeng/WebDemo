@@ -1,0 +1,91 @@
+// 头部 start
+body{
+    background-color: #F5F5F5;
+}
+header{
+    height: 50px;
+    background-color: #FF841D;
+    padding: 10px;
+    .logo{
+        // display: block;
+        height: 100%;
+        img{
+            height: 25px;
+        }
+    }
+    .app{
+        height: 34px;
+        float: right;
+        img{
+            height: 34px;
+        }
+    }
+}
+// 搜索框
+#search{
+    height: 50px;
+    background-color: #fff;
+    padding: 10px 80px 10px 10px ;
+    position: relative;
+    input{
+       border-radius: 15px;
+    }
+    input[type="search"]{
+        background-color: #F5F5F5;
+        border:none;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        padding-left: 15px;
+    }
+    input[type="submit"]{
+        float: right;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #FF841D;
+        border: none;
+        width: 63px;
+        height: 30px;
+        color: #fff;
+    }
+}
+// 头部 end
+
+// 菜单栏 start
+#menu{
+    background-color: #fff;
+    padding: 10px 0 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    ul{    
+        li{
+            float: left;
+            width: 25%;
+            padding: 10px 15px 0 ;
+            text-align: center;
+            a{
+                display: block;
+                img{
+                    height: 50px;
+                }
+                p{
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+        li:nth-child(n+9){
+            // background-color: red;
+            display: none;
+        }
+    }
+}
+// 菜单栏 end
+
+// 商品推荐start
+#recommend{
+    // margin-top:10px;
+}
+// 商品推荐end
+

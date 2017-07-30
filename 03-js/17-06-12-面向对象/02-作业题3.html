@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-作业题3</title>
+</head>
+<body>
+    <div id="parent">
+        <div>hahaha</div>
+        adfaflk
+        <p>123</p>
+        <a>456</a>
+        akjfdk
+        <p>789</p>
+        <span> JQK </span>
+    </div>
+    <script>
+        // 1: childNodes
+        function getChildren( parent ){
+            var ret = []; // 存储所有parent下的所有子节点中的元素节点
+            // 获取所有子节点
+            var childs = parent.childNodes;
+            // 遍历所有子节点
+            var i = 0,
+                l = childs.length;
+            for( ; i < l; i++ ){
+                // 判断当前子节点是否为元素节点
+                // 如果是
+                if( childs[ i ].nodeType == 1 ){
+                    // 就push到ret数组中
+                    ret.push( childs[ i ] );
+                }
+            }
+
+            return ret;
+        }
+
+        // 2: firstChild nextSibling
+        function getChildren( parent ){
+            // 存储所有子节点中的元素节点
+            var ret = [],
+                node = parent.firstChild; // 定义循环标量
+
+            /*for( ; node; node = node.nextSibling ){
+                // 判断当前node是否为元素节点
+                if( node.nodeType == 1 ){
+                    // 如果是,就添加到ret
+                    ret.push( node );
+                }
+            }*/
+
+            /*while( node ){
+                if( node.nodeType == 1 ){
+                    ret.push( node );
+                }
+                node = node.nextSibling;
+            }*/
+
+            do {
+                if( node.nodeType == 1 ){
+                    ret.push( node );
+                }
+            } while( node = node.nextSibling );
+
+            return ret;
+        }
+
+        console.log( getChildren( document.getElementById( 'parent' ) ) );
+    </script>
+</body>
+</html>

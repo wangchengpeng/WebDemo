@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>12-闭包应用1 - 缓存数据</title>
+</head>
+<body>
+  <script>
+    //1 搭建闭包结构
+    //2 确定缓存结构 - 方便获取 和 设置
+    // 用数据来模拟缓存
+    // 3 内容函数才是获取fib的数列第n项的值
+    function outer(){
+      // 缓存
+      var cache = [ , 1, 1, 2, 3, 5 ];
+      // 返回求fib数列的闭包函数，指定n形参 表示获取第n项值
+      return function( n ){
+        // 4 求值
+        // 4.1 先从缓存获取值
+        var热天= cache[ n ];
+        // 4.2 如果ret为undefined值，要重新计算
+        if( !ret ){
+          //如果n的值为1 或 2，ret = 1；
+          if( n == 1 || n == 2){
+            ret = 1;
+            //否则 就要递归去求
+          } else {
+            ret = arguments.callee( n = 1 ) + arguments.callee( n - 2 );
+          }
+          cache[ n ] = net;
+        }
+        return rer;
+      };
+    }
+    var fib = outer();
+    for( var i = 1; i < 13; i++){
+      console.log( fib( i ) );
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04-刮刮乐</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+			margin: 50px 400px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="200" height="50"></canvas>
+	<script>
+		var canvas = document.querySelector( '#canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		// 1 模拟中奖算法
+		var awards = [ '宝宝别哭', '宝宝别哭', '一只美女', '宝宝别哭',  '5元代金', '再来一次', '10代金券', '5元代金', '宝宝别哭', '再来一次', '5元代金',  '10元代金', '宝宝别哭'];
+
+		var index = Math.floor( Math.random() * awards.length );
+		var award = awards[ index ];
+
+		// 2 将中奖信息绘制到Canvas中
+		ctx.textAlign = 'center';
+		ctx.textBaseline = 'middle';
+		ctx.font = '24px 微软雅黑';
+		ctx.fillText( award, w / 2, h / 2 );
+
+		// 3 将上述绘制后的中奖信息，保存为base64编码图片，然后在作为canvas的背景图
+		var imgurl = canvas.toDataURL( 'image/png', 1 );
+		canvas.style.background = 'url( ' + imgurl + ' )';
+
+		// 4 将遮罩层
+		ctx.fillStyle = '#eee';
+		ctx.fillRect( 0, 0, w, h );
+		// 5 实现刮的效果
+		var flag = false; // 不能刮奖
+		// 5.1 绑定mousedown事件
+		canvas.addEventListener( 'mousedown', function() {
+			flag = true;
+			ctx.globalCompositeOperation = 'destination-out';
+		} );
+		// 5.2 绑定mousemove
+		canvas.addEventListener( 'mousemove', function( e ) {
+			if( flag ){
+				var x = e.clientX - canvas.offsetLeft,
+					y = e.clientY - canvas.offsetTop;
+				ctx.beginPath();
+				ctx.arc( x, y, 5, 0, 2 * Math.PI );
+				ctx.fillStyle = 'green';
+				ctx.fill();
+			}
+		} );
+		// 5.3 绑定mouseup
+		canvas.addEventListener( 'mouseup', function() {
+			flag = false;
+			ctx.globalCompositeOperation = 'source-over';
+		} );
+	</script>
+</body>
+</html>

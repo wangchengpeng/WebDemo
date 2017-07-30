@@ -1,0 +1,168 @@
+*{
+	font-family: "微软雅黑";
+}
+input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+/*主体模块设置main*/
+.main{
+	width:96%;
+    margin:0.2rem 2%;
+    height:11.0rem;
+    background:#f5b8a7;/*肉色*/
+   	overflow: hidden;
+}
+/*会员信息模块设置memberInforBox*/
+.memberInforBox{
+	width:96%;
+	margin:0 2%;
+}
+/*每一小块模块设置memberInfor*/
+.memberInfor{
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+.memberInfor-1{
+	margin-top:0.5rem;
+}
+.memberInfor:not(.memberInfor-1){
+	margin-top:0.3rem;
+}
+.memberInfor p{
+	width:38%;
+	margin-right:2%;
+	color:#000;
+	font-size:0.28rem;
+	text-align: right;
+}
+.memberInfor input{
+	width:58%;
+	padding-left:2%;
+	height:0.5rem;
+	background:#fff;
+	color:#000;
+	font-size:0.28rem;
+}
+/*下一步按钮设置xybBtnBox*/
+.xybBtnBox{
+	margin-top:1.8rem;
+	width:100%;
+}
+.xybBtn{
+	width:40%;
+    margin:0 30%;
+    height:0.6rem;
+    line-height:0.6rem;
+    text-align: center;
+    background:#a11a1b;/*深红色*/
+    color:#fff;
+    font-size:0.3rem;
+}
+
+
+/*会员资料下一步页面样式设置memberInfor_Next*/
+
+/*主体模块设置mainBox*/
+.mainBox{
+	width:96%;
+    margin:0.2rem 2%;
+    /*height:11.0rem;*/
+   	padding-bottom:2.0rem;
+    background:#f5b8a7;/*肉色*/
+   	background-size:100% 100%;
+   	-webkit-background-size:100% 100%;
+   	overflow: hidden;
+}
+/*产品类型模块设置productTypeBox*/
+.productTypeBox{
+	width:98%;
+	padding-left:2%;
+}
+/*每一小块产品类型设置productType*/
+.productType{
+	float:left;
+	width:31.33%;
+	height:0.6rem;
+	line-height:0.6rem;
+	text-align: center;
+	color:#fff;
+	font-size:0.28rem;
+	margin-right:2%;
+	margin-top:0.2rem;
+}
+.productType_bg1{
+	background:#9d9f9e;/*灰色*/
+}
+.productType_bg2{
+	background:#d26d4d;/*橘黄色*/
+}
+/*产品表格模块设置proTab*/
+.proTab{
+	padding-top:0.2rem;
+	width:98%;
+	margin:0 1%;
+	border-collapse: separate;
+	border-spacing: 0.1rem 0.1rem;
+	overflow: hidden;
+}
+.proTab tr{
+	width:100%;
+}
+.proTab td{
+	height:0.6rem;
+	text-align: center;
+	line-height:0.6rem;
+	font-size: 0.24rem;
+}
+.tr1{
+	background:#d26d4d;/*橘黄色*/
+}
+.tr1 td{
+	color:#fff;
+}
+.proTab tr:not(.tr1){
+	background:#fff;
+}
+.proTab tr:not(.tr1) td{
+	color:#000;
+}
+.proTab tr td:nth-child(1){
+	width:60%;
+	overflow: hidden;
+}
+.proTab tr td:nth-child(2){
+	width:40%;
+}
+.shipment{
+	width:100%;
+	height:0.6rem;
+	line-height:0.6rem;
+	text-align: center;
+	color:#000;
+	font-size: 0.24rem;
+}
+/*按钮模块设置btnBox*/
+.btnBox{
+	margin-top:0.8rem;
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+}
+.btnBox input{
+	width:35%;
+	height:0.6rem;
+	background:#a11a1b;/*深红色*/
+	line-height:0.6rem;
+	text-align: center;
+	color:#fff;
+	font-size: 0.32rem;
+	letter-spacing: 2px;
+}
+.btnBox input:nth-child(1){
+	margin-right:10%;
+}

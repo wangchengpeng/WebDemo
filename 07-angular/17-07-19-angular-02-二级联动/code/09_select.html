@@ -1,0 +1,40 @@
+<html>
+ <head>
+     <meta charset="UTF-8">
+     <title>09_下拉列表</title>
+ </head>
+ <body ng-app="app" ng-controller="myc">
+        <!-- option最终选择的value会赋值给select的value属性，那么就可以用ng-model -->
+        <select ng-model="city" ng-options="city.viewName for city in citys">
+            <option value="">请选择</option>
+        </select>
+    
+    <button ng-click="show()">查看选择中option的值</button>
+
+     <script type="text/javascript" src="./assets/angular/angular.js"></script>
+     <script type="text/javascript">
+         var app = angular.module('app',[]);
+         app.controller('myc',['$scope',function($scope){
+             $scope.citys = [{
+                pinyin:'bj',
+                viewName:'北京'
+             },{
+                pinyin:'sh',
+                viewName:'上海'
+             },{
+                pinyin:'gz',
+                viewName:'广州'
+             },{
+                pinyin:'sz',
+                viewName:'深圳'
+             }];
+
+             $scope.show = function(){
+                 console.log($scope.city);
+             }
+
+         }])
+
+     </script>
+ </body>
+ </html> 

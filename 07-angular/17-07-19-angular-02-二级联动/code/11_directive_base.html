@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>11_自定义指令</title>
+</head>
+<body ng-app="app">
+    
+    <my-div></my-div>
+    <div my-div></div>
+
+    <div class="my-div"></div>
+
+    <!-- directive:my-div --> 
+
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script type="text/javascript">
+        angular.module('app',[])
+        .directive('myDiv',function(){
+            return {
+                //E:element A：attribute 
+                restrict:'ECMA', //c  class  m comment注释 
+                // template:'<h1>哈哈</h1>',
+                replace:true, //默认值false，配合M的方式使用,true的时候只能有一个根节点
+                templateUrl:'./template.html', //基于ajax请求
+            }
+        })
+
+
+    </script>
+</body>
+</html>

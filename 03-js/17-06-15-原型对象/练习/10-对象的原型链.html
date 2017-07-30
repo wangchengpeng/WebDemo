@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>10-对象的原型链</title>
+
+</head>
+<body>
+  <script>
+    //Objct对象的原型链
+    var obj = {};
+    //obj-> Object.prototype -> null
+    var arr = [];
+    //  
+    function parent(){};
+    function Child(){};
+
+    var p = new Parent();
+
+
+    Child.prototype = p ;
+
+    var c = new Child();
+
+  </script>
+</body>
+</html>
+
+

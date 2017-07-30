@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../03-artTemplate/template-web.js"></script>
+</head>
+<body>
+  <div id="dv">
+  </div> 
+  <script>
+
+    // 1) 使用字符串定义模板
+    var tmp = '<div>{{ value + 1 }}</div>';
+    // 2) 使用 compile() 方法, 参数为模板字符串
+    var render = template.compile( tmp );
+    // 该方法会返回一个渲染函数, 这个渲染函数允许反复调用.
+    // 3) 调用渲染函数, 传入需要填充的数据( 背后的对象 )
+    var html = render( data );
+    // 该方法返回的是 渲染好的字符串, 只需要在给标签的 innerHTML 赋值即可.
+    document.getElementById( 'dv' ).innerHTML = html;
+    
+
+   
+
+  </script>
+</body>
+</html>

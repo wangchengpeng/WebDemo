@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="app" ng-controller="myController">
+
+        {{text}}
+    </div>
+
+    <button type="">  原生点击修改值</button>
+    <script type="text/javascript" src="./assets/angular/angular.js"></script>
+    <script>
+        var app = angular.module('app',[]);
+        app.controller('myController',function($scope){
+            $scope.text = '我是myController赋值的结果';
+            window.myScope = $scope;
+        });
+
+        document.querySelector('button').onclick = function() {
+            window.myScope.text = ('呜呼哀哉');
+            window.myScope.$apply();
+        }
+        
+
+    </script>
+</body>
+</html>

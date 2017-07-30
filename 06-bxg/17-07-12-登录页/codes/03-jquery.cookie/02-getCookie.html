@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./libs/jquery-3.2.0/jquery-3.2.0.js"></script>
+  <script src="./libs/jquery-cookie-master/src/jquery.cookie.js"></script>
+  <script>
+    
+    $(function (){
+
+        $( ':button' ).click(function () {
+          // alert( 'click' );
+
+          // 将用户的名字与密码存储到 cookie 中
+          var uid = $( '[name=uid]' ).val();
+          var pwd = $( '[name=pwd]' ).val();
+          var isRem = $( ':checkbox' ).prop( 'checked' );
+
+          if ( isRem ) {
+
+              $.cookie( 'uid', uid, { expires: 30 } );
+              $.cookie( 'pwd', pwd, { expires: 30 } );
+          
+          }
+
+          alert( '登录成功' );
+
+        });
+
+
+        // 判断是否存在 cookie 值, 如果存在则加上去
+        var kv = $.cookie();
+        if ( kv.uid && kv.pwd ) {
+          $( '[name=uid]' ).val( kv.uid );
+          $( '[name=pwd]' ).val( kv.pwd );
+          $( ':checkbox' ).prop( 'checked', true );
+        }
+    }) ;
+  
+  </script>
+</head>
+<body>
+  <form >
+    用户名: <input type="text" name="uid" placeholder="请输入用户名"><br>
+    密&nbsp;&nbsp;码: <input type="password" name="pwd" placeholder="请输入密码"><br>
+    <input type="button" value="登录" /><br>
+    <input type="checkbox" >是否记住密码
+  </form>
+ 
+</body>
+</html>

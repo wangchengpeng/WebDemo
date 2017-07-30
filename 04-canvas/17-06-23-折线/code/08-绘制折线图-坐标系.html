@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08-绘制折线图-坐标系</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+	<script>
+		var canvas = document.getElementById( 'canvas' ),
+			ctx = canvas.getContext( '2d' );
+
+		var w = canvas.width,
+			h = canvas.height;
+
+		var margin = 20; // 指定坐标轴与canvas 的边距
+
+		// 绘制y轴
+		ctx.beginPath();
+		ctx.moveTo( margin, margin );
+		ctx.lineTo( margin, h - margin );
+		// 绘制x轴
+		ctx.lineTo( w - margin, h - margin );
+		ctx.stroke();
+
+		var arrowSize = 16; // 定义箭头大小
+		// 绘制y轴箭头
+		ctx.beginPath();
+		ctx.moveTo( margin, margin );
+		ctx.lineTo( margin - arrowSize / 2, margin + arrowSize );	
+		ctx.lineTo( margin, margin + arrowSize / 2 );
+		ctx.lineTo( margin + arrowSize / 2, margin + arrowSize );
+		ctx.closePath();
+		// 绘制x轴箭头
+		ctx.moveTo( w - margin, h - margin );
+		ctx.lineTo( w - margin - arrowSize, h - margin - arrowSize / 2 );
+		ctx.lineTo( w - margin - arrowSize / 2, h - margin );
+		ctx.lineTo( w - margin - arrowSize, h - margin + arrowSize / 2 );
+		ctx.closePath();
+		ctx.fill();
+
+	</script>
+</body>
+</html>

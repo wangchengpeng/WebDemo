@@ -1,0 +1,116 @@
+.main-1{
+	padding:0.5rem 0;
+	background:#f6b29f;/*肉色*/
+}
+/*信息模块设置infroBox*/
+.infroBox{
+	width:80%;
+	margin:0 10%;
+}
+.infro{
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+.infro:last-child{
+	margin-top:0.3rem;
+}
+.infro span{
+	width:28%;
+	font-size:0.4rem;
+	color:#000;
+}
+.infro input{
+	font-size:0.37rem;
+	color:#000;
+	background:#fff;
+}
+.tel{
+	width:70%;
+	height:0.56rem;
+	padding-left:2%;
+	line-height:0.56rem;
+	letter-spacing: 1px;
+}
+.code{
+	width:35%;
+	height:0.56rem;
+	line-height:0.56rem;
+	text-align: center;
+	margin-right: 2%;
+	letter-spacing: 1px;
+}
+.codeImg{
+	width:35%;
+	height:0.56rem;
+}
+.codeImg img{
+	width:100%;
+	height:0.56rem;
+}
+/*查询按钮模块设置chaxunBtn*/
+input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.chaBtnBox{
+	width:100%;
+	margin-top:0.8rem;
+}
+.chaBtn{
+	width:38%;
+	margin:0 31%;
+	height:0.6rem;
+	background:#bc1314;/*红色*/
+	line-height:0.6rem;
+	text-align: center;
+	font-size:0.32rem;
+	color:#fff;
+}
+/*表格模块设置table*/
+.table{
+	width:98%;
+	margin:0 1%;
+	margin-top:0.8rem;
+	border-collapse: collapse;
+	/*display: none;*/
+}
+.table tr{
+	width:100%;
+	border-bottom:1px solid #f6b29f;/*肉色*/
+}
+.table tr th{
+	padding:0.1rem 0;
+	background:#d16c4d;/*浅橘黄色*/
+	border-right:1px solid #f6b29f;/*肉色*/
+	text-align: center;
+	color:#fff;
+	font-size:0.24rem;
+	
+}
+.table tr td{
+	padding:0.1rem 0;
+	background:#fff;
+	border-right:1px solid #f6b29f;/*肉色*/
+	font-size:0.18rem;
+	color:#000;
+	text-align: center;
+}
+.proName{
+	/*width:28%;*/
+}
+/*销售情况模块设置record*/
+.record{
+	width:98%;
+	margin:0 1%;
+	margin-top:0.8rem;
+	height:1.8rem;
+	line-height:1.8rem;
+	background:#ed6d4a;/*橘黄色*/
+	text-align: center;
+	font-size:0.32rem;
+	color:#fff;
+	display: none;
+}

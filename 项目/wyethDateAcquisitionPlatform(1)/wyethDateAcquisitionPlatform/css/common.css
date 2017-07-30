@@ -1,0 +1,31 @@
+/*全局设置*/
+html,body,form,div,input,select,option,table,tr,td,th,caption,thead,tbody,tfoot,col,colgroup,label,p,span,ul,li,dl,dt,dd,em,i,a,img,iframe,textarea,button,video{
+	margin:0;
+	padding:0;
+}
+/*html,body,form{
+    height: 100%;
+}
+form{
+	width:100%;
+}*/
+/*select,input{
+	appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}*/
+img,input,select,button,textarea{
+	border:0;
+}
+ul li{
+	list-style:none;
+}
+em,i{
+	font-style:normal;
+}
+a{
+	text-decoration: none;
+}
+span,img,a{
+	display:inline-block;
+}

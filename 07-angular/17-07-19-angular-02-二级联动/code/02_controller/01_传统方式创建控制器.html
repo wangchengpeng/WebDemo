@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>01_传统方式</title>
+</head>
+<body>
+    
+    <div ng-app="app" ng-controller="myController">
+        {{text}}
+    </div>
+
+    <script type="text/javascript" src="../assets/angular-1.2.29/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        //只在1.2.29以前的版本可以使用
+        function myController($scope){
+            $scope.text = 'abc';
+        }
+        //a找不到
+        // var app=angular.module("app",[]);function myController(a){a.text="abc"};
+    </script>
+</body>
+</html>

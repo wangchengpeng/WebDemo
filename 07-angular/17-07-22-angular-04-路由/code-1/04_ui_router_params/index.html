@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>1-03_SPA</title>
+</head>
+<style type="text/css">
+    .h {
+        background-color: yellowgreen;
+        height: 50px;
+    }
+
+    .b {
+        background-color: hotpink;
+        height: 250px;
+    }
+
+    .f {
+        background-color: skyblue;
+        height: 50px;
+    }
+
+    a {
+        color: #000;
+    }
+</style>
+
+<body ng-app="app">
+    <div class="h">
+        <a ui-sref="list">查看学生列表</a>
+    </div>
+    <div class="b" ui-view></div>
+    <div class="f">
+        版权所有 违者必究
+    </div>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript">
+        //创建模块及依赖模块
+        angular.module('app', ['ui.router'])
+            .config(['$stateProvider',function($stateProvider){
+            $stateProvider.state('list',{
+                url:'/list',
+                templateUrl:'./list.html',
+                controller:['$scope',function($scope){
+                    $scope.stus = [{
+                        id:1,
+                        name:'小明'
+                    },{
+                        id:'2',
+                        name:'小红'
+                    }];
+                }]
+            })
+            .state('dataid',{
+                url:'/detail?d&name',
+                template:'<h1>您点击的是id为:{{id}}{{name}}的学生</h1>',
+                controller:['$scope','$state',function($scope,$state){
+                    console.log($state.params);
+                    $scope.name = $state.params.name;
+                    $sccope.is = $state.parame.id;
+                    
+                }]
+            })
+          
+        }])
+    </script>
+</body>
+
+</html>
